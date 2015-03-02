@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainBoardViewController">
             <connections>
+                <outlet property="m1x1pickerView" destination="6If-Re-4Gx" id="jwH-QO-RSe"/>
+                <outlet property="m1x2pickerView" destination="LO0-ka-f28" id="8un-zw-hzb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +15,79 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkS-mM-EVF">
+                    <rect key="frame" x="265" y="27" width="71" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6If-Re-4Gx">
+                    <rect key="frame" x="8" y="80" width="190" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="hqC-yW-H7R"/>
+                        <outlet property="delegate" destination="-1" id="6G7-ne-gK0"/>
+                    </connections>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LO0-ka-f28">
+                    <rect key="frame" x="206" y="80" width="190" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="gZF-ly-P6G"/>
+                        <outlet property="delegate" destination="-1" id="d5N-cg-8Qu"/>
+                    </connections>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fJ-nG-8Zb">
+                    <rect key="frame" x="404" y="80" width="190" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="fvK-uP-i80"/>
+                        <outlet property="delegate" destination="-1" id="QHS-Wu-gAr"/>
+                    </connections>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52m-bI-cA8">
+                    <rect key="frame" x="6" y="250" width="190" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="4Bw-5n-27s"/>
+                        <outlet property="delegate" destination="-1" id="Kzr-i8-7s7"/>
+                    </connections>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-aV-2r7">
+                    <rect key="frame" x="204" y="250" width="190" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Vdh-WN-h89"/>
+                        <outlet property="delegate" destination="-1" id="65R-1C-bnU"/>
+                    </connections>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smf-Fy-I9c">
+                    <rect key="frame" x="402" y="250" width="190" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="NqW-0A-Pf3"/>
+                        <outlet property="delegate" destination="-1" id="McN-pl-7h2"/>
+                    </connections>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQZ-m2-wzu">
+                    <rect key="frame" x="6" y="420" width="190" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="iKm-Or-Xfx"/>
+                        <outlet property="delegate" destination="-1" id="hPd-Bj-JRf"/>
+                    </connections>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHi-30-Icn">
+                    <rect key="frame" x="204" y="420" width="190" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="1ki-QB-IKi"/>
+                        <outlet property="delegate" destination="-1" id="3Sm-j3-tgu"/>
+                    </connections>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6c-XO-wGw">
+                    <rect key="frame" x="402" y="420" width="190" height="162"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="eoS-xy-cee"/>
+                        <outlet property="delegate" destination="-1" id="LGV-0Q-fLU"/>
+                    </connections>
+                </pickerView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="353" y="361"/>
         </view>
     </objects>
 </document>

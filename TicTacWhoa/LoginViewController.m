@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "MainBoardViewController.h"
 
 @interface LoginViewController ()
 
@@ -15,6 +16,7 @@
 @implementation LoginViewController
 @synthesize userNameTextField;
 @synthesize passwordTextField;
+@synthesize boardViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,5 +38,8 @@
     }
     
     // Go to the next MainBoardViewController
+    boardViewController = [[MainBoardViewController alloc] initWithNibName:@"MainBoardViewController" bundle:nil];
+//    [self.navigationController pushViewController:boardViewController animated:YES];
+    [self presentViewController:boardViewController animated:YES completion:nil];
 }
 @end
