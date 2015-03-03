@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FC88FAB1AA536C9000F0087 /* pic1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC88FAA1AA536C9000F0087 /* pic1.png */; };
 		8E81FAF61AA022EB00F70393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FAF51AA022EB00F70393 /* main.m */; };
 		8E81FAF91AA022EB00F70393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FAF81AA022EB00F70393 /* AppDelegate.m */; };
 		8E81FAFF1AA022EB00F70393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FAFD1AA022EB00F70393 /* Main.storyboard */; };
@@ -18,8 +19,6 @@
 		8E81FB221AA1A4F100F70393 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB201AA1A4F100F70393 /* LoginViewController.xib */; };
 		8E81FB261AA2F6A500F70393 /* MainBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FB241AA2F6A500F70393 /* MainBoardViewController.m */; };
 		8E81FB271AA2F6A500F70393 /* MainBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */; };
-		8E81FB291AA42F1F00F70393 /* 2015-01-24 10.50.13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB281AA42F1F00F70393 /* 2015-01-24 10.50.13.jpg */; };
-		8E81FB2B1AA42F2900F70393 /* 2015-01-24 11.35.58.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB2A1AA42F2900F70393 /* 2015-01-24 11.35.58.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FC88FAA1AA536C9000F0087 /* pic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic1.png; sourceTree = "<group>"; };
 		8E81FAF01AA022EB00F70393 /* TicTacWhoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacWhoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81FAF41AA022EB00F70393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E81FAF51AA022EB00F70393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,8 +52,6 @@
 		8E81FB231AA2F6A500F70393 /* MainBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBoardViewController.h; sourceTree = "<group>"; };
 		8E81FB241AA2F6A500F70393 /* MainBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBoardViewController.m; sourceTree = "<group>"; };
 		8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainBoardViewController.xib; sourceTree = "<group>"; };
-		8E81FB281AA42F1F00F70393 /* 2015-01-24 10.50.13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "2015-01-24 10.50.13.jpg"; path = "../../../../../Downloads/2015-01-24 10.50.13.jpg"; sourceTree = "<group>"; };
-		8E81FB2A1AA42F2900F70393 /* 2015-01-24 11.35.58.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "2015-01-24 11.35.58.jpg"; path = "../../../../../Downloads/2015-01-24 11.35.58.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FC88FA91AA536C9000F0087 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0FC88FAA1AA536C9000F0087 /* pic1.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		8E81FAE71AA022EB00F70393 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +101,7 @@
 		8E81FAF21AA022EB00F70393 /* TicTacWhoa */ = {
 			isa = PBXGroup;
 			children = (
+				0FC88FA91AA536C9000F0087 /* Images */,
 				8E81FAF71AA022EB00F70393 /* AppDelegate.h */,
 				8E81FAF81AA022EB00F70393 /* AppDelegate.m */,
 				8E81FAFD1AA022EB00F70393 /* Main.storyboard */,
@@ -116,8 +123,6 @@
 		8E81FAF31AA022EB00F70393 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8E81FB2A1AA42F2900F70393 /* 2015-01-24 11.35.58.jpg */,
-				8E81FB281AA42F1F00F70393 /* 2015-01-24 10.50.13.jpg */,
 				8E81FAF41AA022EB00F70393 /* Info.plist */,
 				8E81FAF51AA022EB00F70393 /* main.m */,
 			);
@@ -222,11 +227,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E81FB271AA2F6A500F70393 /* MainBoardViewController.xib in Resources */,
-				8E81FB291AA42F1F00F70393 /* 2015-01-24 10.50.13.jpg in Resources */,
 				8E81FB221AA1A4F100F70393 /* LoginViewController.xib in Resources */,
+				0FC88FAB1AA536C9000F0087 /* pic1.png in Resources */,
 				8E81FB1D1AA19D2000F70393 /* SplashUIViewController.xib in Resources */,
 				8E81FAFF1AA022EB00F70393 /* Main.storyboard in Resources */,
-				8E81FB2B1AA42F2900F70393 /* 2015-01-24 11.35.58.jpg in Resources */,
 				8E81FB011AA022EB00F70393 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +438,7 @@
 				8E81FB151AA022EB00F70393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E81FB161AA022EB00F70393 /* Build configuration list for PBXNativeTarget "TicTacWhoaTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +447,7 @@
 				8E81FB181AA022EB00F70393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

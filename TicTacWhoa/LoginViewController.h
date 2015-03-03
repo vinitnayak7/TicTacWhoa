@@ -14,11 +14,12 @@
 @property (strong,nonatomic) MainBoardViewController *boardViewController;
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
-@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginExistingUser;
+@property (weak, nonatomic) IBOutlet UIButton *loginNewUser;
 
 //========== Actions
-- (IBAction)submitCredentials:(id)sender;
+- (IBAction)submitExistingUser:(id)sender;
+- (IBAction)submitNewUser:(id)sender;
 
 @end

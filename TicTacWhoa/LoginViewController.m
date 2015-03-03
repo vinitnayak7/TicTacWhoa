@@ -15,7 +15,6 @@
 
 @implementation LoginViewController
 @synthesize userNameTextField;
-@synthesize passwordTextField;
 @synthesize boardViewController;
 
 - (void)viewDidLoad {
@@ -28,18 +27,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-- (IBAction)submitCredentials:(id)sender {
+// TODO everything
+- (IBAction)submitExistingUser:(id)sender {
     if ([userNameTextField.text isEqual: @""]) {
         NSLog(@"username empty");
-    }
-    if ([passwordTextField.text isEqual: @""]) {
-        NSLog(@"pass empty");
     }
     
     // Go to the next MainBoardViewController
     boardViewController = [[MainBoardViewController alloc] initWithNibName:@"MainBoardViewController" bundle:nil];
-//    [self.navigationController pushViewController:boardViewController animated:YES];
+    [self presentViewController:boardViewController animated:YES completion:nil];
+}
+
+// TODO everything
+- (IBAction)submitNewUser:(id)sender {
+    boardViewController = [[MainBoardViewController alloc] initWithNibName:@"MainBoardViewController" bundle:nil];
     [self presentViewController:boardViewController animated:YES completion:nil];
 }
 @end
