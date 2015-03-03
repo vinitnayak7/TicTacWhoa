@@ -58,7 +58,7 @@
           forComponent:(NSInteger)component
            reusingView:(UIView *)view
 {
-    UIImage *image = [UIImage imageNamed:@"2015-01-24 10.50.13.jpg"];
+    UIImage *image = [UIImage imageNamed:@"pic1"];
     UIImageView *imageView = [[UIImageView alloc] init];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     [imageView setImage:image];
