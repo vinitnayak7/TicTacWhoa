@@ -9,6 +9,7 @@
 #import "SplashUIViewController.h"
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "MainBoardViewController.h"
 
 @interface SplashUIViewController ()
 
@@ -27,7 +28,7 @@
     [super viewDidAppear:animated];
     [NSThread sleepForTimeInterval:2.5];
     // Override point for customization after application launch.
-    loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    loginViewController = [[MainBoardViewController alloc] initWithNibName:@"MainBoardViewController" bundle:nil];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.window.rootViewController = self.loginViewController;
     [appDelegate.window makeKeyAndVisible];

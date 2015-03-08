@@ -11,6 +11,6 @@
 
 @interface SplashUIViewController : UIViewController
 
-@property (strong,nonatomic) LoginViewController *loginViewController;
+@property (strong,nonatomic) MainBoardViewController *loginViewController;
 
 @end
