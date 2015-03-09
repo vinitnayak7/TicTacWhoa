@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0FC88FAB1AA536C9000F0087 /* pic1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC88FAA1AA536C9000F0087 /* pic1.png */; };
+		8E488A451AACDD040020AD80 /* MutableGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E488A441AACDD040020AD80 /* MutableGrid.m */; };
+		8E488A481AACFF510020AD80 /* Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E488A471AACFF510020AD80 /* Selection.m */; };
+		8E488A4D1AAD68E00020AD80 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E488A491AAD68E00020AD80 /* car.png */; };
+		8E488A4E1AAD68E00020AD80 /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E488A4A1AAD68E00020AD80 /* cat.png */; };
+		8E488A4F1AAD68E00020AD80 /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E488A4B1AAD68E00020AD80 /* dog.png */; };
+		8E488A501AAD68E00020AD80 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E488A4C1AAD68E00020AD80 /* house.png */; };
 		8E81FAF61AA022EB00F70393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FAF51AA022EB00F70393 /* main.m */; };
 		8E81FAF91AA022EB00F70393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FAF81AA022EB00F70393 /* AppDelegate.m */; };
 		8E81FAFF1AA022EB00F70393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FAFD1AA022EB00F70393 /* Main.storyboard */; };
@@ -33,6 +39,15 @@
 
 /* Begin PBXFileReference section */
 		0FC88FAA1AA536C9000F0087 /* pic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic1.png; sourceTree = "<group>"; };
+		8E488A421AACDB280020AD80 /* GridProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridProtocol.h; sourceTree = "<group>"; };
+		8E488A431AACDC0D0020AD80 /* MutableGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutableGrid.h; sourceTree = "<group>"; };
+		8E488A441AACDD040020AD80 /* MutableGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutableGrid.m; sourceTree = "<group>"; };
+		8E488A461AACFB590020AD80 /* Selection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Selection.h; sourceTree = "<group>"; };
+		8E488A471AACFF510020AD80 /* Selection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Selection.m; sourceTree = "<group>"; };
+		8E488A491AAD68E00020AD80 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
+		8E488A4A1AAD68E00020AD80 /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
+		8E488A4B1AAD68E00020AD80 /* dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog.png; sourceTree = "<group>"; };
+		8E488A4C1AAD68E00020AD80 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		8E81FAF01AA022EB00F70393 /* TicTacWhoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacWhoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81FAF41AA022EB00F70393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E81FAF51AA022EB00F70393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,9 +90,25 @@
 		0FC88FA91AA536C9000F0087 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8E488A491AAD68E00020AD80 /* car.png */,
+				8E488A4A1AAD68E00020AD80 /* cat.png */,
+				8E488A4B1AAD68E00020AD80 /* dog.png */,
+				8E488A4C1AAD68E00020AD80 /* house.png */,
 				0FC88FAA1AA536C9000F0087 /* pic1.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		8E488A3C1AACD8F40020AD80 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8E488A421AACDB280020AD80 /* GridProtocol.h */,
+				8E488A431AACDC0D0020AD80 /* MutableGrid.h */,
+				8E488A441AACDD040020AD80 /* MutableGrid.m */,
+				8E488A461AACFB590020AD80 /* Selection.h */,
+				8E488A471AACFF510020AD80 /* Selection.m */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		8E81FAE71AA022EB00F70393 = {
@@ -116,6 +147,7 @@
 				8E81FB231AA2F6A500F70393 /* MainBoardViewController.h */,
 				8E81FB241AA2F6A500F70393 /* MainBoardViewController.m */,
 				8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */,
+				8E488A3C1AACD8F40020AD80 /* Data */,
 			);
 			path = TicTacWhoa;
 			sourceTree = "<group>";
@@ -226,7 +258,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E488A4D1AAD68E00020AD80 /* car.png in Resources */,
 				8E81FB271AA2F6A500F70393 /* MainBoardViewController.xib in Resources */,
+				8E488A501AAD68E00020AD80 /* house.png in Resources */,
+				8E488A4E1AAD68E00020AD80 /* cat.png in Resources */,
+				8E488A4F1AAD68E00020AD80 /* dog.png in Resources */,
 				8E81FB221AA1A4F100F70393 /* LoginViewController.xib in Resources */,
 				0FC88FAB1AA536C9000F0087 /* pic1.png in Resources */,
 				8E81FB1D1AA19D2000F70393 /* SplashUIViewController.xib in Resources */,
@@ -253,6 +289,8 @@
 				8E81FB261AA2F6A500F70393 /* MainBoardViewController.m in Sources */,
 				8E81FAF91AA022EB00F70393 /* AppDelegate.m in Sources */,
 				8E81FB1C1AA19D2000F70393 /* SplashUIViewController.m in Sources */,
+				8E488A481AACFF510020AD80 /* Selection.m in Sources */,
+				8E488A451AACDD040020AD80 /* MutableGrid.m in Sources */,
 				8E81FAF61AA022EB00F70393 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

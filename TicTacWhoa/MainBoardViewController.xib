@@ -8,6 +8,13 @@
             <connections>
                 <outlet property="m1x1pickerView" destination="6If-Re-4Gx" id="jwH-QO-RSe"/>
                 <outlet property="m1x2pickerView" destination="LO0-ka-f28" id="8un-zw-hzb"/>
+                <outlet property="m1x3pickerView" destination="9fJ-nG-8Zb" id="hAz-f6-BBg"/>
+                <outlet property="m2x1pickerView" destination="52m-bI-cA8" id="cYs-OD-UjN"/>
+                <outlet property="m2x2pickerView" destination="UzB-aV-2r7" id="lUV-h8-dTy"/>
+                <outlet property="m2x3pickerView" destination="smf-Fy-I9c" id="cEy-e8-wzb"/>
+                <outlet property="m3x1pickerView" destination="TQZ-m2-wzu" id="hDg-aG-fOB"/>
+                <outlet property="m3x2pickerView" destination="cHi-30-Icn" id="Znr-SR-7nh"/>
+                <outlet property="m3x3pickerView" destination="a6c-XO-wGw" id="cf9-lc-bNJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
