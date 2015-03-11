@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MutableGrid.h"
 #import "Selection.h"
+#import "Constants.h"
 
 @implementation MutableGrid {
     NSArray *pickerList;
@@ -41,29 +42,52 @@
     [selectionList removeAllObjects];
 }
 
--(BOOL)saveGrid {
+-(BOOL)saveGrid:(NSString *)userName {
     // Store the data
     if ([selectionList count] == 0) {
         return NO;
     }
-    
-    
+        
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:selectionList forKey:@"foo"];
+    NSArray *nonMutableArray = [NSArray arrayWithArray:selectionList];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:nonMutableArray];
+    [defaults setObject:data forKey:userName];
     [defaults synchronize];
     return YES;
 }
 
--(BOOL)validate {
-    attempts++;
-    return NO;
+-(BOOL)validate:(NSString *)userName {
+    if (attempts > ATTEMPT_LIMIT) {
+        return NO;
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [defaults objectForKey:userName];
+    NSArray *solution = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    if ([selectionList count] == 0
+        || [selectionList count] != [solution count]) {
+        attempts++;
+        return NO;
+    }
+    
+    for (int i = 0; i < [solution count]; i++) {
+        Selection *s1 = [solution objectAtIndex:i];
+        Selection *s2 = [selectionList objectAtIndex:i];
+        if (s1.picker != s2.picker
+            || s1.rowInPicker != s2.rowInPicker) {
+            attempts++;
+            return NO;
+        }
+    }
+    return YES;
 }
 
--(NSInteger)getAttempts {
+-(int)getAttempts {
     return attempts;
 }
 
-- (BOOL)isSelectedForPicker:(UIPickerView *)picker forRow:(NSInteger)row {
+- (BOOL)isSelectedForPicker:(NSString *)picker forRow:(NSInteger)row {
     NSMapTable *selectedMap = [selectedViewsTable objectForKey:picker];
     if (selectedMap == nil) {
         return NO;
@@ -72,7 +96,7 @@
     return [selectedMap objectForKey:[NSNumber numberWithInteger:row]] != nil;
 }
 
--(void)updateSelectionForPicker:(UIPickerView *)picker forRow:(NSInteger)row {
+-(void)updateSelectionForPicker:(NSString *)picker forRow:(NSInteger)row {
     NSMapTable *pickerSelectionMap = [selectedViewsTable objectForKey:picker];
     if (pickerSelectionMap == nil
         || ![pickerSelectionMap objectForKey:[NSNumber numberWithInteger:row]]) {

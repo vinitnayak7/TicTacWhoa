@@ -13,11 +13,25 @@
 @synthesize picker;
 @synthesize rowInPicker;
 
--(id)initWithPicker:(UIPickerView*)pickerView forRow:(NSInteger) row {
+-(id)initWithPicker:(NSString*)pickerView forRow:(NSInteger) row {
     self = [super init];
     if (self) {
         self.picker = pickerView;
         self.rowInPicker = row;
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+    [coder encodeObject:picker forKey:@"picker"];
+    [coder encodeInteger:rowInPicker forKey:@"rowInPicker"];
+}
+
+- (id)initWithCoder:(NSCoder *)coder {
+    self = [super init];
+    if (self) {
+        picker = [coder decodeObjectForKey:@"picker"];
+        rowInPicker = [coder decodeIntegerForKey:@"rowInPicker"];
     }
     return self;
 }

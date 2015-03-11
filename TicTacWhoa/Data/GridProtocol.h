@@ -12,10 +12,10 @@
 @protocol GridProtocol <NSObject>
 
 -(void)resetDataState;
--(BOOL)validate;
--(BOOL)saveGrid;
+-(BOOL)validate:(NSString *)userName;
+-(BOOL)saveGrid:(NSString *)userName;
 -(NSInteger)getAttempts;
--(void)updateSelectionForPicker:(UIPickerView *)picker forRow:(NSInteger)row;
+-(void)updateSelectionForPicker:(NSString *)picker forRow:(NSInteger)row;
 
 
 

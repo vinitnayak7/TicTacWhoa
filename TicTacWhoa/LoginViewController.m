@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "MainBoardViewController.h"
+#import "Constants.h"
 
 @interface LoginViewController ()
 
@@ -20,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // UNCOMMENT TO ERASE ALL NSUserDefaults
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,20 +32,43 @@
     // Dispose of any resources that can be recreated.
 }
 
-// TODO everything
 - (IBAction)submitExistingUser:(id)sender {
     if ([userNameTextField.text isEqual: @""]) {
         NSLog(@"username empty");
+        return;
     }
     
-    // Go to the next MainBoardViewController
-    boardViewController = [[MainBoardViewController alloc] initWithNibName:@"MainBoardViewController" bundle:nil];
-    [self presentViewController:boardViewController animated:YES completion:nil];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:userNameTextField.text]) {
+        boardViewController = [[MainBoardViewController alloc] initWithUserName:userNameTextField.text forNewUser:NO];
+        [self presentViewController:boardViewController animated:YES completion:nil];
+    } else {
+        [LoginViewController showAlert:@"No user found, please login to create a new account!"];
+    }
 }
 
-// TODO everything
 - (IBAction)submitNewUser:(id)sender {
-    boardViewController = [[MainBoardViewController alloc] initWithNibName:@"MainBoardViewController" bundle:nil];
-    [self presentViewController:boardViewController animated:YES completion:nil];
+    if ([userNameTextField.text isEqual: @""]) {
+        NSLog(@"username empty");
+        return;
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if(![defaults objectForKey:userNameTextField.text]) {
+        boardViewController = [[MainBoardViewController alloc] initWithUserName:userNameTextField.text forNewUser:YES];
+        [self presentViewController:boardViewController animated:YES completion:nil];
+    } else {
+        [LoginViewController showAlert:@"User already exists, please select a different username!"];
+    }
+}
+
++(void)showAlert:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Hold up"
+                          message:message
+                          delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [alert show];
 }
 @end

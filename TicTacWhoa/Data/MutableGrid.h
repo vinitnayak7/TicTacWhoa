@@ -11,5 +11,5 @@
 
 @interface MutableGrid: NSObject<GridProtocol>
 - (id)initWithPickers:(NSArray *)pickers;
-- (BOOL)isSelectedForPicker:(UIPickerView *)picker forRow:(NSInteger)row;
+- (BOOL)isSelectedForPicker:(NSString *)picker forRow:(NSInteger)row;
 @end

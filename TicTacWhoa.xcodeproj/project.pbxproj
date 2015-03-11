@@ -14,6 +14,7 @@
 		8E488A4E1AAD68E00020AD80 /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E488A4A1AAD68E00020AD80 /* cat.png */; };
 		8E488A4F1AAD68E00020AD80 /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E488A4B1AAD68E00020AD80 /* dog.png */; };
 		8E488A501AAD68E00020AD80 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E488A4C1AAD68E00020AD80 /* house.png */; };
+		8E488A521AAFDD2F0020AD80 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E488A511AAFDD2F0020AD80 /* Constants.m */; };
 		8E81FAF61AA022EB00F70393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FAF51AA022EB00F70393 /* main.m */; };
 		8E81FAF91AA022EB00F70393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FAF81AA022EB00F70393 /* AppDelegate.m */; };
 		8E81FAFF1AA022EB00F70393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FAFD1AA022EB00F70393 /* Main.storyboard */; };
@@ -48,6 +49,8 @@
 		8E488A4A1AAD68E00020AD80 /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
 		8E488A4B1AAD68E00020AD80 /* dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog.png; sourceTree = "<group>"; };
 		8E488A4C1AAD68E00020AD80 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
+		8E488A511AAFDD2F0020AD80 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		8E488A531AAFDDCA0020AD80 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		8E81FAF01AA022EB00F70393 /* TicTacWhoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacWhoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81FAF41AA022EB00F70393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E81FAF51AA022EB00F70393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				8E488A441AACDD040020AD80 /* MutableGrid.m */,
 				8E488A461AACFB590020AD80 /* Selection.h */,
 				8E488A471AACFF510020AD80 /* Selection.m */,
+				8E488A511AAFDD2F0020AD80 /* Constants.m */,
+				8E488A531AAFDDCA0020AD80 /* Constants.h */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				8E81FB211AA1A4F100F70393 /* LoginViewController.m in Sources */,
 				8E81FB261AA2F6A500F70393 /* MainBoardViewController.m in Sources */,
 				8E81FAF91AA022EB00F70393 /* AppDelegate.m in Sources */,
+				8E488A521AAFDD2F0020AD80 /* Constants.m in Sources */,
 				8E81FB1C1AA19D2000F70393 /* SplashUIViewController.m in Sources */,
 				8E488A481AACFF510020AD80 /* Selection.m in Sources */,
 				8E488A451AACDD040020AD80 /* MutableGrid.m in Sources */,

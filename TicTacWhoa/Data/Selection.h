@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface Selection : NSObject
-@property UIPickerView *picker;
+@interface Selection : NSObject<NSCoding>
+@property NSString *picker;
 @property NSInteger rowInPicker;
 // TODO make currentlySelected work! (?)
 
--(id)initWithPicker:(UIPickerView*)pickerView forRow:(NSInteger)row;
+-(id)initWithPicker:(NSString*)pickerView forRow:(NSInteger)row;
 @end
