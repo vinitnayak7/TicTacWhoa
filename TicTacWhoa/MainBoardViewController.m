@@ -17,6 +17,7 @@
 @implementation MainBoardViewController {
     MutableGrid *grid;
     NSMutableArray *pickerList;
+    NSMutableArray *pickerImageList;
     BOOL newUser;
     NSString *userName;
     NSMapTable *pickerToString;
@@ -31,13 +32,14 @@
 @synthesize m3x1pickerView;
 @synthesize m3x2pickerView;
 @synthesize m3x3pickerView;
-@synthesize trialsLabel;
+@synthesize attemptsLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     pickerList = [[NSMutableArray alloc] initWithCapacity:9];
     pickerToString = [[NSMapTable alloc] init];
+    pickerImageList = [[NSMutableArray alloc] init];
 
     [pickerList addObject:m1x1pickerView];
     [pickerList addObject:m1x2pickerView];
@@ -50,14 +52,20 @@
     [pickerList addObject:m3x3pickerView];
     
     [pickerToString setObject:@"m1x1pickerView" forKey:m1x1pickerView];
-    [pickerToString setObject:@"m1x2pickerView" forKey:m1x1pickerView];
-    [pickerToString setObject:@"m1x3pickerView" forKey:m1x1pickerView];
-    [pickerToString setObject:@"m2x1pickerView" forKey:m1x1pickerView];
-    [pickerToString setObject:@"m2x2pickerView" forKey:m1x1pickerView];
-    [pickerToString setObject:@"m2x3pickerView" forKey:m1x1pickerView];
-    [pickerToString setObject:@"m3x1pickerView" forKey:m1x1pickerView];
-    [pickerToString setObject:@"m3x2pickerView" forKey:m1x1pickerView];
-    [pickerToString setObject:@"m3x3pickerView" forKey:m1x1pickerView];
+    [pickerToString setObject:@"m1x2pickerView" forKey:m1x2pickerView];
+    [pickerToString setObject:@"m1x3pickerView" forKey:m1x3pickerView];
+    [pickerToString setObject:@"m2x1pickerView" forKey:m2x1pickerView];
+    [pickerToString setObject:@"m2x2pickerView" forKey:m2x2pickerView];
+    [pickerToString setObject:@"m2x3pickerView" forKey:m2x3pickerView];
+    [pickerToString setObject:@"m3x1pickerView" forKey:m3x1pickerView];
+    [pickerToString setObject:@"m3x2pickerView" forKey:m3x2pickerView];
+    [pickerToString setObject:@"m3x3pickerView" forKey:m3x3pickerView];
+    
+    [pickerImageList addObject:@"pic1.png"];
+    [pickerImageList addObject:@"car.png"];
+    [pickerImageList addObject:@"cat.png"];
+    [pickerImageList addObject:@"dog.png"];
+    [pickerImageList addObject:@"house.png"];
     
     
     grid = [[MutableGrid alloc] initWithPickers:pickerList];
@@ -98,7 +106,7 @@
 // The number of rows of data
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return 4;
+    return [pickerImageList count];
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
@@ -123,7 +131,7 @@
     } else {
         imageView = (UIImageView *)view;
     }
-    UIImage *image = [UIImage imageNamed:@"pic1"];
+    UIImage *image = [UIImage imageNamed:[pickerImageList objectAtIndex:row]];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     [imageView setImage:image];
     [[pickerView.subviews objectAtIndex:1] setHidden:TRUE];
@@ -178,11 +186,19 @@
             [MainBoardViewController showAlert:@"ATTEMPTS!"];
         } else {
             [MainBoardViewController showAlert:@"NOT SUCCESSFUL"];
+            [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];       
         }
     }
 }
 
 - (IBAction)cancelButtonAction:(id)sender {
+    [grid increaseAttempts];
+    [grid resetDataState];
+    for (UIPickerView *picker in pickerList) {
+        [picker reloadAllComponents];
+        [picker selectRow:0 inComponent:0 animated:YES];
+    }
+    [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];  
 }
 
 +(void)showAlert:(NSString *)message {

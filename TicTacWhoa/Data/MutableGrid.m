@@ -36,10 +36,8 @@
 }
 
 -(void)resetDataState {
-    for (UIPickerView *picker in pickerList) {
-        [picker reloadAllComponents];
-    }
     [selectionList removeAllObjects];
+    [selectedViewsTable removeAllObjects];
 }
 
 -(BOOL)saveGrid:(NSString *)userName {
@@ -74,7 +72,7 @@
     for (int i = 0; i < [solution count]; i++) {
         Selection *s1 = [solution objectAtIndex:i];
         Selection *s2 = [selectionList objectAtIndex:i];
-        if (s1.picker != s2.picker
+        if (![s1.picker isEqualToString:s2.picker]
             || s1.rowInPicker != s2.rowInPicker) {
             attempts++;
             return NO;
@@ -85,6 +83,10 @@
 
 -(int)getAttempts {
     return attempts;
+}
+
+-(void)increaseAttempts {
+    attempts++;
 }
 
 - (BOOL)isSelectedForPicker:(NSString *)picker forRow:(NSInteger)row {

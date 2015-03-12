@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainBoardViewController">
             <connections>
+                <outlet property="attemptsLabel" destination="Fbv-8d-CAj" id="Xma-26-Amy"/>
                 <outlet property="m1x1pickerView" destination="6If-Re-4Gx" id="jwH-QO-RSe"/>
                 <outlet property="m1x2pickerView" destination="LO0-ka-f28" id="8un-zw-hzb"/>
                 <outlet property="m1x3pickerView" destination="9fJ-nG-8Zb" id="hAz-f6-BBg"/>
@@ -15,7 +16,6 @@
                 <outlet property="m3x1pickerView" destination="TQZ-m2-wzu" id="hDg-aG-fOB"/>
                 <outlet property="m3x2pickerView" destination="cHi-30-Icn" id="Znr-SR-7nh"/>
                 <outlet property="m3x3pickerView" destination="a6c-XO-wGw" id="cf9-lc-bNJ"/>
-                <outlet property="trialsLabel" destination="XrN-g1-vpF" id="ygq-FF-6d4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -123,15 +123,6 @@
                         <outlet property="delegate" destination="-1" id="LGV-0Q-fLU"/>
                     </connections>
                 </pickerView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trials: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrN-g1-vpF">
-                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="107" y="59" width="59" height="21"/>
-                    </variation>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zq-ed-lmC">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <state key="normal" title="Submit">
@@ -165,22 +156,31 @@
                         <action selector="cancelButtonAction:" destination="-1" eventType="touchUpInside" id="KcD-yo-hhf"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attempts:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-8d-CAj">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="108" y="44" width="117" height="21"/>
+                    </variation>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="XrN-g1-vpF"/>
                     <exclude reference="5Zq-ed-lmC"/>
                     <exclude reference="4ia-WF-BCg"/>
                     <exclude reference="wys-No-X4H"/>
+                    <exclude reference="Fbv-8d-CAj"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
                 <mask key="subviews">
-                    <include reference="XrN-g1-vpF"/>
                     <include reference="5Zq-ed-lmC"/>
                     <include reference="4ia-WF-BCg"/>
                     <include reference="wys-No-X4H"/>
+                    <include reference="Fbv-8d-CAj"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="353" y="361"/>

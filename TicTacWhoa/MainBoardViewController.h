@@ -28,7 +28,8 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *m3x2pickerView;
 @property (weak, nonatomic) IBOutlet UIPickerView *m3x3pickerView;
 
-@property (weak, nonatomic) IBOutlet UILabel *trialsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *attemptsLabel;
+
 
 -(id)initWithUserName:(NSString *)userName forNewUser:(BOOL)isNewUser;
 

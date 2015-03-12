@@ -23,8 +23,8 @@
     // Do any additional setup after loading the view from its nib.
     
     // UNCOMMENT TO ERASE ALL NSUserDefaults
-    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+//    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+//    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -15,6 +15,7 @@
 -(BOOL)validate:(NSString *)userName;
 -(BOOL)saveGrid:(NSString *)userName;
 -(NSInteger)getAttempts;
+-(void)increaseAttempts;
 -(void)updateSelectionForPicker:(NSString *)picker forRow:(NSInteger)row;
 
 
