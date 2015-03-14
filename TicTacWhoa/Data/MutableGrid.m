@@ -25,13 +25,6 @@
         selectionList = [[NSMutableArray alloc] init];
         selectedViewsTable = [[NSMapTable alloc] init];
     }
-    NSInteger n = 9;
-    NSNumber *nsn = [NSNumber numberWithInteger:9];
-    NSMutableSet *nms = [[NSMutableSet alloc] init];
-    [nms addObject:nsn];
-    if ([nms containsObject:[NSNumber numberWithInteger:n]]) {
-        NSLog(@"SHIITE");
-    }
     return self;
 }
 

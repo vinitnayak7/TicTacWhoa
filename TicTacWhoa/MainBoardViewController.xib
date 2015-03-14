@@ -24,15 +24,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkS-mM-EVF">
-                    <rect key="frame" x="265" y="27" width="71" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="366" y="24" width="71" height="21"/>
-                    </variation>
-                </label>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6If-Re-4Gx">
                     <rect key="frame" x="8" y="80" width="190" height="162"/>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -143,6 +134,9 @@
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="576" y="634" width="49" height="30"/>
                     </variation>
+                    <connections>
+                        <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="ST3-Un-gZN"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wys-No-X4H">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -163,6 +157,15 @@
                     <nil key="highlightedColor"/>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="108" y="44" width="117" height="21"/>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Passphrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkS-mM-EVF">
+                    <rect key="frame" x="265" y="27" width="71" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="312" y="23" width="178" height="21"/>
                     </variation>
                 </label>
             </subviews>

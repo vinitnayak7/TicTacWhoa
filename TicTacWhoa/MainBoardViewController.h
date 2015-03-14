@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuViewController.h"
 
 @interface MainBoardViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate>
 
@@ -29,10 +30,12 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *m3x3pickerView;
 
 @property (weak, nonatomic) IBOutlet UILabel *attemptsLabel;
-
+@property (strong,nonatomic) MenuViewController *menuViewController;
 
 -(id)initWithUserName:(NSString *)userName forNewUser:(BOOL)isNewUser;
 
 - (IBAction)submitButtonAction:(id)sender;
 - (IBAction)cancelButtonAction:(id)sender;
+- (IBAction)logoutAction:(id)sender;
+
 @end

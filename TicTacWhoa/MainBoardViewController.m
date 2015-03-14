@@ -33,6 +33,7 @@
 @synthesize m3x2pickerView;
 @synthesize m3x3pickerView;
 @synthesize attemptsLabel;
+@synthesize menuViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -180,13 +181,22 @@
         success = [grid validate:userName];
     }
     if (success) {
-        [MainBoardViewController showAlert:@"YAYAYA"];
+//        [MainBoardViewController showAlert:@"YAYAYA" withDelegate:nil
+//                                 withTitle:@"Sorry" withOtherButtonTitle:nil];
+        menuViewController = [[MenuViewController alloc] init];
+        UIViewController *currentViewController = self.presentingViewController;
+        [self dismissViewControllerAnimated:NO completion:^{
+            [currentViewController presentViewController:menuViewController animated:NO completion:nil];
+        }];
+
     } else {
         if ([grid getAttempts] > ATTEMPT_LIMIT) {
-            [MainBoardViewController showAlert:@"ATTEMPTS!"];
+            [MainBoardViewController showAlert:@"ATTEMPTS!" withDelegate:nil
+                                     withTitle:@"Sorry" withOtherButtonTitle:nil];
         } else {
-            [MainBoardViewController showAlert:@"NOT SUCCESSFUL"];
-            [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];       
+            [MainBoardViewController showAlert:@"NOT SUCCESSFUL" withDelegate:nil
+                                     withTitle:@"Sorry" withOtherButtonTitle:nil];
+            [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
         }
     }
 }
@@ -201,14 +211,35 @@
     [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];  
 }
 
-+(void)showAlert:(NSString *)message {
+- (IBAction)logoutAction:(id)sender {
+    if (newUser) {
+        [MainBoardViewController
+         showAlert:@"Your account will not be created if you don't submit a passphrase"
+         withDelegate:self
+         withTitle:@"Are you sure?" withOtherButtonTitle:@"Logout"];
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
++(void)showAlert:(NSString *)message
+    withDelegate:(id)delegate
+    withTitle:(NSString *)title
+    withOtherButtonTitle:(NSString*)otherButtonTitle {
+    
     UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"Sorry"
+                          initWithTitle:title
                           message:message
-                          delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil];
+                          delegate:delegate
+                          cancelButtonTitle:@"Dismiss"
+                          otherButtonTitles:otherButtonTitle, nil];
     [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{

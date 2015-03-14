@@ -42,6 +42,7 @@
     if ([defaults objectForKey:userNameTextField.text]) {
         boardViewController = [[MainBoardViewController alloc] initWithUserName:userNameTextField.text forNewUser:NO];
         [self presentViewController:boardViewController animated:YES completion:nil];
+        [userNameTextField setText:@""];
     } else {
         [LoginViewController showAlert:@"No user found, please login to create a new account!"];
     }
@@ -57,6 +58,7 @@
     if(![defaults objectForKey:userNameTextField.text]) {
         boardViewController = [[MainBoardViewController alloc] initWithUserName:userNameTextField.text forNewUser:YES];
         [self presentViewController:boardViewController animated:YES completion:nil];
+        [userNameTextField setText:@""];
     } else {
         [LoginViewController showAlert:@"User already exists, please select a different username!"];
     }

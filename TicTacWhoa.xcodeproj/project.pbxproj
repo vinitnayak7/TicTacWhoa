@@ -26,6 +26,8 @@
 		8E81FB221AA1A4F100F70393 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB201AA1A4F100F70393 /* LoginViewController.xib */; };
 		8E81FB261AA2F6A500F70393 /* MainBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FB241AA2F6A500F70393 /* MainBoardViewController.m */; };
 		8E81FB271AA2F6A500F70393 /* MainBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */; };
+		8ECA1B3F1AB4C4AC00AEAFF6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */; };
+		8ECA1B401AB4C4AC00AEAFF6 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,9 @@
 		8E81FB231AA2F6A500F70393 /* MainBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBoardViewController.h; sourceTree = "<group>"; };
 		8E81FB241AA2F6A500F70393 /* MainBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBoardViewController.m; sourceTree = "<group>"; };
 		8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainBoardViewController.xib; sourceTree = "<group>"; };
+		8ECA1B3C1AB4C4AC00AEAFF6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +157,9 @@
 				8E81FB231AA2F6A500F70393 /* MainBoardViewController.h */,
 				8E81FB241AA2F6A500F70393 /* MainBoardViewController.m */,
 				8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */,
+				8ECA1B3C1AB4C4AC00AEAFF6 /* MenuViewController.h */,
+				8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */,
+				8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */,
 				8E488A3C1AACD8F40020AD80 /* Data */,
 			);
 			path = TicTacWhoa;
@@ -270,6 +278,7 @@
 				8E488A4F1AAD68E00020AD80 /* dog.png in Resources */,
 				8E81FB221AA1A4F100F70393 /* LoginViewController.xib in Resources */,
 				0FC88FAB1AA536C9000F0087 /* pic1.png in Resources */,
+				8ECA1B401AB4C4AC00AEAFF6 /* MenuViewController.xib in Resources */,
 				8E81FB1D1AA19D2000F70393 /* SplashUIViewController.xib in Resources */,
 				8E81FAFF1AA022EB00F70393 /* Main.storyboard in Resources */,
 				8E81FB011AA022EB00F70393 /* Images.xcassets in Resources */,
@@ -291,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E81FB211AA1A4F100F70393 /* LoginViewController.m in Sources */,
+				8ECA1B3F1AB4C4AC00AEAFF6 /* MenuViewController.m in Sources */,
 				8E81FB261AA2F6A500F70393 /* MainBoardViewController.m in Sources */,
 				8E81FAF91AA022EB00F70393 /* AppDelegate.m in Sources */,
 				8E488A521AAFDD2F0020AD80 /* Constants.m in Sources */,
