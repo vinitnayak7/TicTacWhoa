@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FC88FAB1AA536C9000F0087 /* pic1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC88FAA1AA536C9000F0087 /* pic1.png */; };
 		8E488A451AACDD040020AD80 /* MutableGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E488A441AACDD040020AD80 /* MutableGrid.m */; };
 		8E488A481AACFF510020AD80 /* Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E488A471AACFF510020AD80 /* Selection.m */; };
 		8E488A4D1AAD68E00020AD80 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E488A491AAD68E00020AD80 /* car.png */; };
@@ -28,6 +27,16 @@
 		8E81FB271AA2F6A500F70393 /* MainBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */; };
 		8ECA1B3F1AB4C4AC00AEAFF6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */; };
 		8ECA1B401AB4C4AC00AEAFF6 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */; };
+		8EEFDF701AD98DA9005207A0 /* eight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF661AD98DA9005207A0 /* eight.png */; };
+		8EEFDF711AD98DA9005207A0 /* five.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF671AD98DA9005207A0 /* five.png */; };
+		8EEFDF721AD98DA9005207A0 /* four.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF681AD98DA9005207A0 /* four.png */; };
+		8EEFDF731AD98DA9005207A0 /* nine.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF691AD98DA9005207A0 /* nine.png */; };
+		8EEFDF741AD98DA9005207A0 /* one.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF6A1AD98DA9005207A0 /* one.png */; };
+		8EEFDF751AD98DA9005207A0 /* seven.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF6B1AD98DA9005207A0 /* seven.png */; };
+		8EEFDF761AD98DA9005207A0 /* six.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF6C1AD98DA9005207A0 /* six.png */; };
+		8EEFDF771AD98DA9005207A0 /* three.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF6D1AD98DA9005207A0 /* three.png */; };
+		8EEFDF781AD98DA9005207A0 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF6E1AD98DA9005207A0 /* tree.png */; };
+		8EEFDF791AD98DA9005207A0 /* two.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF6F1AD98DA9005207A0 /* two.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0FC88FAA1AA536C9000F0087 /* pic1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic1.png; sourceTree = "<group>"; };
 		8E488A421AACDB280020AD80 /* GridProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridProtocol.h; sourceTree = "<group>"; };
 		8E488A431AACDC0D0020AD80 /* MutableGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutableGrid.h; sourceTree = "<group>"; };
 		8E488A441AACDD040020AD80 /* MutableGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutableGrid.m; sourceTree = "<group>"; };
@@ -75,6 +83,16 @@
 		8ECA1B3C1AB4C4AC00AEAFF6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		8EEFDF661AD98DA9005207A0 /* eight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eight.png; sourceTree = "<group>"; };
+		8EEFDF671AD98DA9005207A0 /* five.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = five.png; sourceTree = "<group>"; };
+		8EEFDF681AD98DA9005207A0 /* four.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = four.png; sourceTree = "<group>"; };
+		8EEFDF691AD98DA9005207A0 /* nine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nine.png; sourceTree = "<group>"; };
+		8EEFDF6A1AD98DA9005207A0 /* one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = one.png; sourceTree = "<group>"; };
+		8EEFDF6B1AD98DA9005207A0 /* seven.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seven.png; sourceTree = "<group>"; };
+		8EEFDF6C1AD98DA9005207A0 /* six.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = six.png; sourceTree = "<group>"; };
+		8EEFDF6D1AD98DA9005207A0 /* three.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = three.png; sourceTree = "<group>"; };
+		8EEFDF6E1AD98DA9005207A0 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
+		8EEFDF6F1AD98DA9005207A0 /* two.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = two.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +116,20 @@
 		0FC88FA91AA536C9000F0087 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8EEFDF661AD98DA9005207A0 /* eight.png */,
+				8EEFDF671AD98DA9005207A0 /* five.png */,
+				8EEFDF681AD98DA9005207A0 /* four.png */,
+				8EEFDF691AD98DA9005207A0 /* nine.png */,
+				8EEFDF6A1AD98DA9005207A0 /* one.png */,
+				8EEFDF6B1AD98DA9005207A0 /* seven.png */,
+				8EEFDF6C1AD98DA9005207A0 /* six.png */,
+				8EEFDF6D1AD98DA9005207A0 /* three.png */,
+				8EEFDF6E1AD98DA9005207A0 /* tree.png */,
+				8EEFDF6F1AD98DA9005207A0 /* two.png */,
 				8E488A491AAD68E00020AD80 /* car.png */,
 				8E488A4A1AAD68E00020AD80 /* cat.png */,
 				8E488A4B1AAD68E00020AD80 /* dog.png */,
 				8E488A4C1AAD68E00020AD80 /* house.png */,
-				0FC88FAA1AA536C9000F0087 /* pic1.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -275,11 +302,20 @@
 				8E81FB271AA2F6A500F70393 /* MainBoardViewController.xib in Resources */,
 				8E488A501AAD68E00020AD80 /* house.png in Resources */,
 				8E488A4E1AAD68E00020AD80 /* cat.png in Resources */,
+				8EEFDF721AD98DA9005207A0 /* four.png in Resources */,
 				8E488A4F1AAD68E00020AD80 /* dog.png in Resources */,
+				8EEFDF741AD98DA9005207A0 /* one.png in Resources */,
+				8EEFDF761AD98DA9005207A0 /* six.png in Resources */,
+				8EEFDF791AD98DA9005207A0 /* two.png in Resources */,
+				8EEFDF771AD98DA9005207A0 /* three.png in Resources */,
+				8EEFDF711AD98DA9005207A0 /* five.png in Resources */,
+				8EEFDF731AD98DA9005207A0 /* nine.png in Resources */,
 				8E81FB221AA1A4F100F70393 /* LoginViewController.xib in Resources */,
-				0FC88FAB1AA536C9000F0087 /* pic1.png in Resources */,
+				8EEFDF781AD98DA9005207A0 /* tree.png in Resources */,
 				8ECA1B401AB4C4AC00AEAFF6 /* MenuViewController.xib in Resources */,
+				8EEFDF701AD98DA9005207A0 /* eight.png in Resources */,
 				8E81FB1D1AA19D2000F70393 /* SplashUIViewController.xib in Resources */,
+				8EEFDF751AD98DA9005207A0 /* seven.png in Resources */,
 				8E81FAFF1AA022EB00F70393 /* Main.storyboard in Resources */,
 				8E81FB011AA022EB00F70393 /* Images.xcassets in Resources */,
 			);
