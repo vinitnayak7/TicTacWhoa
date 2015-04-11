@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MenuViewController.h"
 
-@interface MainBoardViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate>
+@interface MainBoardViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate, UIPickerViewAccessibilityDelegate>
 
 //========== ROW 1 =====================
 @property (weak, nonatomic) IBOutlet UIPickerView *m1x1pickerView;

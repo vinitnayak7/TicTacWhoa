@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainBoardViewController">
@@ -26,6 +26,10 @@
             <subviews>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6If-Re-4Gx">
                     <rect key="frame" x="8" y="80" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration" label="Ones digit selector">
+                        <accessibilityTraits key="traits" none="YES"/>
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="108" y="80" width="190" height="162"/>
                     </variation>
@@ -36,6 +40,9 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LO0-ka-f28">
                     <rect key="frame" x="206" y="80" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration" hint="twos digit" label="number two">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="306" y="80" width="190" height="162"/>
                     </variation>
@@ -46,6 +53,9 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fJ-nG-8Zb">
                     <rect key="frame" x="404" y="80" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="504" y="80" width="190" height="162"/>
                     </variation>
@@ -56,6 +66,9 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52m-bI-cA8">
                     <rect key="frame" x="6" y="250" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration" label="">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="106" y="250" width="190" height="162"/>
                     </variation>
@@ -66,6 +79,9 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-aV-2r7">
                     <rect key="frame" x="204" y="250" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="304" y="250" width="190" height="162"/>
                     </variation>
@@ -76,6 +92,9 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smf-Fy-I9c">
                     <rect key="frame" x="402" y="250" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="502" y="250" width="190" height="162"/>
                     </variation>
@@ -116,6 +135,7 @@
                 </pickerView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zq-ed-lmC">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <accessibility key="accessibilityConfiguration" label="Submit passphrase"/>
                     <state key="normal" title="Submit">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -150,7 +170,7 @@
                         <action selector="cancelButtonAction:" destination="-1" eventType="touchUpInside" id="KcD-yo-hhf"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attempts:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-8d-CAj">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attempts: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-8d-CAj">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

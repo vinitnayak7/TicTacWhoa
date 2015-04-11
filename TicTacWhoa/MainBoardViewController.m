@@ -9,6 +9,7 @@
 #import "MainBoardViewController.h"
 #import "MutableGrid.h"
 #import "Constants.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface MainBoardViewController ()
 
@@ -18,6 +19,7 @@
     MutableGrid *grid;
     NSMutableArray *pickerList;
     NSMutableArray *pickerImageList;
+    NSMapTable *pickerStartingImageList;
     BOOL newUser;
     NSString *userName;
     NSMapTable *pickerToString;
@@ -40,7 +42,9 @@
     // Do any additional setup after loading the view from its nib.
     pickerList = [[NSMutableArray alloc] initWithCapacity:9];
     pickerToString = [[NSMapTable alloc] init];
+    
     pickerImageList = [[NSMutableArray alloc] init];
+    pickerStartingImageList = [[NSMapTable alloc] init];
 
     [pickerList addObject:m1x1pickerView];
     [pickerList addObject:m1x2pickerView];
@@ -52,6 +56,8 @@
     [pickerList addObject:m3x2pickerView];
     [pickerList addObject:m3x3pickerView];
     
+    [m1x1pickerView setAccessibilityLabel:@"ones biaatch"];
+    
     [pickerToString setObject:@"m1x1pickerView" forKey:m1x1pickerView];
     [pickerToString setObject:@"m1x2pickerView" forKey:m1x2pickerView];
     [pickerToString setObject:@"m1x3pickerView" forKey:m1x3pickerView];
@@ -61,8 +67,18 @@
     [pickerToString setObject:@"m3x1pickerView" forKey:m3x1pickerView];
     [pickerToString setObject:@"m3x2pickerView" forKey:m3x2pickerView];
     [pickerToString setObject:@"m3x3pickerView" forKey:m3x3pickerView];
+
+    [pickerStartingImageList setObject:@"one.png" forKey:m1x1pickerView];
+    [pickerStartingImageList setObject:@"two.png" forKey:m1x2pickerView];
+    [pickerStartingImageList setObject:@"three.png" forKey:m1x3pickerView];
+    [pickerStartingImageList setObject:@"four.png" forKey:m2x1pickerView];
+    [pickerStartingImageList setObject:@"five.png" forKey:m2x2pickerView];
+    [pickerStartingImageList setObject:@"six.png" forKey:m2x3pickerView];
+    [pickerStartingImageList setObject:@"seven.png" forKey:m3x1pickerView];
+    [pickerStartingImageList setObject:@"eight.png" forKey:m3x2pickerView];
+    [pickerStartingImageList setObject:@"nine.png" forKey:m3x3pickerView];
     
-    [pickerImageList addObject:@"pic1.png"];
+    [pickerImageList addObject:@"tree.png"];
     [pickerImageList addObject:@"car.png"];
     [pickerImageList addObject:@"cat.png"];
     [pickerImageList addObject:@"dog.png"];
@@ -76,6 +92,8 @@
         [picker addGestureRecognizer:gestureRecognizer];
         gestureRecognizer.delegate = self;
     }
+    
+    [attemptsLabel setHidden:newUser];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -132,7 +150,18 @@
     } else {
         imageView = (UIImageView *)view;
     }
-    UIImage *image = [UIImage imageNamed:[pickerImageList objectAtIndex:row]];
+    
+    UIImage *image;
+    // We want the first image to be distinct and have the number displayed, the rest
+    // are the same.
+    if (row == 0) {
+        image = [UIImage imageNamed:[pickerStartingImageList objectForKey:pickerView]];
+        [imageView setAccessibilityLabel:[pickerStartingImageList objectForKey:pickerView]];
+    } else {
+        image = [UIImage imageNamed:[pickerImageList objectAtIndex:row]];
+        [imageView setAccessibilityLabel:[pickerImageList objectAtIndex:row]];
+    }
+    
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     [imageView setImage:image];
     [[pickerView.subviews objectAtIndex:1] setHidden:TRUE];
@@ -155,16 +184,25 @@
     UIView *imageView = [pV viewForRow:selectedRow forComponent:0];
     struct CGColor *selectionColor;
     CGFloat borderWidth = 6.0f;
+
+    AVSpeechUtterance *utterance2;
+
     
     if (![grid isSelectedForPicker:[pickerToString objectForKey:pV] forRow:selectedRow]) {
         imageView.frame = CGRectInset(imageView.frame, borderWidth, borderWidth);
         selectionColor = [UIColor redColor].CGColor;
+        utterance2 = [AVSpeechUtterance
+                       speechUtteranceWithString:@"selected"];
     } else {
         imageView.frame = CGRectInset(imageView.frame, -borderWidth, -borderWidth);
         selectionColor = [UIColor clearColor].CGColor;
+        utterance2 = [AVSpeechUtterance
+                      speechUtteranceWithString:@"unselected"];
     }
     imageView.layer.borderColor = selectionColor;
     imageView.layer.borderWidth = borderWidth;
+    AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
+    [synth speakUtterance:utterance2];
     
     for (UIPickerView *picker in pickerList) {
         if (picker == pV) {
@@ -181,8 +219,6 @@
         success = [grid validate:userName];
     }
     if (success) {
-//        [MainBoardViewController showAlert:@"YAYAYA" withDelegate:nil
-//                                 withTitle:@"Sorry" withOtherButtonTitle:nil];
         menuViewController = [[MenuViewController alloc] init];
         UIViewController *currentViewController = self.presentingViewController;
         [self dismissViewControllerAnimated:NO completion:^{
@@ -191,10 +227,9 @@
 
     } else {
         if ([grid getAttempts] > ATTEMPT_LIMIT) {
-            [MainBoardViewController showAlert:@"ATTEMPTS!" withDelegate:nil
-                                     withTitle:@"Sorry" withOtherButtonTitle:nil];
+            [MainBoardViewController showAlert:@"Sorry, you've reached the maximum number of attempts" withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
         } else {
-            [MainBoardViewController showAlert:@"NOT SUCCESSFUL" withDelegate:nil
+            [MainBoardViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
                                      withTitle:@"Sorry" withOtherButtonTitle:nil];
             [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
         }

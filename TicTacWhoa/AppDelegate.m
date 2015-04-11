@@ -10,7 +10,6 @@
 #import "SplashUIViewController.h"
 
 @interface AppDelegate ()
-//@property (nonatomic, retain) IBOutlet SplashUIViewController *splash;
 @end
 
 @implementation AppDelegate
