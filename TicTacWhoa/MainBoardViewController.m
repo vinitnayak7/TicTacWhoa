@@ -56,8 +56,6 @@
     [pickerList addObject:m3x2pickerView];
     [pickerList addObject:m3x3pickerView];
     
-    [m1x1pickerView setAccessibilityLabel:@"ones biaatch"];
-    
     [pickerToString setObject:@"m1x1pickerView" forKey:m1x1pickerView];
     [pickerToString setObject:@"m1x2pickerView" forKey:m1x2pickerView];
     [pickerToString setObject:@"m1x3pickerView" forKey:m1x3pickerView];
@@ -78,12 +76,19 @@
     [pickerStartingImageList setObject:@"eight.png" forKey:m3x2pickerView];
     [pickerStartingImageList setObject:@"nine.png" forKey:m3x3pickerView];
     
+    [m1x1pickerView setIsAccessibilityElement:true];
+    [m2x1pickerView setAccessibilityLabel:@"NO WAY!"];
+    [m1x2pickerView setAccessibilityLabel:@"NO WAY TOO!"];
+    m1x1pickerView.isAccessibilityElement= YES;
+    bool b = [m1x1pickerView isAccessibilityElement];
+    NSString *s = [m1x1pickerView accessibilityLabel];
+    
     [pickerImageList addObject:@"tree.png"];
     [pickerImageList addObject:@"car.png"];
     [pickerImageList addObject:@"cat.png"];
     [pickerImageList addObject:@"dog.png"];
     [pickerImageList addObject:@"house.png"];
-    
+    [m1x1pickerView setImagesForRows:pickerImageList];
     
     grid = [[MutableGrid alloc] initWithPickers:pickerList];
     
@@ -161,11 +166,12 @@
         image = [UIImage imageNamed:[pickerImageList objectAtIndex:row]];
         [imageView setAccessibilityLabel:[pickerImageList objectAtIndex:row]];
     }
-    
+
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     [imageView setImage:image];
     [[pickerView.subviews objectAtIndex:1] setHidden:TRUE];
     [[pickerView.subviews objectAtIndex:2] setHidden:TRUE];
+    
 
     if ([grid isSelectedForPicker:[pickerToString objectForKey:pickerView] forRow:row]) {
         CGFloat borderWidth = 6.0f;

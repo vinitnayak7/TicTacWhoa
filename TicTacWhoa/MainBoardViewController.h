@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MenuViewController.h"
+#import "AccessiblePickerView.h"
 
 @interface MainBoardViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate, UIPickerViewAccessibilityDelegate>
 
 //========== ROW 1 =====================
-@property (weak, nonatomic) IBOutlet UIPickerView *m1x1pickerView;
+@property (weak, nonatomic) IBOutlet AccessiblePickerView *m1x1pickerView;
 @property (weak, nonatomic) IBOutlet UIPickerView *m1x2pickerView;
 @property (weak, nonatomic) IBOutlet UIPickerView *m1x3pickerView;
 

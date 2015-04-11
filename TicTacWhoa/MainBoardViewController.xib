@@ -24,9 +24,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6If-Re-4Gx">
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6If-Re-4Gx" customClass="AccessiblePickerView">
                     <rect key="frame" x="8" y="80" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" label="Ones digit selector">
+                    <accessibility key="accessibilityConfiguration" hint="once an image is selected double tap to select that image." label="Ones digit selector Swipe down with three fingers to scroll to an image">
                         <accessibilityTraits key="traits" none="YES"/>
                         <bool key="isElement" value="YES"/>
                     </accessibility>

@@ -25,6 +25,7 @@
 		8E81FB221AA1A4F100F70393 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB201AA1A4F100F70393 /* LoginViewController.xib */; };
 		8E81FB261AA2F6A500F70393 /* MainBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FB241AA2F6A500F70393 /* MainBoardViewController.m */; };
 		8E81FB271AA2F6A500F70393 /* MainBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */; };
+		8EA5E5861AD997C800477FF0 /* AccessiblePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5E5851AD997C800477FF0 /* AccessiblePickerView.m */; };
 		8ECA1B3F1AB4C4AC00AEAFF6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */; };
 		8ECA1B401AB4C4AC00AEAFF6 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */; };
 		8EEFDF701AD98DA9005207A0 /* eight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF661AD98DA9005207A0 /* eight.png */; };
@@ -80,6 +81,8 @@
 		8E81FB231AA2F6A500F70393 /* MainBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBoardViewController.h; sourceTree = "<group>"; };
 		8E81FB241AA2F6A500F70393 /* MainBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBoardViewController.m; sourceTree = "<group>"; };
 		8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainBoardViewController.xib; sourceTree = "<group>"; };
+		8EA5E5841AD997C800477FF0 /* AccessiblePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccessiblePickerView.h; path = accessibility/AccessiblePickerView.h; sourceTree = "<group>"; };
+		8EA5E5851AD997C800477FF0 /* AccessiblePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccessiblePickerView.m; path = accessibility/AccessiblePickerView.m; sourceTree = "<group>"; };
 		8ECA1B3C1AB4C4AC00AEAFF6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */,
 				8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */,
 				8E488A3C1AACD8F40020AD80 /* Data */,
+				8EA5E5841AD997C800477FF0 /* AccessiblePickerView.h */,
+				8EA5E5851AD997C800477FF0 /* AccessiblePickerView.m */,
 			);
 			path = TicTacWhoa;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 				8E81FAF91AA022EB00F70393 /* AppDelegate.m in Sources */,
 				8E488A521AAFDD2F0020AD80 /* Constants.m in Sources */,
 				8E81FB1C1AA19D2000F70393 /* SplashUIViewController.m in Sources */,
+				8EA5E5861AD997C800477FF0 /* AccessiblePickerView.m in Sources */,
 				8E488A481AACFF510020AD80 /* Selection.m in Sources */,
 				8E488A451AACDD040020AD80 /* MutableGrid.m in Sources */,
 				8E81FAF61AA022EB00F70393 /* main.m in Sources */,
