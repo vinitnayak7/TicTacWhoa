@@ -9,7 +9,7 @@
 #import "MainBoardViewController.h"
 #import "MutableGrid.h"
 #import "Constants.h"
-#import <AVFoundation/AVFoundation.h>
+#import "AccessibilityUtils.h"
 
 @interface MainBoardViewController ()
 
@@ -76,19 +76,23 @@
     [pickerStartingImageList setObject:@"eight.png" forKey:m3x2pickerView];
     [pickerStartingImageList setObject:@"nine.png" forKey:m3x3pickerView];
     
-    [m1x1pickerView setIsAccessibilityElement:true];
-    [m2x1pickerView setAccessibilityLabel:@"NO WAY!"];
-    [m1x2pickerView setAccessibilityLabel:@"NO WAY TOO!"];
-    m1x1pickerView.isAccessibilityElement= YES;
-    bool b = [m1x1pickerView isAccessibilityElement];
-    NSString *s = [m1x1pickerView accessibilityLabel];
-    
+    for (AccessiblePickerView *picker in pickerStartingImageList.keyEnumerator) {
+        [pickerImageList addObject:[pickerStartingImageList objectForKey:picker]];
+        [pickerImageList addObject:@"tree.png"];
+        [pickerImageList addObject:@"car.png"];
+        [pickerImageList addObject:@"cat.png"];
+        [pickerImageList addObject:@"dog.png"];
+        [pickerImageList addObject:@"house.png"];
+        
+        [picker setImagesForRows:[NSArray arrayWithArray:pickerImageList]];
+        [pickerImageList removeAllObjects];
+    }
+
     [pickerImageList addObject:@"tree.png"];
     [pickerImageList addObject:@"car.png"];
     [pickerImageList addObject:@"cat.png"];
     [pickerImageList addObject:@"dog.png"];
     [pickerImageList addObject:@"house.png"];
-    [m1x1pickerView setImagesForRows:pickerImageList];
     
     grid = [[MutableGrid alloc] initWithPickers:pickerList];
     
@@ -130,7 +134,7 @@
 // The number of rows of data
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return [pickerImageList count];
+    return 6;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
@@ -163,8 +167,8 @@
         image = [UIImage imageNamed:[pickerStartingImageList objectForKey:pickerView]];
         [imageView setAccessibilityLabel:[pickerStartingImageList objectForKey:pickerView]];
     } else {
-        image = [UIImage imageNamed:[pickerImageList objectAtIndex:row]];
-        [imageView setAccessibilityLabel:[pickerImageList objectAtIndex:row]];
+        image = [UIImage imageNamed:[pickerImageList objectAtIndex:row-1]];
+        [imageView setAccessibilityLabel:[pickerImageList objectAtIndex:row-1]];
     }
 
     imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -191,24 +195,21 @@
     struct CGColor *selectionColor;
     CGFloat borderWidth = 6.0f;
 
-    AVSpeechUtterance *utterance2;
+    NSString *utterance;
 
     
     if (![grid isSelectedForPicker:[pickerToString objectForKey:pV] forRow:selectedRow]) {
         imageView.frame = CGRectInset(imageView.frame, borderWidth, borderWidth);
         selectionColor = [UIColor redColor].CGColor;
-        utterance2 = [AVSpeechUtterance
-                       speechUtteranceWithString:@"selected"];
+        utterance = @"selected";
     } else {
         imageView.frame = CGRectInset(imageView.frame, -borderWidth, -borderWidth);
         selectionColor = [UIColor clearColor].CGColor;
-        utterance2 = [AVSpeechUtterance
-                      speechUtteranceWithString:@"unselected"];
+        utterance = @"unselected";
     }
     imageView.layer.borderColor = selectionColor;
     imageView.layer.borderWidth = borderWidth;
-    AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
-    [synth speakUtterance:utterance2];
+    [AccessibilityUtils speakIfInAccessibility:utterance];
     
     for (UIPickerView *picker in pickerList) {
         if (picker == pV) {

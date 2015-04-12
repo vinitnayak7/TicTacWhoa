@@ -7,20 +7,12 @@
 //
 
 #import "AccessiblePickerView.h"
-#import <AVFoundation/AVFoundation.h>
+#import "AccessibilityUtils.h"
 
 @implementation AccessiblePickerView {
     int selectedRow;
     NSArray *imageNameList;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 //-(void) accessibilityElementDidBecomeFocused {
 //        AVSpeechUtterance *utterance2;
@@ -41,38 +33,22 @@
 }
 
 -(void) accessibilityIncrement {
-    NSLog(@"inc");
     if (selectedRow == [self numberOfRowsInComponent:0] - 1) {
         return;
     }
-    
     selectedRow++;
-    AVSpeechUtterance *utterance2;
-    utterance2 = [AVSpeechUtterance
-                  speechUtteranceWithString:[self->imageNameList objectAtIndex:selectedRow]];
     
-    AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
-    [synth speakUtterance:utterance2];
-    
+    [AccessibilityUtils speakIfInAccessibility:[self->imageNameList objectAtIndex:selectedRow]];
     [super selectRow:selectedRow inComponent:0 animated:YES];
-
-
 }
 
 -(void) accessibilityDecrement {
-    NSLog(@"Dec");
     if (selectedRow < 1 ) {
         return;
     }
-    
     selectedRow--;
-    AVSpeechUtterance *utterance2;
-    utterance2 = [AVSpeechUtterance
-                  speechUtteranceWithString:[self->imageNameList objectAtIndex:selectedRow]];
     
-    AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
-    [synth speakUtterance:utterance2];
-    
+    [AccessibilityUtils speakIfInAccessibility:[self->imageNameList objectAtIndex:selectedRow]];
     [super selectRow:selectedRow inComponent:0 animated:YES];
 }
 

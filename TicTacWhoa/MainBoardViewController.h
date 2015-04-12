@@ -14,21 +14,21 @@
 
 //========== ROW 1 =====================
 @property (weak, nonatomic) IBOutlet AccessiblePickerView *m1x1pickerView;
-@property (weak, nonatomic) IBOutlet UIPickerView *m1x2pickerView;
-@property (weak, nonatomic) IBOutlet UIPickerView *m1x3pickerView;
+@property (weak, nonatomic) IBOutlet AccessiblePickerView *m1x2pickerView;
+@property (weak, nonatomic) IBOutlet AccessiblePickerView *m1x3pickerView;
 
 
 
 //========== ROW 2 =====================
-@property (weak, nonatomic) IBOutlet UIPickerView *m2x1pickerView;
-@property (weak, nonatomic) IBOutlet UIPickerView *m2x2pickerView;
-@property (weak, nonatomic) IBOutlet UIPickerView *m2x3pickerView;
+@property (weak, nonatomic) IBOutlet AccessiblePickerView *m2x1pickerView;
+@property (weak, nonatomic) IBOutlet AccessiblePickerView *m2x2pickerView;
+@property (weak, nonatomic) IBOutlet AccessiblePickerView *m2x3pickerView;
 
 
 //========== ROW 3 =====================
-@property (weak, nonatomic) IBOutlet UIPickerView *m3x1pickerView;
-@property (weak, nonatomic) IBOutlet UIPickerView *m3x2pickerView;
-@property (weak, nonatomic) IBOutlet UIPickerView *m3x3pickerView;
+@property (weak, nonatomic) IBOutlet AccessiblePickerView *m3x1pickerView;
+@property (weak, nonatomic) IBOutlet AccessiblePickerView *m3x2pickerView;
+@property (weak, nonatomic) IBOutlet AccessiblePickerView *m3x3pickerView;
 
 @property (weak, nonatomic) IBOutlet UILabel *attemptsLabel;
 @property (strong,nonatomic) MenuViewController *menuViewController;

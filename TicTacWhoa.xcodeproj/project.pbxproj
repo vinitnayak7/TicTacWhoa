@@ -26,6 +26,7 @@
 		8E81FB261AA2F6A500F70393 /* MainBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FB241AA2F6A500F70393 /* MainBoardViewController.m */; };
 		8E81FB271AA2F6A500F70393 /* MainBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */; };
 		8EA5E5861AD997C800477FF0 /* AccessiblePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5E5851AD997C800477FF0 /* AccessiblePickerView.m */; };
+		8EA5E58B1ADA24DB00477FF0 /* AccessibilityUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5E58A1ADA24DB00477FF0 /* AccessibilityUtils.m */; };
 		8ECA1B3F1AB4C4AC00AEAFF6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */; };
 		8ECA1B401AB4C4AC00AEAFF6 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */; };
 		8EEFDF701AD98DA9005207A0 /* eight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF661AD98DA9005207A0 /* eight.png */; };
@@ -83,6 +84,8 @@
 		8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainBoardViewController.xib; sourceTree = "<group>"; };
 		8EA5E5841AD997C800477FF0 /* AccessiblePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccessiblePickerView.h; path = accessibility/AccessiblePickerView.h; sourceTree = "<group>"; };
 		8EA5E5851AD997C800477FF0 /* AccessiblePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccessiblePickerView.m; path = accessibility/AccessiblePickerView.m; sourceTree = "<group>"; };
+		8EA5E5891ADA24DB00477FF0 /* AccessibilityUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccessibilityUtils.h; path = accessibility/AccessibilityUtils.h; sourceTree = "<group>"; };
+		8EA5E58A1ADA24DB00477FF0 /* AccessibilityUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccessibilityUtils.m; path = accessibility/AccessibilityUtils.m; sourceTree = "<group>"; };
 		8ECA1B3C1AB4C4AC00AEAFF6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				8E488A3C1AACD8F40020AD80 /* Data */,
 				8EA5E5841AD997C800477FF0 /* AccessiblePickerView.h */,
 				8EA5E5851AD997C800477FF0 /* AccessiblePickerView.m */,
+				8EA5E5891ADA24DB00477FF0 /* AccessibilityUtils.h */,
+				8EA5E58A1ADA24DB00477FF0 /* AccessibilityUtils.m */,
 			);
 			path = TicTacWhoa;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EA5E58B1ADA24DB00477FF0 /* AccessibilityUtils.m in Sources */,
 				8E81FB211AA1A4F100F70393 /* LoginViewController.m in Sources */,
 				8ECA1B3F1AB4C4AC00AEAFF6 /* MenuViewController.m in Sources */,
 				8E81FB261AA2F6A500F70393 /* MainBoardViewController.m in Sources */,
