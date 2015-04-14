@@ -7,10 +7,13 @@
 //
 
 #import "AccessibilityUtils.h"
-#import <AVFoundation/AVFoundation.h>
 
+static AVSpeechSynthesizer *speaker;
 @implementation AccessibilityUtils
 
++(void)initialize {
+    speaker = [[AVSpeechSynthesizer alloc] init];
+}
 -(instancetype)init {
     // Private constructor
     return nil;
@@ -20,11 +23,12 @@
     if (!UIAccessibilityIsVoiceOverRunning()) {
         return;
     }
-    
+
+    [speaker stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+
     AVSpeechUtterance *utterance2 = [AVSpeechUtterance
                   speechUtteranceWithString:textToSpeak];
-    AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
-    [synth speakUtterance:utterance2];
+    [speaker speakUtterance:utterance2];
 }
 
 @end

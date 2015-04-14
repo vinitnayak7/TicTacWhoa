@@ -105,6 +105,9 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQZ-m2-wzu" customClass="AccessiblePickerView">
                     <rect key="frame" x="6" y="420" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="106" y="420" width="190" height="162"/>
                     </variation>
@@ -115,6 +118,9 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHi-30-Icn" customClass="AccessiblePickerView">
                     <rect key="frame" x="204" y="420" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="304" y="420" width="190" height="162"/>
                     </variation>
@@ -125,6 +131,9 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6c-XO-wGw" customClass="AccessiblePickerView">
                     <rect key="frame" x="402" y="420" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="502" y="420" width="190" height="162"/>
                     </variation>

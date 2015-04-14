@@ -23,11 +23,6 @@
 //            [synth speakUtterance:utterance2];
 //}
 
--(BOOL) accessibilityScroll:(UIAccessibilityScrollDirection)direction {
-
-    return YES;
-}
-
 -(BOOL) isAccessibilityElement {
     return YES;
 }
@@ -38,7 +33,7 @@
     }
     selectedRow++;
     
-    [AccessibilityUtils speakIfInAccessibility:[self->imageNameList objectAtIndex:selectedRow]];
+    [AccessibilityUtils speakIfInAccessibility:[self removeFileSuffix:[self->imageNameList objectAtIndex:selectedRow]]];
     [super selectRow:selectedRow inComponent:0 animated:YES];
 }
 
@@ -48,7 +43,7 @@
     }
     selectedRow--;
     
-    [AccessibilityUtils speakIfInAccessibility:[self->imageNameList objectAtIndex:selectedRow]];
+    [AccessibilityUtils speakIfInAccessibility:[self removeFileSuffix:[self->imageNameList objectAtIndex:selectedRow]]];
     [super selectRow:selectedRow inComponent:0 animated:YES];
 }
 
@@ -61,4 +56,8 @@
     self->imageNameList = imageList;
 }
 
+-(NSString*)removeFileSuffix:(NSString*)fileSpeech {
+    NSString* noFileExtension = [fileSpeech substringToIndex:[fileSpeech length]-4];
+    return [NSString stringWithFormat:@"%@ image", noFileExtension];
+}
 @end
