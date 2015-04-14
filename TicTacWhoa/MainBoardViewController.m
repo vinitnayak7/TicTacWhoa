@@ -96,14 +96,11 @@
     
     grid = [[MutableGrid alloc] initWithPickers:pickerList];
     
-    for (UIPickerView *picker in pickerList) {
-        UITapGestureRecognizer* gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickerTapped:)];
-        if (UIAccessibilityIsVoiceOverRunning()) {
-            [gestureRecognizer setNumberOfTapsRequired:2];
-        }
-        [picker addGestureRecognizer:gestureRecognizer];
-        gestureRecognizer.delegate = self;
-    }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateAccessibilityImageTap)
+                                                 name:UIAccessibilityVoiceOverStatusChanged
+                                               object:nil];
+    [self updateAccessibilityImageTap];
     
     [attemptsLabel setHidden:newUser];
 }
@@ -215,6 +212,20 @@
         if (picker == pV) {
             [grid updateSelectionForPicker:[pickerToString objectForKey:picker] forRow:selectedRow];
         }
+    }
+}
+
+-(void)updateAccessibilityImageTap {
+    for (UIPickerView *picker in pickerList) {
+        UITapGestureRecognizer* gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickerTapped:)];
+        if (UIAccessibilityIsVoiceOverRunning()) {
+            [gestureRecognizer setNumberOfTapsRequired:2];
+        }
+        for (UIGestureRecognizer *recognizer in picker.gestureRecognizers) {
+            [picker removeGestureRecognizer:recognizer];
+        }
+        [picker addGestureRecognizer:gestureRecognizer];
+        gestureRecognizer.delegate = self;
     }
 }
 
