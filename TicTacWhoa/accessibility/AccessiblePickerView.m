@@ -12,16 +12,12 @@
 @implementation AccessiblePickerView {
     int selectedRow;
     NSArray *imageNameList;
+    NSString *originalAccessiblityLabel;
 }
 
-//-(void) accessibilityElementDidBecomeFocused {
-//        AVSpeechUtterance *utterance2;
-//        utterance2 = [AVSpeechUtterance
-//                      speechUtteranceWithString:@"Working all day"];
-//        
-//        AVSpeechSynthesizer *synth = [[AVSpeechSynthesizer alloc] init];
-//            [synth speakUtterance:utterance2];
-//}
+-(void)accessibilityElementDidLoseFocus {
+    [self setAccessibilityLabel:[self getFutureAccessibilityLabel]];
+}
 
 -(BOOL) isAccessibilityElement {
     return YES;
@@ -35,6 +31,7 @@
     
     [AccessibilityUtils speakIfInAccessibility:[self removeFileSuffix:[self->imageNameList objectAtIndex:selectedRow]]];
     [super selectRow:selectedRow inComponent:0 animated:YES];
+    [self setAccessibilityLabel:[self getFutureAccessibilityLabel]];
 }
 
 -(void) accessibilityDecrement {
@@ -45,6 +42,7 @@
     
     [AccessibilityUtils speakIfInAccessibility:[self removeFileSuffix:[self->imageNameList objectAtIndex:selectedRow]]];
     [super selectRow:selectedRow inComponent:0 animated:YES];
+    [self setAccessibilityLabel:[self getFutureAccessibilityLabel]];
 }
 
 -(UIAccessibilityTraits)accessibilityTraits {
@@ -59,5 +57,16 @@
 -(NSString*)removeFileSuffix:(NSString*)fileSpeech {
     NSString* noFileExtension = [fileSpeech substringToIndex:[fileSpeech length]-4];
     return [NSString stringWithFormat:@"%@ image", noFileExtension];
+}
+
+// Sets label for when we return to this picker view
+-(NSString*)getFutureAccessibilityLabel {
+    if (!originalAccessiblityLabel) {
+        // Keep everything except for tapp 3 times instructions
+        originalAccessiblityLabel = [self accessibilityLabel];
+        originalAccessiblityLabel = [originalAccessiblityLabel substringToIndex:[originalAccessiblityLabel rangeOfString:@"tap"].location];
+    }
+    NSString *newLabel = [self removeFileSuffix:[self->imageNameList objectAtIndex:selectedRow]];
+    return [NSString stringWithFormat:@"%@ %@", originalAccessiblityLabel, newLabel];
 }
 @end

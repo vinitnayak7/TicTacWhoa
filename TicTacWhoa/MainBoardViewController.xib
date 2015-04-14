@@ -26,7 +26,7 @@
             <subviews>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6If-Re-4Gx" customClass="AccessiblePickerView">
                     <rect key="frame" x="8" y="80" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" hint="" label="Ones digit selector ">
+                    <accessibility key="accessibilityConfiguration" hint="" label="Ones digit image selector tap 3 times to select image">
                         <accessibilityTraits key="traits" none="YES"/>
                         <bool key="isElement" value="YES"/>
                     </accessibility>
@@ -40,7 +40,7 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LO0-ka-f28" customClass="AccessiblePickerView">
                     <rect key="frame" x="206" y="80" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" hint="" label="Twos digit selector ">
+                    <accessibility key="accessibilityConfiguration" hint="" label="Twos digit image selector tap 3 times to select image">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -53,7 +53,7 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fJ-nG-8Zb" customClass="AccessiblePickerView">
                     <rect key="frame" x="404" y="80" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" label="Threes digit selector ">
+                    <accessibility key="accessibilityConfiguration" label="Threes digit image selector tap 3 times to select image">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -66,7 +66,7 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52m-bI-cA8" customClass="AccessiblePickerView">
                     <rect key="frame" x="6" y="250" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" label="">
+                    <accessibility key="accessibilityConfiguration" label="Fours digit image selector tap 3 times to select image">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -79,7 +79,7 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-aV-2r7" customClass="AccessiblePickerView">
                     <rect key="frame" x="204" y="250" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration">
+                    <accessibility key="accessibilityConfiguration" label="Fives digit image selector tap 3 times to select image">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -92,7 +92,7 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smf-Fy-I9c" customClass="AccessiblePickerView">
                     <rect key="frame" x="402" y="250" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration">
+                    <accessibility key="accessibilityConfiguration" label="Sixes digit image selector tap 3 times to select image">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -105,7 +105,7 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQZ-m2-wzu" customClass="AccessiblePickerView">
                     <rect key="frame" x="6" y="420" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration">
+                    <accessibility key="accessibilityConfiguration" label="Sevens digit image selector tap 3 times to select image">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -118,7 +118,7 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHi-30-Icn" customClass="AccessiblePickerView">
                     <rect key="frame" x="204" y="420" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration">
+                    <accessibility key="accessibilityConfiguration" label="Eights digit image selector tap 3 times to select image">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -131,7 +131,7 @@
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6c-XO-wGw" customClass="AccessiblePickerView">
                     <rect key="frame" x="402" y="420" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration">
+                    <accessibility key="accessibilityConfiguration" label="Nines digit image selector tap 3 times to select image">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">

@@ -98,6 +98,9 @@
     
     for (UIPickerView *picker in pickerList) {
         UITapGestureRecognizer* gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickerTapped:)];
+        if (UIAccessibilityIsVoiceOverRunning()) {
+            [gestureRecognizer setNumberOfTapsRequired:2];
+        }
         [picker addGestureRecognizer:gestureRecognizer];
         gestureRecognizer.delegate = self;
     }
@@ -165,10 +168,8 @@
     // are the same.
     if (row == 0) {
         image = [UIImage imageNamed:[pickerStartingImageList objectForKey:pickerView]];
-        [imageView setAccessibilityLabel:[pickerStartingImageList objectForKey:pickerView]];
     } else {
         image = [UIImage imageNamed:[pickerImageList objectAtIndex:row-1]];
-        [imageView setAccessibilityLabel:[pickerImageList objectAtIndex:row-1]];
     }
 
     imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -188,7 +189,7 @@
 
 -(void)pickerTapped:(UIGestureRecognizer *)recognizer {
     NSLog(@"FUCK");
-    UIPickerView *pV = (UIPickerView*)[recognizer view];
+    AccessiblePickerView *pV = (AccessiblePickerView*)[recognizer view];
     NSUInteger selectedRow = [pV selectedRowInComponent:0];
 
     UIView *imageView = [pV viewForRow:selectedRow forComponent:0];
@@ -196,7 +197,6 @@
     CGFloat borderWidth = 6.0f;
 
     NSString *utterance;
-
     
     if (![grid isSelectedForPicker:[pickerToString objectForKey:pV] forRow:selectedRow]) {
         imageView.frame = CGRectInset(imageView.frame, borderWidth, borderWidth);
