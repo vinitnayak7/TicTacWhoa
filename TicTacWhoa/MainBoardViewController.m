@@ -163,12 +163,15 @@
     }
     
     UIImage *image;
+    NSString *accessibilityLabel;
     // We want the first image to be distinct and have the number displayed, the rest
     // are the same.
     if (row == 0) {
         image = [UIImage imageNamed:[pickerStartingImageList objectForKey:pickerView]];
+        accessibilityLabel = [pickerStartingImageList objectForKey:pickerView];
     } else {
         image = [UIImage imageNamed:[pickerImageList objectAtIndex:row-1]];
+        accessibilityLabel = [pickerImageList objectAtIndex:row-1];
     }
 
     imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -182,13 +185,19 @@
         imageView.frame = CGRectInset(imageView.frame, borderWidth, borderWidth);
         imageView.layer.borderColor = [UIColor redColor].CGColor;
         imageView.layer.borderWidth = borderWidth;
+        accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"selected", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
+    } else {
+        accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"un selected", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
     }
+    [imageView setAccessibilityLabel:accessibilityLabel];
     return imageView;
 }
 
 -(void)pickerTapped:(UIGestureRecognizer *)recognizer {
     NSLog(@"FUCK");
-    AccessiblePickerView *pV = (AccessiblePickerView*)[recognizer view];
+    UIPickerView *pV = (UIPickerView*)[recognizer view];
+    
+    // TODO, put all images in one array for each UIPickerView so we don't have to worry about offests
     NSUInteger selectedRow = [pV selectedRowInComponent:0];
 
     UIView *imageView = [pV viewForRow:selectedRow forComponent:0];
@@ -196,19 +205,26 @@
     CGFloat borderWidth = 6.0f;
 
     NSString *utterance;
+    NSString *imageTitle;
+    
+    if (selectedRow == 0) {
+        imageTitle = [pickerStartingImageList objectForKey:pV];
+    } else {
+        imageTitle = [pickerImageList objectAtIndex:selectedRow - 1];
+    }
     
     if (![grid isSelectedForPicker:[pickerToString objectForKey:pV] forRow:selectedRow]) {
         imageView.frame = CGRectInset(imageView.frame, borderWidth, borderWidth);
         selectionColor = [UIColor redColor].CGColor;
-        utterance = @"selected";
+        utterance = [NSString stringWithFormat:@"%@ selected", [AccessibilityUtils removeFileSuffix:imageTitle]];
     } else {
         imageView.frame = CGRectInset(imageView.frame, -borderWidth, -borderWidth);
         selectionColor = [UIColor clearColor].CGColor;
-        utterance = @"unselected";
+        utterance = [NSString stringWithFormat:@"%@ un selected", [AccessibilityUtils removeFileSuffix:imageTitle]];
     }
     imageView.layer.borderColor = selectionColor;
     imageView.layer.borderWidth = borderWidth;
-    [AccessibilityUtils speakIfInAccessibility:utterance];
+    [imageView setAccessibilityLabel:utterance];
     
     for (UIPickerView *picker in pickerList) {
         if (picker == pV) {
@@ -323,5 +339,10 @@ accessibilityLabelForComponent:(NSInteger)component {
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     return true;
+}
+
+-(NSString*)removeFileSuffix:(NSString*)fileSpeech {
+    NSString* noFileExtension = [fileSpeech substringToIndex:[fileSpeech length]-4];
+    return [NSString stringWithFormat:@"%@ image", noFileExtension];
 }
 @end

@@ -12,4 +12,5 @@
 
 @interface AccessibilityUtils : NSObject
 +(void)speakIfInAccessibility:(NSString*) textToSpeak;
++(NSString*)removeFileSuffix:(NSString*)fileSpeech;
 @end

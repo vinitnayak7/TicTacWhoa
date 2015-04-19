@@ -31,4 +31,9 @@ static AVSpeechSynthesizer *speaker;
     [speaker speakUtterance:utterance2];
 }
 
++(NSString*)removeFileSuffix:(NSString*)fileSpeech {
+    NSString* noFileExtension = [fileSpeech substringToIndex:[fileSpeech length]-4];
+    return [NSString stringWithFormat:@"%@ image", noFileExtension];
+}
+
 @end
