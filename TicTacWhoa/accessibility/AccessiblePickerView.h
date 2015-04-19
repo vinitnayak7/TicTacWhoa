@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AccessiblePickerView : UIPickerView
+@interface AccessiblePickerView : UIPickerView <UIPickerViewAccessibilityDelegate>
 -(void) setImagesForRows:(NSArray*) imageList;
 @end

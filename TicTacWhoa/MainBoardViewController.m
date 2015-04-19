@@ -45,7 +45,9 @@
     
     pickerImageList = [[NSMutableArray alloc] init];
     pickerStartingImageList = [[NSMapTable alloc] init];
-
+    
+    
+    // NB: Do not change, this MUST be in the correct order
     [pickerList addObject:m1x1pickerView];
     [pickerList addObject:m1x2pickerView];
     [pickerList addObject:m1x3pickerView];
@@ -76,7 +78,7 @@
     [pickerStartingImageList setObject:@"eight.png" forKey:m3x2pickerView];
     [pickerStartingImageList setObject:@"nine.png" forKey:m3x3pickerView];
     
-    for (AccessiblePickerView *picker in pickerStartingImageList.keyEnumerator) {
+    for (UIPickerView *picker in pickerStartingImageList.keyEnumerator) {
         [pickerImageList addObject:[pickerStartingImageList objectForKey:picker]];
         [pickerImageList addObject:@"tree.png"];
         [pickerImageList addObject:@"car.png"];
@@ -84,7 +86,7 @@
         [pickerImageList addObject:@"dog.png"];
         [pickerImageList addObject:@"house.png"];
         
-        [picker setImagesForRows:[NSArray arrayWithArray:pickerImageList]];
+//        [picker setImagesForRows:[NSArray arrayWithArray:pickerImageList]];
         [pickerImageList removeAllObjects];
     }
 
@@ -218,12 +220,12 @@
 -(void)updateAccessibilityImageTap {
     for (UIPickerView *picker in pickerList) {
         UITapGestureRecognizer* gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickerTapped:)];
-        if (UIAccessibilityIsVoiceOverRunning()) {
-            [gestureRecognizer setNumberOfTapsRequired:2];
-        }
-        for (UIGestureRecognizer *recognizer in picker.gestureRecognizers) {
-            [picker removeGestureRecognizer:recognizer];
-        }
+//        if (UIAccessibilityIsVoiceOverRunning()) {
+//            [gestureRecognizer setNumberOfTapsRequired:2];
+//        }
+//        for (UIGestureRecognizer *recognizer in picker.gestureRecognizers) {
+//            [picker removeGestureRecognizer:recognizer];
+//        }
         [picker addGestureRecognizer:gestureRecognizer];
         gestureRecognizer.delegate = self;
     }
@@ -287,6 +289,30 @@
                           cancelButtonTitle:@"Dismiss"
                           otherButtonTitles:otherButtonTitle, nil];
     [alert show];
+}
+
+/** 
+ TODO: Figure out a better way to do this
+ Currently pickerView isn't actually a UIPickerView, it's a UIAccessibilityPickerComponent, 
+ which we have no way to map from to our digit UIPickerViews, so we check their frame to see
+ which one it comes close to.
+ 
+ NB: This is heavily reliant on using ordered NSMutableArrays and inserting the pickers in the
+ correct order into the array, 1-9, row by row (horizontal then vertical)
+ */
+- (NSString *)pickerView:(UIPickerView *)pickerView
+accessibilityLabelForComponent:(NSInteger)component {
+    CGRect accessibilityPckerFrame = [pickerView accessibilityFrame];
+
+    for (UIPickerView *pV in pickerList) {
+        CGRect pickerFrame = [pV accessibilityFrame];
+        if (pickerFrame.origin.x == accessibilityPckerFrame.origin.x) {
+            if (pickerFrame.origin.y > accessibilityPckerFrame.origin.y) {
+                return [pV accessibilityLabel];
+            }
+        }
+    }
+    return NULL;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

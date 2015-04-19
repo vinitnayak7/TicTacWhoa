@@ -24,11 +24,11 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6If-Re-4Gx" customClass="AccessiblePickerView">
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6If-Re-4Gx">
                     <rect key="frame" x="8" y="80" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" hint="" label="Ones digit image selector tap 3 times to select image">
+                    <accessibility key="accessibilityConfiguration" hint="" label="Ones digit image selector">
                         <accessibilityTraits key="traits" none="YES"/>
-                        <bool key="isElement" value="YES"/>
+                        <bool key="isElement" value="NO"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="108" y="80" width="190" height="162"/>
@@ -38,10 +38,10 @@
                         <outlet property="delegate" destination="-1" id="6G7-ne-gK0"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LO0-ka-f28" customClass="AccessiblePickerView">
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LO0-ka-f28">
                     <rect key="frame" x="206" y="80" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" hint="" label="Twos digit image selector tap 3 times to select image">
-                        <bool key="isElement" value="YES"/>
+                    <accessibility key="accessibilityConfiguration" hint="" label="Twos digit image selector">
+                        <bool key="isElement" value="NO"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="306" y="80" width="190" height="162"/>
@@ -51,10 +51,10 @@
                         <outlet property="delegate" destination="-1" id="d5N-cg-8Qu"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fJ-nG-8Zb" customClass="AccessiblePickerView">
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fJ-nG-8Zb">
                     <rect key="frame" x="404" y="80" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" label="Threes digit image selector tap 3 times to select image">
-                        <bool key="isElement" value="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="Threes digit image selector">
+                        <bool key="isElement" value="NO"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="504" y="80" width="190" height="162"/>
@@ -64,22 +64,22 @@
                         <outlet property="delegate" destination="-1" id="QHS-Wu-gAr"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52m-bI-cA8" customClass="AccessiblePickerView">
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52m-bI-cA8">
                     <rect key="frame" x="6" y="250" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" label="Fours digit image selector tap 3 times to select image">
+                    <accessibility key="accessibilityConfiguration" label="Fours digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="106" y="250" width="190" height="162"/>
                     </variation>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="4Bw-5n-27s"/>
-                        <outlet property="delegate" destination="-1" id="Kzr-i8-7s7"/>
+                        <outlet property="dataSource" destination="-1" id="Lge-ts-jrf"/>
+                        <outlet property="delegate" destination="-1" id="Bvu-dT-K0r"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-aV-2r7" customClass="AccessiblePickerView">
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-aV-2r7">
                     <rect key="frame" x="204" y="250" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" label="Fives digit image selector tap 3 times to select image">
+                    <accessibility key="accessibilityConfiguration" label="Fives digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -90,9 +90,9 @@
                         <outlet property="delegate" destination="-1" id="65R-1C-bnU"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smf-Fy-I9c" customClass="AccessiblePickerView">
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smf-Fy-I9c">
                     <rect key="frame" x="402" y="250" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" label="Sixes digit image selector tap 3 times to select image">
+                    <accessibility key="accessibilityConfiguration" label="Sixes digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -103,9 +103,9 @@
                         <outlet property="delegate" destination="-1" id="McN-pl-7h2"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQZ-m2-wzu" customClass="AccessiblePickerView">
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQZ-m2-wzu">
                     <rect key="frame" x="6" y="420" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" label="Sevens digit image selector tap 3 times to select image">
+                    <accessibility key="accessibilityConfiguration" label="Sevens digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -116,9 +116,9 @@
                         <outlet property="delegate" destination="-1" id="hPd-Bj-JRf"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHi-30-Icn" customClass="AccessiblePickerView">
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHi-30-Icn">
                     <rect key="frame" x="204" y="420" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" label="Eights digit image selector tap 3 times to select image">
+                    <accessibility key="accessibilityConfiguration" label="Eights digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -129,9 +129,9 @@
                         <outlet property="delegate" destination="-1" id="3Sm-j3-tgu"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6c-XO-wGw" customClass="AccessiblePickerView">
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6c-XO-wGw">
                     <rect key="frame" x="402" y="420" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" label="Nines digit image selector tap 3 times to select image">
+                    <accessibility key="accessibilityConfiguration" label="Nines digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -182,7 +182,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attempts: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-8d-CAj">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="108" y="44" width="117" height="21"/>
@@ -191,7 +191,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Passphrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkS-mM-EVF">
                     <rect key="frame" x="265" y="27" width="71" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                         <rect key="frame" x="312" y="23" width="178" height="21"/>

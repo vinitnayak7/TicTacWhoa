@@ -69,4 +69,10 @@
     NSString *newLabel = [self removeFileSuffix:[self->imageNameList objectAtIndex:selectedRow]];
     return [NSString stringWithFormat:@"%@ %@", originalAccessiblityLabel, newLabel];
 }
+
+- (NSString *)pickerView:(UIPickerView *)pickerView
+accessibilityLabelForComponent:(NSInteger)component {
+    BOOL y = [pickerView isAccessibilityElement];
+    return @"foo";
+}
 @end
