@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E237F2F1AE76BD90083815F /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E237F2D1AE76BD90083815F /* UserProfileViewController.m */; };
+		8E237F301AE76BD90083815F /* UserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E237F2E1AE76BD90083815F /* UserProfileViewController.xib */; };
+		8E237F341AE76FA00083815F /* UserProfileSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E237F321AE76FA00083815F /* UserProfileSettingsViewController.m */; };
+		8E237F351AE76FA00083815F /* UserProfileSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E237F331AE76FA00083815F /* UserProfileSettingsViewController.xib */; };
 		8E488A451AACDD040020AD80 /* MutableGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E488A441AACDD040020AD80 /* MutableGrid.m */; };
 		8E488A481AACFF510020AD80 /* Selection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E488A471AACFF510020AD80 /* Selection.m */; };
 		8E488A4D1AAD68E00020AD80 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E488A491AAD68E00020AD80 /* car.png */; };
@@ -51,6 +55,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E237F2C1AE76BD90083815F /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		8E237F2D1AE76BD90083815F /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
+		8E237F2E1AE76BD90083815F /* UserProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileViewController.xib; sourceTree = "<group>"; };
+		8E237F311AE76FA00083815F /* UserProfileSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileSettingsViewController.h; sourceTree = "<group>"; };
+		8E237F321AE76FA00083815F /* UserProfileSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileSettingsViewController.m; sourceTree = "<group>"; };
+		8E237F331AE76FA00083815F /* UserProfileSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileSettingsViewController.xib; sourceTree = "<group>"; };
 		8E488A421AACDB280020AD80 /* GridProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridProtocol.h; sourceTree = "<group>"; };
 		8E488A431AACDC0D0020AD80 /* MutableGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutableGrid.h; sourceTree = "<group>"; };
 		8E488A441AACDD040020AD80 /* MutableGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutableGrid.m; sourceTree = "<group>"; };
@@ -193,6 +203,12 @@
 				8E488A3C1AACD8F40020AD80 /* Data */,
 				8EA5E5891ADA24DB00477FF0 /* AccessibilityUtils.h */,
 				8EA5E58A1ADA24DB00477FF0 /* AccessibilityUtils.m */,
+				8E237F2C1AE76BD90083815F /* UserProfileViewController.h */,
+				8E237F2D1AE76BD90083815F /* UserProfileViewController.m */,
+				8E237F2E1AE76BD90083815F /* UserProfileViewController.xib */,
+				8E237F311AE76FA00083815F /* UserProfileSettingsViewController.h */,
+				8E237F321AE76FA00083815F /* UserProfileSettingsViewController.m */,
+				8E237F331AE76FA00083815F /* UserProfileSettingsViewController.xib */,
 			);
 			path = TicTacWhoa;
 			sourceTree = "<group>";
@@ -309,11 +325,13 @@
 				8E488A4E1AAD68E00020AD80 /* cat.png in Resources */,
 				8EEFDF721AD98DA9005207A0 /* four.png in Resources */,
 				8E488A4F1AAD68E00020AD80 /* dog.png in Resources */,
+				8E237F301AE76BD90083815F /* UserProfileViewController.xib in Resources */,
 				8EEFDF741AD98DA9005207A0 /* one.png in Resources */,
 				8EEFDF761AD98DA9005207A0 /* six.png in Resources */,
 				8EEFDF791AD98DA9005207A0 /* two.png in Resources */,
 				8EEFDF771AD98DA9005207A0 /* three.png in Resources */,
 				8EEFDF711AD98DA9005207A0 /* five.png in Resources */,
+				8E237F351AE76FA00083815F /* UserProfileSettingsViewController.xib in Resources */,
 				8EEFDF731AD98DA9005207A0 /* nine.png in Resources */,
 				8E81FB221AA1A4F100F70393 /* LoginViewController.xib in Resources */,
 				8EEFDF781AD98DA9005207A0 /* tree.png in Resources */,
@@ -342,11 +360,13 @@
 			files = (
 				8EA5E58B1ADA24DB00477FF0 /* AccessibilityUtils.m in Sources */,
 				8E81FB211AA1A4F100F70393 /* LoginViewController.m in Sources */,
+				8E237F341AE76FA00083815F /* UserProfileSettingsViewController.m in Sources */,
 				8ECA1B3F1AB4C4AC00AEAFF6 /* MenuViewController.m in Sources */,
 				8E81FAF91AA022EB00F70393 /* AppDelegate.m in Sources */,
 				8E488A521AAFDD2F0020AD80 /* Constants.m in Sources */,
 				8EA5E58D1ADCDB7500477FF0 /* NewUserViewController.m in Sources */,
 				8E81FB1C1AA19D2000F70393 /* SplashUIViewController.m in Sources */,
+				8E237F2F1AE76BD90083815F /* UserProfileViewController.m in Sources */,
 				8E488A481AACFF510020AD80 /* Selection.m in Sources */,
 				8E488A451AACDD040020AD80 /* MutableGrid.m in Sources */,
 				8E81FAF61AA022EB00F70393 /* main.m in Sources */,

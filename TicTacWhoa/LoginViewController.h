@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NewUserViewController.h"
+#import "MenuViewController.h"
 
 @interface LoginViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate, UIPickerViewAccessibilityDelegate, UIAlertViewDelegate>
 
@@ -42,5 +43,7 @@
 - (IBAction)submitExistingUser:(id)sender;
 - (IBAction)submitNewUser:(id)sender;
 - (IBAction)resetGridAction:(id)sender;
+
+-(id)initWithUsername:(NSString*)name;
 
 @end

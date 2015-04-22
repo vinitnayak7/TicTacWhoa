@@ -7,12 +7,14 @@
 //
 
 #import "MenuViewController.h"
+#import "AppDelegate.h"
 
 @interface MenuViewController ()
 
 @end
 
 @implementation MenuViewController
+@synthesize userProfileViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,7 +36,14 @@
 }
 */
 
+- (IBAction)userProfileAction:(id)sender {
+    userProfileViewController = [[UserProfileViewController alloc] initWithNibName:@"UserProfileViewController" bundle:nil];
+    [self presentViewController:userProfileViewController animated:YES completion:nil];
+}
+
 - (IBAction)logoutAction:(id)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate setUserName:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

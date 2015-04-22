@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "AccessibilityUtils.h"
 #import "MutableGrid.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 
@@ -22,6 +23,7 @@
     NSMutableArray *pickerImageList;
     NSMapTable *pickerStartingImageList;
     NSMapTable *pickerToString;
+    NSString *userName;
 }
 
 @synthesize m1x1pickerView;
@@ -104,6 +106,8 @@
     
     grid = [[MutableGrid alloc] initWithPickers:pickerList];
     
+    [userNameTextField setText:self->userName];
+    
     [self updateAccessibilityImageTap];
     ///////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////
@@ -112,6 +116,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(id)initWithUsername:(NSString*)name {
+    self = [super init];
+    if (self) {
+        self->userName = name;
+    }
+    return self;
 }
 
 - (IBAction)submitExistingUser:(id)sender {
@@ -131,6 +143,8 @@
     if (success) {
         menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
         [self presentViewController:menuViewController animated:YES completion:nil];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDelegate setUserName:userName];
         [userNameTextField setText:@""];
         [self resetGridAction:nil];
     } else {

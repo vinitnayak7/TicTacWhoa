@@ -14,5 +14,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong,nonatomic) SplashUIViewController *splashViewController;
 
+@property (strong, nonatomic) NSString *userName;
+
 @end
 

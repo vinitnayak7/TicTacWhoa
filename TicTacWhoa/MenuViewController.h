@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserProfileViewController.h"
 
 @interface MenuViewController : UIViewController
 
+@property (strong,nonatomic) UserProfileViewController *userProfileViewController;
+
+- (IBAction)userProfileAction:(id)sender;
 - (IBAction)logoutAction:(id)sender;
 @end

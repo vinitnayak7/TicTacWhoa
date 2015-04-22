@@ -62,6 +62,18 @@
                         <rect key="frame" x="300" y="54" width="201" height="21"/>
                     </variation>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYt-x4-y14">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="User Profile">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="361" y="447" width="80" height="30"/>
+                    </variation>
+                    <connections>
+                        <action selector="userProfileAction:" destination="-1" eventType="touchUpInside" id="tzm-AP-1AQ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <variation key="default">
@@ -71,6 +83,7 @@
                     <exclude reference="WiD-Be-FDa"/>
                     <exclude reference="DxA-tw-pRv"/>
                     <exclude reference="xNc-AZ-2Ww"/>
+                    <exclude reference="DYt-x4-y14"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
@@ -80,6 +93,7 @@
                     <include reference="WiD-Be-FDa"/>
                     <include reference="DxA-tw-pRv"/>
                     <include reference="xNc-AZ-2Ww"/>
+                    <include reference="DYt-x4-y14"/>
                 </mask>
             </variation>
         </view>
