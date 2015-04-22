@@ -21,8 +21,6 @@
     NSMutableArray *pickerList;
     NSMutableArray *pickerImageList;
     NSMapTable *pickerStartingImageList;
-    BOOL newUser;
-    NSString *userName;
     NSMapTable *pickerToString;
 }
 
@@ -117,45 +115,52 @@
 }
 
 - (IBAction)submitExistingUser:(id)sender {
-    if ([userNameTextField.text isEqual: @""]) {
-        NSLog(@"username empty");
+    NSString *userName = userNameTextField.text;
+    if (userName == nil || [userName  isEqual: @""]) {
+        [LoginViewController showAlert:@"Enter userName" withDelegate:self withTitle:@"Sorry" withCancelButton:@"OK" withOtherButtonTitle:nil];
         return;
     }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults objectForKey:userNameTextField.text]) {
-        boardViewController = [[NewUserViewController alloc] initWithUserName:userNameTextField.text forNewUser:NO];
-        [self presentViewController:boardViewController animated:YES completion:nil];
+    if(![defaults objectForKey:userName]) {
+        [LoginViewController showAlert:@"User does not exist" withDelegate:self withTitle:@"Sorry" withCancelButton:@"Retry with different username" withOtherButtonTitle:@"Create new user"];
+        return;
+    }
+    
+    BOOL success = [grid validate:userNameTextField.text];
+    if (success) {
+        menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+        [self presentViewController:menuViewController animated:YES completion:nil];
         [userNameTextField setText:@""];
+        [self resetGridAction:nil];
     } else {
-        [LoginViewController showAlert:@"No user found" withDelegate:self withTitle:@"sorry" withCancelButton:@"Retry with different name" withOtherButtonTitle:@"Create new User"];
+        if ([grid getAttempts] > ATTEMPT_LIMIT) {
+            [NewUserViewController showAlert:@"Sorry, you've reached the maximum number of attempts" withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
+        } else {
+            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
+                                   withTitle:@"Sorry" withOtherButtonTitle:nil];
+            // TODO
+            //            [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
+        }
     }
 }
 
 - (IBAction)submitNewUser:(id)sender {
-    if ([userNameTextField.text isEqual: @""]) {
-        NSLog(@"username empty");
-        return;
-    }
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if(![defaults objectForKey:userNameTextField.text]) {
-        boardViewController = [[NewUserViewController alloc] initWithUserName:userNameTextField.text forNewUser:YES];
-        [self presentViewController:boardViewController animated:YES completion:nil];
-        [userNameTextField setText:@""];
-    } else {
-        [LoginViewController showAlert:@"User already exists, please select a different username!" withDelegate:self withTitle:@"sorry" withCancelButton:@"Dismiss" withOtherButtonTitle:@"Create new User"];
-    }
+    boardViewController = [[NewUserViewController alloc] initWithNibName:@"NewUserViewController" bundle:nil];
+    [self presentViewController:boardViewController animated:YES completion:nil];
+    [userNameTextField setText:@""];
+    [self resetGridAction:nil];
 }
 
-+(void)showAlert:(NSString *)message {
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"Sorry"
-                          message:message
-                          delegate:self
-                          cancelButtonTitle:@"Retry with different username"
-                          otherButtonTitles:@"Create New User", nil];
-    [alert show];
+- (IBAction)resetGridAction:(id)sender {
+    [grid resetDataState];
+    for (UIPickerView *picker in pickerList) {
+        [picker reloadAllComponents];
+        [picker selectRow:0 inComponent:0 animated:YES];
+    }
+    // TODO
+    //    [grid increaseAttempts];
+    //    [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -278,54 +283,6 @@
     }
 }
 
-- (IBAction)submitButtonAction:(id)sender {
-    BOOL success;
-    if (newUser) {
-        success = [grid saveGrid:userName];
-    } else {
-        success = [grid validate:userName];
-    }
-    if (success) {
-        menuViewController = [[MenuViewController alloc] init];
-        UIViewController *currentViewController = self.presentingViewController;
-        [self dismissViewControllerAnimated:NO completion:^{
-            [currentViewController presentViewController:menuViewController animated:NO completion:nil];
-        }];
-        
-    } else {
-        if ([grid getAttempts] > ATTEMPT_LIMIT) {
-            [NewUserViewController showAlert:@"Sorry, you've reached the maximum number of attempts" withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
-        } else {
-            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
-                                     withTitle:@"Sorry" withOtherButtonTitle:nil];
-            // TODO
-//            [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
-        }
-    }
-}
-
-- (IBAction)cancelButtonAction:(id)sender {
-    [grid increaseAttempts];
-    [grid resetDataState];
-    for (UIPickerView *picker in pickerList) {
-        [picker reloadAllComponents];
-        [picker selectRow:0 inComponent:0 animated:YES];
-    }
-    // TODO
-//    [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
-}
-
-- (IBAction)logoutAction:(id)sender {
-    if (newUser) {
-        [NewUserViewController
-         showAlert:@"Your account will not be created if you don't submit a passphrase"
-         withDelegate:self
-         withTitle:@"Are you sure?" withOtherButtonTitle:@"Logout"];
-    } else {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
-}
-
 +(void)showAlert:(NSString *)message
     withDelegate:(id)delegate
        withTitle:(NSString *)title
@@ -368,6 +325,8 @@ accessibilityLabelForComponent:(NSInteger)component {
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [alertView cancelButtonIndex]) {
         [userNameTextField becomeFirstResponder];
+    } else {
+        [self submitNewUser:nil];
     }
 }
 

@@ -39,6 +39,19 @@
                         <action selector="submitExistingUser:" destination="-1" eventType="touchUpInside" id="j5m-E7-cI8"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai0-yO-0dF">
+                    <rect key="frame" x="200" y="353" width="68" height="30"/>
+                    <accessibility key="accessibilityConfiguration" label="Sign up as new user"/>
+                    <state key="normal" title="New User">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="423" y="722" width="68" height="30"/>
+                    </variation>
+                    <connections>
+                        <action selector="submitNewUser:" destination="-1" eventType="touchUpInside" id="nD3-Kg-xjr"/>
+                    </connections>
+                </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="od2-T1-cVF">
                     <rect key="frame" x="238" y="217" width="97" height="30"/>
                     <accessibility key="accessibilityConfiguration" hint="" label="Enter Username">
@@ -53,6 +66,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login As A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FC-PE-4cj">
                     <rect key="frame" x="245" y="324" width="83" height="21"/>
                     <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
                         <bool key="isElement" value="NO"/>
                     </accessibility>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -189,17 +203,16 @@
                         <rect key="frame" x="306" y="123" width="185" height="21"/>
                     </variation>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai0-yO-0dF">
-                    <rect key="frame" x="200" y="353" width="68" height="30"/>
-                    <accessibility key="accessibilityConfiguration" label="Sign up as new user"/>
-                    <state key="normal" title="New User">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-xx-tJN">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="Reset Grid">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="423" y="722" width="68" height="30"/>
+                        <rect key="frame" x="150" y="647" width="73" height="30"/>
                     </variation>
                     <connections>
-                        <action selector="submitNewUser:" destination="-1" eventType="touchUpInside" id="nD3-Kg-xjr"/>
+                        <action selector="resetGridAction:" destination="-1" eventType="touchUpInside" id="157-f8-Ae9"/>
                     </connections>
                 </button>
             </subviews>
@@ -216,6 +229,7 @@
                     <exclude reference="kw9-X2-DrF"/>
                     <exclude reference="FwE-dI-lHv"/>
                     <exclude reference="gN0-y7-ZQe"/>
+                    <exclude reference="Q2g-xx-tJN"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
@@ -230,6 +244,7 @@
                     <include reference="kw9-X2-DrF"/>
                     <include reference="FwE-dI-lHv"/>
                     <include reference="gN0-y7-ZQe"/>
+                    <include reference="Q2g-xx-tJN"/>
                 </mask>
             </variation>
         </view>

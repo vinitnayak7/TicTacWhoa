@@ -35,7 +35,7 @@
 
 -(BOOL)saveGrid:(NSString *)userName {
     // Store the data
-    if ([selectionList count] == 0) {
+    if ([selectionList count] != 4) {
         return NO;
     }
         

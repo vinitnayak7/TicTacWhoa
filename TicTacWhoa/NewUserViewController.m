@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Vinit Nayak. All rights reserved.
 //
 
-#import "MainBoardViewController.h"
+#import "NewUserViewController.h"
 #import "MutableGrid.h"
 #import "Constants.h"
 #import "AccessibilityUtils.h"
@@ -20,8 +20,6 @@
     NSMutableArray *pickerList;
     NSMutableArray *pickerImageList;
     NSMapTable *pickerStartingImageList;
-    BOOL newUser;
-    NSString *userName;
     NSMapTable *pickerToString;
 }
 
@@ -34,8 +32,8 @@
 @synthesize m3x1pickerView;
 @synthesize m3x2pickerView;
 @synthesize m3x3pickerView;
-@synthesize attemptsLabel;
 @synthesize menuViewController;
+@synthesize userNameTextField;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -99,8 +97,6 @@
     grid = [[MutableGrid alloc] initWithPickers:pickerList];
 
     [self updateAccessibilityImageTap];
-    
-    [attemptsLabel setHidden:newUser];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,15 +108,6 @@
 {
     [super viewDidAppear:animated];
     
-}
-
--(id)initWithUserName:(NSString *)usersName forNewUser:(BOOL)isNewUser {
-    self = [super init];
-    if (self) {
-        newUser = isNewUser;
-        userName = usersName;
-    }
-    return self;
 }
 
 // The number of columns of data
@@ -238,12 +225,18 @@
 }
 
 - (IBAction)submitButtonAction:(id)sender {
-    BOOL success;
-    if (newUser) {
-        success = [grid saveGrid:userName];
-    } else {
-        success = [grid validate:userName];
+    NSString *userName = userNameTextField.text;
+    if (userName == nil || [userName  isEqual: @""]) {
+        [NewUserViewController showAlert:@"Enter username!" withDelegate:nil withTitle:@"Error" withOtherButtonTitle:nil];
+        return;
     }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults objectForKey:userNameTextField.text]) {
+        [NewUserViewController showAlert:@"Username already exists!" withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
+        return;
+    }
+    BOOL success = [grid saveGrid:userName];
     if (success) {
         menuViewController = [[MenuViewController alloc] init];
         UIViewController *currentViewController = self.presentingViewController;
@@ -252,35 +245,28 @@
         }];
 
     } else {
-        if ([grid getAttempts] > ATTEMPT_LIMIT) {
-            [NewUserViewController showAlert:@"Sorry, you've reached the maximum number of attempts" withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
-        } else {
-            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
-                                     withTitle:@"Sorry" withOtherButtonTitle:nil];
-            [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
-        }
+//        if ([grid getAttempts] > ATTEMPT_LIMIT) {
+            [NewUserViewController showAlert:@"Please only select 4 images" withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
+//        } else {
+//            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
+//                                     withTitle:@"Sorry" withOtherButtonTitle:nil];
+//            [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
+//        }
     }
 }
 
 - (IBAction)cancelButtonAction:(id)sender {
-    [grid increaseAttempts];
     [grid resetDataState];
     for (UIPickerView *picker in pickerList) {
         [picker reloadAllComponents];
         [picker selectRow:0 inComponent:0 animated:YES];
     }
-    [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];  
+//    [grid increaseAttempts];
+//    [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
 }
 
 - (IBAction)logoutAction:(id)sender {
-    if (newUser) {
-        [NewUserViewController
-         showAlert:@"Your account will not be created if you don't submit a passphrase"
-         withDelegate:self
-         withTitle:@"Are you sure?" withOtherButtonTitle:@"Logout"];
-    } else {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 +(void)showAlert:(NSString *)message

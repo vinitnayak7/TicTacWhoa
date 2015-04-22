@@ -29,17 +29,16 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *m3x2pickerView;
 @property (weak, nonatomic) IBOutlet UIPickerView *m3x3pickerView;
 
-@property (weak, nonatomic) IBOutlet UILabel *attemptsLabel;
 @property (strong,nonatomic) MenuViewController *menuViewController;
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 
--(id)initWithUserName:(NSString *)userName forNewUser:(BOOL)isNewUser;
 
 - (IBAction)submitButtonAction:(id)sender;
 - (IBAction)cancelButtonAction:(id)sender;
 - (IBAction)logoutAction:(id)sender;
 + (void)showAlert:(NSString *)message
-    withDelegate:(id)delegate
-       withTitle:(NSString *)title
-withOtherButtonTitle:(NSString*)otherButtonTitle;
+        withDelegate:(id)delegate
+        withTitle:(NSString *)title
+        withOtherButtonTitle:(NSString*)otherButtonTitle;
 
 @end

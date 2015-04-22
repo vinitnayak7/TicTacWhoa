@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewUserViewController">
             <connections>
-                <outlet property="attemptsLabel" destination="Fbv-8d-CAj" id="Xma-26-Amy"/>
                 <outlet property="m1x1pickerView" destination="6If-Re-4Gx" id="jwH-QO-RSe"/>
                 <outlet property="m1x2pickerView" destination="LO0-ka-f28" id="8un-zw-hzb"/>
                 <outlet property="m1x3pickerView" destination="9fJ-nG-8Zb" id="hAz-f6-BBg"/>
@@ -16,6 +15,7 @@
                 <outlet property="m3x1pickerView" destination="TQZ-m2-wzu" id="hDg-aG-fOB"/>
                 <outlet property="m3x2pickerView" destination="cHi-30-Icn" id="Znr-SR-7nh"/>
                 <outlet property="m3x3pickerView" destination="a6c-XO-wGw" id="cf9-lc-bNJ"/>
+                <outlet property="userNameTextField" destination="63A-JS-4tc" id="TOW-Pk-4g4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,7 +31,7 @@
                         <bool key="isElement" value="NO"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="108" y="80" width="190" height="162"/>
+                        <rect key="frame" x="108" y="134" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="hqC-yW-H7R"/>
@@ -44,7 +44,7 @@
                         <bool key="isElement" value="NO"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="306" y="80" width="190" height="162"/>
+                        <rect key="frame" x="306" y="134" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="gZF-ly-P6G"/>
@@ -57,7 +57,7 @@
                         <bool key="isElement" value="NO"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="504" y="80" width="190" height="162"/>
+                        <rect key="frame" x="504" y="134" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="fvK-uP-i80"/>
@@ -70,7 +70,7 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="106" y="250" width="190" height="162"/>
+                        <rect key="frame" x="106" y="304" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Lge-ts-jrf"/>
@@ -83,7 +83,7 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="304" y="250" width="190" height="162"/>
+                        <rect key="frame" x="304" y="304" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Vdh-WN-h89"/>
@@ -96,7 +96,7 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="502" y="250" width="190" height="162"/>
+                        <rect key="frame" x="502" y="304" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="NqW-0A-Pf3"/>
@@ -109,7 +109,7 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="106" y="420" width="190" height="162"/>
+                        <rect key="frame" x="106" y="474" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="iKm-Or-Xfx"/>
@@ -122,7 +122,7 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="304" y="420" width="190" height="162"/>
+                        <rect key="frame" x="304" y="474" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="1ki-QB-IKi"/>
@@ -135,7 +135,7 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="502" y="420" width="190" height="162"/>
+                        <rect key="frame" x="502" y="474" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="eoS-xy-cee"/>
@@ -149,7 +149,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="377" y="634" width="49" height="30"/>
+                        <rect key="frame" x="375" y="674" width="49" height="30"/>
                     </variation>
                     <connections>
                         <action selector="submitButtonAction:" destination="-1" eventType="touchUpInside" id="IAk-2T-iqM"/>
@@ -157,11 +157,11 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-WF-BCg">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                    <state key="normal" title="Logout">
+                    <state key="normal" title="Exit">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="576" y="634" width="49" height="30"/>
+                        <rect key="frame" x="574" y="674" width="30" height="30"/>
                     </variation>
                     <connections>
                         <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="ST3-Un-gZN"/>
@@ -169,32 +169,32 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wys-No-X4H">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                    <state key="normal" title="Cancel">
+                    <state key="normal" title="Reset">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="177" y="634" width="48" height="30"/>
+                        <rect key="frame" x="175" y="674" width="40" height="30"/>
                     </variation>
                     <connections>
                         <action selector="cancelButtonAction:" destination="-1" eventType="touchUpInside" id="KcD-yo-hhf"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attempts: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-8d-CAj">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63A-JS-4tc">
+                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                    <accessibility key="accessibilityConfiguration" label="Enter username"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="351" y="42" width="97" height="30"/>
+                    </variation>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter passphrase below" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uF7-OI-jz1">
                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="108" y="44" width="117" height="21"/>
-                    </variation>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Passphrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkS-mM-EVF">
-                    <rect key="frame" x="265" y="27" width="71" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="312" y="23" width="178" height="21"/>
+                        <rect key="frame" x="308" y="89" width="185" height="21"/>
                     </variation>
                 </label>
             </subviews>
@@ -204,7 +204,8 @@
                     <exclude reference="5Zq-ed-lmC"/>
                     <exclude reference="4ia-WF-BCg"/>
                     <exclude reference="wys-No-X4H"/>
-                    <exclude reference="Fbv-8d-CAj"/>
+                    <exclude reference="63A-JS-4tc"/>
+                    <exclude reference="uF7-OI-jz1"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
@@ -212,7 +213,8 @@
                     <include reference="5Zq-ed-lmC"/>
                     <include reference="4ia-WF-BCg"/>
                     <include reference="wys-No-X4H"/>
-                    <include reference="Fbv-8d-CAj"/>
+                    <include reference="63A-JS-4tc"/>
+                    <include reference="uF7-OI-jz1"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="353" y="361"/>

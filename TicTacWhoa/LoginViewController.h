@@ -41,5 +41,6 @@
 //========== Actions
 - (IBAction)submitExistingUser:(id)sender;
 - (IBAction)submitNewUser:(id)sender;
+- (IBAction)resetGridAction:(id)sender;
 
 @end
