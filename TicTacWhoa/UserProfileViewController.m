@@ -7,6 +7,7 @@
 //
 
 #import "UserProfileViewController.h"
+#import "AppDelegate.h"
 
 @interface UserProfileViewController ()
 
@@ -48,5 +49,19 @@
     userProfileSettingsViewController = [[UserProfileSettingsViewController alloc]
                                          initWithEnum:CHANGE_ACCOUNT];
     [self presentViewController:userProfileSettingsViewController animated:YES completion:nil];
+}
+
+- (IBAction)logoutAction:(id)sender {
+    UIViewController *currentViewController = self.presentingViewController;
+    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    [self dismissViewControllerAnimated:NO completion:^{
+        [currentViewController presentViewController:loginViewController animated:NO completion:nil];
+    }];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate setUserName:nil];
+}
+
+- (IBAction)cancelAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

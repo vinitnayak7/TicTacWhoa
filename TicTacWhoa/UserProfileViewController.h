@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UserProfileSettingsViewController.h"
 
+
 @interface UserProfileViewController : UIViewController
 
 @property (strong,nonatomic) UserProfileSettingsViewController *userProfileSettingsViewController;
@@ -18,4 +19,6 @@
 - (IBAction)changeEmailAction:(id)sender;
 - (IBAction)changeAccountAction:(id)sender;
 
+- (IBAction)logoutAction:(id)sender;
+- (IBAction)cancelAction:(id)sender;
 @end
