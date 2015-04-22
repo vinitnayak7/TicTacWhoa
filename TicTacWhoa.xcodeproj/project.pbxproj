@@ -23,9 +23,9 @@
 		8E81FB1D1AA19D2000F70393 /* SplashUIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB1B1AA19D2000F70393 /* SplashUIViewController.xib */; };
 		8E81FB211AA1A4F100F70393 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FB1F1AA1A4F100F70393 /* LoginViewController.m */; };
 		8E81FB221AA1A4F100F70393 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB201AA1A4F100F70393 /* LoginViewController.xib */; };
-		8E81FB271AA2F6A500F70393 /* MainBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */; };
+		8E81FB271AA2F6A500F70393 /* NewUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FB251AA2F6A500F70393 /* NewUserViewController.xib */; };
 		8EA5E58B1ADA24DB00477FF0 /* AccessibilityUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5E58A1ADA24DB00477FF0 /* AccessibilityUtils.m */; };
-		8EA5E58D1ADCDB7500477FF0 /* MainBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5E58C1ADCDB7500477FF0 /* MainBoardViewController.m */; };
+		8EA5E58D1ADCDB7500477FF0 /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA5E58C1ADCDB7500477FF0 /* NewUserViewController.m */; };
 		8ECA1B3F1AB4C4AC00AEAFF6 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */; };
 		8ECA1B401AB4C4AC00AEAFF6 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */; };
 		8EEFDF701AD98DA9005207A0 /* eight.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EEFDF661AD98DA9005207A0 /* eight.png */; };
@@ -78,11 +78,11 @@
 		8E81FB1E1AA1A4F100F70393 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		8E81FB1F1AA1A4F100F70393 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8E81FB201AA1A4F100F70393 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		8E81FB231AA2F6A500F70393 /* MainBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBoardViewController.h; sourceTree = "<group>"; };
-		8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainBoardViewController.xib; sourceTree = "<group>"; };
+		8E81FB231AA2F6A500F70393 /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
+		8E81FB251AA2F6A500F70393 /* NewUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserViewController.xib; sourceTree = "<group>"; };
 		8EA5E5891ADA24DB00477FF0 /* AccessibilityUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccessibilityUtils.h; path = accessibility/AccessibilityUtils.h; sourceTree = "<group>"; };
 		8EA5E58A1ADA24DB00477FF0 /* AccessibilityUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccessibilityUtils.m; path = accessibility/AccessibilityUtils.m; sourceTree = "<group>"; };
-		8EA5E58C1ADCDB7500477FF0 /* MainBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBoardViewController.m; sourceTree = "<group>"; };
+		8EA5E58C1ADCDB7500477FF0 /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
 		8ECA1B3C1AB4C4AC00AEAFF6 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -184,9 +184,9 @@
 				8E81FB1E1AA1A4F100F70393 /* LoginViewController.h */,
 				8E81FB1F1AA1A4F100F70393 /* LoginViewController.m */,
 				8E81FB201AA1A4F100F70393 /* LoginViewController.xib */,
-				8E81FB231AA2F6A500F70393 /* MainBoardViewController.h */,
-				8EA5E58C1ADCDB7500477FF0 /* MainBoardViewController.m */,
-				8E81FB251AA2F6A500F70393 /* MainBoardViewController.xib */,
+				8E81FB231AA2F6A500F70393 /* NewUserViewController.h */,
+				8EA5E58C1ADCDB7500477FF0 /* NewUserViewController.m */,
+				8E81FB251AA2F6A500F70393 /* NewUserViewController.xib */,
 				8ECA1B3C1AB4C4AC00AEAFF6 /* MenuViewController.h */,
 				8ECA1B3D1AB4C4AC00AEAFF6 /* MenuViewController.m */,
 				8ECA1B3E1AB4C4AC00AEAFF6 /* MenuViewController.xib */,
@@ -304,7 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E488A4D1AAD68E00020AD80 /* car.png in Resources */,
-				8E81FB271AA2F6A500F70393 /* MainBoardViewController.xib in Resources */,
+				8E81FB271AA2F6A500F70393 /* NewUserViewController.xib in Resources */,
 				8E488A501AAD68E00020AD80 /* house.png in Resources */,
 				8E488A4E1AAD68E00020AD80 /* cat.png in Resources */,
 				8EEFDF721AD98DA9005207A0 /* four.png in Resources */,
@@ -345,7 +345,7 @@
 				8ECA1B3F1AB4C4AC00AEAFF6 /* MenuViewController.m in Sources */,
 				8E81FAF91AA022EB00F70393 /* AppDelegate.m in Sources */,
 				8E488A521AAFDD2F0020AD80 /* Constants.m in Sources */,
-				8EA5E58D1ADCDB7500477FF0 /* MainBoardViewController.m in Sources */,
+				8EA5E58D1ADCDB7500477FF0 /* NewUserViewController.m in Sources */,
 				8E81FB1C1AA19D2000F70393 /* SplashUIViewController.m in Sources */,
 				8E488A481AACFF510020AD80 /* Selection.m in Sources */,
 				8E488A451AACDD040020AD80 /* MutableGrid.m in Sources */,

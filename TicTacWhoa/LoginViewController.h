@@ -7,11 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MainBoardViewController.h"
+#import "NewUserViewController.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate, UIPickerViewAccessibilityDelegate, UIAlertViewDelegate>
 
-@property (strong,nonatomic) MainBoardViewController *boardViewController;
+
+@property (strong,nonatomic) NewUserViewController *boardViewController;
+@property (strong,nonatomic) MenuViewController *menuViewController;
+
+//========== ROW 1 =====================
+@property (weak, nonatomic) IBOutlet UIPickerView *m1x1pickerView;
+@property (weak, nonatomic) IBOutlet UIPickerView *m1x2pickerView;
+@property (weak, nonatomic) IBOutlet UIPickerView *m1x3pickerView;
+
+
+
+//========== ROW 2 =====================
+@property (weak, nonatomic) IBOutlet UIPickerView *m2x1pickerView;
+@property (weak, nonatomic) IBOutlet UIPickerView *m2x2pickerView;
+@property (weak, nonatomic) IBOutlet UIPickerView *m2x3pickerView;
+
+
+//========== ROW 3 =====================
+@property (weak, nonatomic) IBOutlet UIPickerView *m3x1pickerView;
+@property (weak, nonatomic) IBOutlet UIPickerView *m3x2pickerView;
+@property (weak, nonatomic) IBOutlet UIPickerView *m3x3pickerView;
 
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 

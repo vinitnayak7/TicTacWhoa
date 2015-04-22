@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MenuViewController.h"
 
-@interface MainBoardViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate, UIPickerViewAccessibilityDelegate>
+@interface NewUserViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate, UIPickerViewAccessibilityDelegate>
 
 //========== ROW 1 =====================
 @property (weak, nonatomic) IBOutlet UIPickerView *m1x1pickerView;
@@ -37,5 +37,9 @@
 - (IBAction)submitButtonAction:(id)sender;
 - (IBAction)cancelButtonAction:(id)sender;
 - (IBAction)logoutAction:(id)sender;
++ (void)showAlert:(NSString *)message
+    withDelegate:(id)delegate
+       withTitle:(NSString *)title
+withOtherButtonTitle:(NSString*)otherButtonTitle;
 
 @end

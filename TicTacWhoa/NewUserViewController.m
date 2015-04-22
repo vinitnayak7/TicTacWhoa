@@ -11,11 +11,11 @@
 #import "Constants.h"
 #import "AccessibilityUtils.h"
 
-@interface MainBoardViewController ()
+@interface NewUserViewController ()
 
 @end
 
-@implementation MainBoardViewController {
+@implementation NewUserViewController {
     MutableGrid *grid;
     NSMutableArray *pickerList;
     NSMutableArray *pickerImageList;
@@ -253,9 +253,9 @@
 
     } else {
         if ([grid getAttempts] > ATTEMPT_LIMIT) {
-            [MainBoardViewController showAlert:@"Sorry, you've reached the maximum number of attempts" withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
+            [NewUserViewController showAlert:@"Sorry, you've reached the maximum number of attempts" withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
         } else {
-            [MainBoardViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
+            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
                                      withTitle:@"Sorry" withOtherButtonTitle:nil];
             [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
         }
@@ -274,7 +274,7 @@
 
 - (IBAction)logoutAction:(id)sender {
     if (newUser) {
-        [MainBoardViewController
+        [NewUserViewController
          showAlert:@"Your account will not be created if you don't submit a passphrase"
          withDelegate:self
          withTitle:@"Are you sure?" withOtherButtonTitle:@"Logout"];
