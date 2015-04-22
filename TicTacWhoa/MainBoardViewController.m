@@ -97,11 +97,7 @@
     [pickerImageList addObject:@"house.png"];
     
     grid = [[MutableGrid alloc] initWithPickers:pickerList];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(updateAccessibilityImageTap)
-                                                 name:UIAccessibilityVoiceOverStatusChanged
-                                               object:nil];
+
     [self updateAccessibilityImageTap];
     
     [attemptsLabel setHidden:newUser];
@@ -236,12 +232,6 @@
 -(void)updateAccessibilityImageTap {
     for (UIPickerView *picker in pickerList) {
         UITapGestureRecognizer* gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickerTapped:)];
-//        if (UIAccessibilityIsVoiceOverRunning()) {
-//            [gestureRecognizer setNumberOfTapsRequired:2];
-//        }
-//        for (UIGestureRecognizer *recognizer in picker.gestureRecognizers) {
-//            [picker removeGestureRecognizer:recognizer];
-//        }
         [picker addGestureRecognizer:gestureRecognizer];
         gestureRecognizer.delegate = self;
     }
