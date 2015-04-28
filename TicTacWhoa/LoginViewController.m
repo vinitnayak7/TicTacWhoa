@@ -156,6 +156,7 @@
             // TODO
             //            [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
         }
+        [self resetGridAction:nil];
     }
 }
 

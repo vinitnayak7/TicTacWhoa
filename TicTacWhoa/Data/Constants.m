@@ -9,4 +9,4 @@
 #import <Foundation/Foundation.h>
 
 NSString *const KEY_NEW_USER = @"KEY_NEW_USER";
-int const ATTEMPT_LIMIT = 3;
+int const ATTEMPT_LIMIT = 100;
