@@ -13,9 +13,10 @@
 
 @end
 
-@implementation UserProfileSettingsViewController{
+@implementation UserProfileSettingsViewController {
     SETTING_STATE currentState;
 }
+
 @synthesize changeEmailView;
 @synthesize currentEmailLabel;
 @synthesize currentEmailTextField;
@@ -47,15 +48,6 @@
     return self;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 -(void)setInitialEmailState {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -97,9 +89,16 @@
     [appDelegate setUserName:nil];
 }
 
+- (IBAction)canceling:(id)sender {
+    NSLog(@"NONO");
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [alertView cancelButtonIndex]) {
         [self cancelAction:nil];
     }
 }
+
+
 @end
+

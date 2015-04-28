@@ -10,6 +10,7 @@
 #import "MutableGrid.h"
 #import "Selection.h"
 #import "Constants.h"
+#import "AppDelegate.h"
 
 @implementation MutableGrid {
     NSArray *pickerList;
@@ -44,6 +45,8 @@
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:nonMutableArray];
     [defaults setObject:data forKey:userName];
     [defaults synchronize];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate setUserName:userName];
     return YES;
 }
 

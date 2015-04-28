@@ -8,6 +8,7 @@
 
 #import "UserProfileViewController.h"
 #import "AppDelegate.h"
+#import "ChangePassphraseViewController.h"
 
 @interface UserProfileViewController ()
 
@@ -37,6 +38,12 @@
 */
 
 - (IBAction)changePassphraseAction:(id)sender {
+//    userProfileSettingsViewController = [[UserProfileSettingsViewController alloc]
+//                                         initWithEnum:CHANGE_PASSPHRASE];
+//    [self presentViewController:userProfileSettingsViewController animated:YES completion:nil];
+    ChangePassphraseViewController *vc = [[ChangePassphraseViewController alloc] initWithNibName:@"ChangePassphraseViewController" bundle:nil];
+    [self presentViewController:vc animated:YES completion:nil];
+    
 }
 
 - (IBAction)changeEmailAction:(id)sender {

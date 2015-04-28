@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MutableGrid.h"
+#import "AccessibilityUtils.h"
 
-@interface UserProfileSettingsViewController : UIViewController<UIAlertViewDelegate>
+@interface UserProfileSettingsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate, UIPickerViewAccessibilityDelegate, UIAlertViewDelegate>
+
 
 @property (strong, nonatomic) IBOutlet UIView *changeEmailView;
 @property (weak, nonatomic) IBOutlet UILabel *currentEmailLabel;
