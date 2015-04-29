@@ -244,7 +244,7 @@
         imageView.layer.borderWidth = borderWidth;
         accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"selected", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
     } else {
-        accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"un selected", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
+        accessibilityLabel = [NSString stringWithFormat:@"%@", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
     }
     [imageView setAccessibilityLabel:accessibilityLabel];
     return imageView;

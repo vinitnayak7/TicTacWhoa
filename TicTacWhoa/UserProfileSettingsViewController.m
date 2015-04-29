@@ -89,10 +89,6 @@
     [appDelegate setUserName:nil];
 }
 
-- (IBAction)canceling:(id)sender {
-    NSLog(@"NONO");
-}
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [alertView cancelButtonIndex]) {
         [self cancelAction:nil];

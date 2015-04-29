@@ -36,7 +36,7 @@
 
 -(BOOL)saveGrid:(NSString *)userName {
     // Store the data
-    if ([selectionList count] != 4) {
+    if ([selectionList count] != 4 || ![self checkMultiSelectConstraint]) {
         return NO;
     }
         
@@ -47,6 +47,27 @@
     [defaults synchronize];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate setUserName:userName];
+    return YES;
+}
+
+// Checks selections against constraints set by user
+// i.e. multiple selection in a digit, order of inputs
+-(BOOL) checkMultiSelectConstraint {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", appDelegate.userName];
+    NSString *multipleSelectionKey =
+    [NSString stringWithFormat:@"%@_multi_select", appDelegate.userName];
+    
+    NSMutableSet *pickerSet = [[NSMutableSet alloc] init];
+    if (![defaults boolForKey:multipleSelectionKey]) {
+        for(Selection *s in selectionList) {
+            if ([pickerSet containsObject:s.picker]) {
+                return NO;
+            }
+            [pickerSet addObject:s.picker];
+        }
+    }
     return YES;
 }
 
@@ -65,16 +86,35 @@
         return NO;
     }
     
-    for (int i = 0; i < [solution count]; i++) {
-        Selection *s1 = [solution objectAtIndex:i];
-        Selection *s2 = [selectionList objectAtIndex:i];
-        if (![s1.picker isEqualToString:s2.picker]
-            || s1.rowInPicker != s2.rowInPicker) {
-            attempts++;
-            return NO;
+    NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", userName];
+    
+    if ([defaults boolForKey:pinOrderKey]) {
+        for(Selection *s1 in selectionList) {
+            BOOL found = NO;
+            for(Selection *s2 in solution) {
+                if ([s1.picker isEqualToString:s2.picker]
+                    && s1.rowInPicker == s2.rowInPicker) {
+                    found = YES;
+                    break;
+                }
+            }
+            if (!found) {
+                return NO;
+            }
         }
+        return YES;
+    } else {
+        for (int i = 0; i < [solution count]; i++) {
+            Selection *s1 = [solution objectAtIndex:i];
+            Selection *s2 = [selectionList objectAtIndex:i];
+            if (![s1.picker isEqualToString:s2.picker]
+                || s1.rowInPicker != s2.rowInPicker) {
+                attempts++;
+                return NO;
+            }
+        }
+        return YES;
     }
-    return YES;
 }
 
 -(int)getAttempts {

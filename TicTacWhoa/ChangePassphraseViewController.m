@@ -34,6 +34,8 @@
 @synthesize m3x3pickerView;
 @synthesize optionsView;
 @synthesize changePassphraseSwitch;
+@synthesize inputOrderSwitch;
+@synthesize multipleSelectionSwitch;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -103,6 +105,15 @@
     }
     
     [optionsView setHidden:YES];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", appDelegate.userName];
+    NSString *multipleSelectionKey =
+    [NSString stringWithFormat:@"%@_multi_select", appDelegate.userName];
+
+    [multipleSelectionSwitch setOn:[defaults boolForKey:multipleSelectionKey]];
+    [inputOrderSwitch setOn:[defaults boolForKey:pinOrderKey]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -310,25 +321,45 @@ accessibilityLabelForComponent:(NSInteger)component {
 }
 
 - (IBAction)submitAction:(id)sender {
-    if (![changePassphraseSwitch isOn]) {
-        // Just save the two other switches into NSUserDefaults
-    }
-    
-    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    BOOL success = [optionsView isHidden] ? [grid validate:appDelegate.userName] :
-                                            [grid saveGrid:appDelegate];
-    if (success) {
-        if ([optionsView isHidden]) {
+    BOOL success;
+    if ([optionsView isHidden]) {
+        success = [grid validate:appDelegate.userName];
+        if (success) {
             [self initializeChangeView];
+            return;
         } else {
-            // validate and save the new passphrase!
+            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
+                                   withTitle:@"Sorry" withOtherButtonTitle:nil];
+        }
+    } else if ([changePassphraseSwitch isOn]) {
+        // We know user has verified correctly
+        success = [grid saveGrid:appDelegate.userName];
+        if (!success) {
+            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
+                                   withTitle:@"Sorry" withOtherButtonTitle:nil];
+        } else {
+            [NewUserViewController showAlert:@"Your settings and passphrase were saved!" withDelegate:nil
+                                   withTitle:@"Sorry" withOtherButtonTitle:nil];
         }
     } else {
-        [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
-                                   withTitle:@"Sorry" withOtherButtonTitle:nil];
-
+        // We know user has verified correctly and they don't want to change passphrase
+        // Just save the two other switches into NSUserDefaults
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", appDelegate.userName];
+        NSString *multipleSelectionKey =
+        [NSString stringWithFormat:@"%@_multi_select", appDelegate.userName];
+        BOOL a = inputOrderSwitch.isOn;
+        BOOL b = multipleSelectionSwitch.isOn;
+        [defaults setBool:inputOrderSwitch.isOn forKey:pinOrderKey];
+        [defaults setBool:multipleSelectionSwitch.isOn forKey:multipleSelectionKey];
+        [defaults synchronize];
+        
+        [NewUserViewController showAlert:@"Your settings were saved!" withDelegate:nil
+                               withTitle:@"Sorry" withOtherButtonTitle:nil];
     }
+    
 }
 
 -(void) initializeChangeView {

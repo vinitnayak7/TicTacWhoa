@@ -53,27 +53,35 @@
                     <subviews>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-5e-jzq">
                             <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                            <accessibility key="accessibilityConfiguration" label="Allow passphrase input in any order"/>
                             <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="3" y="3" width="51" height="31"/>
                             </variation>
                         </switch>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input passphrase in specific order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTJ-Gq-6xd">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow passphrase input in any order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTJ-Gq-6xd">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <bool key="isElement" value="NO"/>
+                            </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="60" y="8" width="260" height="21"/>
+                                <rect key="frame" x="60" y="8" width="274" height="21"/>
                             </variation>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bkB-RV-KSm">
                             <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                            <accessibility key="accessibilityConfiguration" label="Allow multiple selections in same digit"/>
                             <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="3" y="37" width="51" height="31"/>
                             </variation>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow multiple selection in same digit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vum-Id-Mq0">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <bool key="isElement" value="NO"/>
+                            </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -83,6 +91,7 @@
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="86K-vF-WKy">
                             <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                            <accessibility key="accessibilityConfiguration" label="Change passphrase"/>
                             <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="3" y="71" width="51" height="31"/>
                             </variation>
@@ -92,6 +101,9 @@
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change passphrase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woY-PQ-tRu">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <bool key="isElement" value="NO"/>
+                            </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
