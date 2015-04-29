@@ -369,7 +369,7 @@ accessibilityLabelForComponent:(NSInteger)component {
         [defaults synchronize];
         
         [NewUserViewController showAlert:@"Your settings were saved!" withDelegate:nil
-                               withTitle:@"Sorry" withOtherButtonTitle:nil];
+                               withTitle:@"Saved" withOtherButtonTitle:nil];
     }
     [self resetGrid];
     

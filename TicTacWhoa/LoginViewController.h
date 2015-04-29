@@ -45,5 +45,6 @@
 - (IBAction)resetGridAction:(id)sender;
 
 -(id)initWithUsername:(NSString*)name;
+@property (weak, nonatomic) IBOutlet UILabel *asteriskLabel;
 
 @end
