@@ -36,6 +36,8 @@
 @property (weak, nonatomic) IBOutlet UISwitch *inputOrderSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *multipleSelectionSwitch;
 - (IBAction)changePassphraseAction:(id)sender;
+- (IBAction)multiSelectSwitchAction:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UISwitch *changePassphraseSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *toggleHintLabel;
 

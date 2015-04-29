@@ -78,6 +78,9 @@
                             <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                 <rect key="frame" x="3" y="37" width="51" height="31"/>
                             </variation>
+                            <connections>
+                                <action selector="multiSelectSwitchAction:" destination="-1" eventType="valueChanged" id="T8t-9O-Jpq"/>
+                            </connections>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow multiple selection in same digit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vum-Id-Mq0">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>

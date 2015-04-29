@@ -22,6 +22,7 @@
     NSMutableArray *pickerImageList;
     NSMapTable *pickerStartingImageList;
     NSMapTable *pickerToString;
+    BOOL multiSelectDisabled;
 }
 @synthesize m1x1pickerView;
 @synthesize m1x2pickerView;
@@ -347,6 +348,16 @@ accessibilityLabelForComponent:(NSInteger)component {
     } else {
         // We know user has verified correctly and they don't want to change passphrase
         // Just save the two other switches into NSUserDefaults
+        
+        // if User disabled multi-select their previous password could have had multiple
+        // selected image from the same digit, which means now they'll never be able to log in
+        // Force them to make a new passphrase
+        if (multiSelectDisabled) {
+            [NewUserViewController showAlert:@"If you disabled selecting multiple images within the same digit, you must make a new password for security reasons!" withDelegate:nil
+                                   withTitle:@"Sorry" withOtherButtonTitle:nil];
+            return;
+        }
+        
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", appDelegate.userName];
@@ -389,5 +400,9 @@ accessibilityLabelForComponent:(NSInteger)component {
     [toggleHintLabel setHidden:!toggleHintLabel.isHidden];
     [self toggleInteractionState];
     
+}
+
+- (IBAction)multiSelectSwitchAction:(id)sender {
+    multiSelectDisabled = ![multipleSelectionSwitch isOn];
 }
 @end
