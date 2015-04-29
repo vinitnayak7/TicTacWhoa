@@ -13,7 +13,7 @@
 
 -(void)resetDataState;
 -(BOOL)validate:(NSString *)userName;
--(BOOL)saveGrid:(NSString *)userName;
+-(BOOL)saveGrid:(NSString *)userName withMultiSelect:(BOOL)multiSelectEnabled;
 -(NSInteger)getAttempts;
 -(void)increaseAttempts;
 -(void)updateSelectionForPicker:(NSString *)picker forRow:(NSInteger)row;

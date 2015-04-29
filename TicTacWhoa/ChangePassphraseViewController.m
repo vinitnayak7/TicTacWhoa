@@ -36,6 +36,7 @@
 @synthesize changePassphraseSwitch;
 @synthesize inputOrderSwitch;
 @synthesize multipleSelectionSwitch;
+@synthesize toggleHintLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -199,7 +200,7 @@
         imageView.layer.borderWidth = borderWidth;
         accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"selected", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
     } else {
-        accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"un selected", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
+        accessibilityLabel = [NSString stringWithFormat:@"%@", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
     }
     [imageView setAccessibilityLabel:accessibilityLabel];
     return imageView;
@@ -334,14 +335,15 @@ accessibilityLabelForComponent:(NSInteger)component {
         }
     } else if ([changePassphraseSwitch isOn]) {
         // We know user has verified correctly
-        success = [grid saveGrid:appDelegate.userName];
+        success = [grid saveGrid:appDelegate.userName withMultiSelect:[multipleSelectionSwitch isOn]];
         if (!success) {
             [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
                                    withTitle:@"Sorry" withOtherButtonTitle:nil];
         } else {
             [NewUserViewController showAlert:@"Your settings and passphrase were saved!" withDelegate:nil
-                                   withTitle:@"Sorry" withOtherButtonTitle:nil];
+                                   withTitle:@"Saved" withOtherButtonTitle:nil];
         }
+
     } else {
         // We know user has verified correctly and they don't want to change passphrase
         // Just save the two other switches into NSUserDefaults
@@ -350,8 +352,7 @@ accessibilityLabelForComponent:(NSInteger)component {
         NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", appDelegate.userName];
         NSString *multipleSelectionKey =
         [NSString stringWithFormat:@"%@_multi_select", appDelegate.userName];
-        BOOL a = inputOrderSwitch.isOn;
-        BOOL b = multipleSelectionSwitch.isOn;
+
         [defaults setBool:inputOrderSwitch.isOn forKey:pinOrderKey];
         [defaults setBool:multipleSelectionSwitch.isOn forKey:multipleSelectionKey];
         [defaults synchronize];
@@ -359,6 +360,7 @@ accessibilityLabelForComponent:(NSInteger)component {
         [NewUserViewController showAlert:@"Your settings were saved!" withDelegate:nil
                                withTitle:@"Sorry" withOtherButtonTitle:nil];
     }
+    [self resetGrid];
     
 }
 
@@ -366,14 +368,16 @@ accessibilityLabelForComponent:(NSInteger)component {
     [optionsView setHidden:NO];
     
     // Reset Grid
+    [self resetGrid];
+    [self toggleInteractionState];
+}
+
+-(void) resetGrid {
     [grid resetDataState];
     for (UIPickerView *picker in pickerList) {
         [picker reloadAllComponents];
         [picker selectRow:0 inComponent:0 animated:YES];
     }
-    [self toggleInteractionState];
-    
-    
 }
 
 -(void) toggleInteractionState {
@@ -382,6 +386,8 @@ accessibilityLabelForComponent:(NSInteger)component {
     }
 }
 - (IBAction)changePassphraseAction:(id)sender {
+    [toggleHintLabel setHidden:!toggleHintLabel.isHidden];
     [self toggleInteractionState];
+    
 }
 @end

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewUserViewController">
             <connections>
+                <outlet property="inputOrderSwitch" destination="YE6-vz-qwh" id="gVE-Vk-DQ3"/>
                 <outlet property="m1x1pickerView" destination="6If-Re-4Gx" id="jwH-QO-RSe"/>
                 <outlet property="m1x2pickerView" destination="LO0-ka-f28" id="8un-zw-hzb"/>
                 <outlet property="m1x3pickerView" destination="9fJ-nG-8Zb" id="hAz-f6-BBg"/>
@@ -15,6 +16,7 @@
                 <outlet property="m3x1pickerView" destination="TQZ-m2-wzu" id="hDg-aG-fOB"/>
                 <outlet property="m3x2pickerView" destination="cHi-30-Icn" id="Znr-SR-7nh"/>
                 <outlet property="m3x3pickerView" destination="a6c-XO-wGw" id="cf9-lc-bNJ"/>
+                <outlet property="multipleSelectionSwitch" destination="meb-55-Nuf" id="sl7-Lx-VOR"/>
                 <outlet property="userNameTextField" destination="63A-JS-4tc" id="TOW-Pk-4g4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,7 +33,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="375" y="697" width="49" height="30"/>
+                        <rect key="frame" x="375" y="737" width="49" height="30"/>
                     </variation>
                     <connections>
                         <action selector="submitButtonAction:" destination="-1" eventType="touchUpInside" id="IAk-2T-iqM"/>
@@ -43,7 +45,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="574" y="697" width="30" height="30"/>
+                        <rect key="frame" x="574" y="737" width="30" height="30"/>
                     </variation>
                     <connections>
                         <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="ST3-Un-gZN"/>
@@ -55,7 +57,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="175" y="697" width="40" height="30"/>
+                        <rect key="frame" x="175" y="737" width="40" height="30"/>
                     </variation>
                     <connections>
                         <action selector="cancelButtonAction:" destination="-1" eventType="touchUpInside" id="KcD-yo-hhf"/>
@@ -86,7 +88,7 @@
                         <bool key="isElement" value="NO"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="107" y="172" width="190" height="162"/>
+                        <rect key="frame" x="107" y="212" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="hqC-yW-H7R"/>
@@ -99,7 +101,7 @@
                         <bool key="isElement" value="NO"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="305" y="172" width="190" height="162"/>
+                        <rect key="frame" x="305" y="212" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="gZF-ly-P6G"/>
@@ -112,7 +114,7 @@
                         <bool key="isElement" value="NO"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="503" y="172" width="190" height="162"/>
+                        <rect key="frame" x="503" y="212" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="fvK-uP-i80"/>
@@ -125,7 +127,7 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="105" y="342" width="190" height="162"/>
+                        <rect key="frame" x="105" y="382" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Lge-ts-jrf"/>
@@ -138,7 +140,7 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="303" y="342" width="190" height="162"/>
+                        <rect key="frame" x="303" y="382" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Vdh-WN-h89"/>
@@ -151,7 +153,7 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="501" y="342" width="190" height="162"/>
+                        <rect key="frame" x="501" y="382" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="NqW-0A-Pf3"/>
@@ -164,7 +166,7 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="105" y="512" width="190" height="162"/>
+                        <rect key="frame" x="105" y="552" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="iKm-Or-Xfx"/>
@@ -177,7 +179,7 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="303" y="512" width="190" height="162"/>
+                        <rect key="frame" x="303" y="552" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="1ki-QB-IKi"/>
@@ -190,13 +192,74 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                     <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="501" y="512" width="190" height="162"/>
+                        <rect key="frame" x="501" y="552" width="190" height="162"/>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="eoS-xy-cee"/>
                         <outlet property="delegate" destination="-1" id="LGV-0Q-fLU"/>
                     </connections>
                 </pickerView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dkp-IA-f5z">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YE6-vz-qwh">
+                            <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                            <accessibility key="accessibilityConfiguration" label="Allow passphrase input in any order"/>
+                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="3" y="3" width="51" height="31"/>
+                            </variation>
+                        </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow passphrase input in any order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRA-Bp-sDp">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <bool key="isElement" value="NO"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="60" y="8" width="274" height="21"/>
+                            </variation>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="meb-55-Nuf">
+                            <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                            <accessibility key="accessibilityConfiguration" label="Allow multiple selections in same digit"/>
+                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="3" y="37" width="51" height="31"/>
+                            </variation>
+                        </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow multiple selection in same digit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24b-RC-TFg">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <bool key="isElement" value="NO"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="60" y="42" width="283" height="21"/>
+                            </variation>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="YE6-vz-qwh"/>
+                            <exclude reference="kRA-Bp-sDp"/>
+                            <exclude reference="meb-55-Nuf"/>
+                            <exclude reference="24b-RC-TFg"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="121" y="136" width="578" height="79"/>
+                        <mask key="subviews">
+                            <include reference="YE6-vz-qwh"/>
+                            <include reference="kRA-Bp-sDp"/>
+                            <include reference="meb-55-Nuf"/>
+                            <include reference="24b-RC-TFg"/>
+                        </mask>
+                    </variation>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <variation key="default">
@@ -206,6 +269,7 @@
                     <exclude reference="wys-No-X4H"/>
                     <exclude reference="63A-JS-4tc"/>
                     <exclude reference="uF7-OI-jz1"/>
+                    <exclude reference="Dkp-IA-f5z"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=regular">
@@ -215,6 +279,7 @@
                     <include reference="wys-No-X4H"/>
                     <include reference="63A-JS-4tc"/>
                     <include reference="uF7-OI-jz1"/>
+                    <include reference="Dkp-IA-f5z"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="353" y="361"/>

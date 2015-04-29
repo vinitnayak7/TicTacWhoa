@@ -34,12 +34,18 @@
     [selectedViewsTable removeAllObjects];
 }
 
--(BOOL)saveGrid:(NSString *)userName {
+-(BOOL)saveGrid:(NSString *)userName withMultiSelect:(BOOL)multiSelectEnabled {
     // Store the data
-    if ([selectionList count] != 4 || ![self checkMultiSelectConstraint]) {
+    if ([selectionList count] != 4) {
         return NO;
     }
-        
+    
+    if (!multiSelectEnabled) {
+        if (![self ensureNoMultiSelectedImages]) {
+            return NO;
+        }
+    }
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *nonMutableArray = [NSArray arrayWithArray:selectionList];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:nonMutableArray];
@@ -51,22 +57,14 @@
 }
 
 // Checks selections against constraints set by user
-// i.e. multiple selection in a digit, order of inputs
--(BOOL) checkMultiSelectConstraint {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", appDelegate.userName];
-    NSString *multipleSelectionKey =
-    [NSString stringWithFormat:@"%@_multi_select", appDelegate.userName];
+-(BOOL) ensureNoMultiSelectedImages {
     
     NSMutableSet *pickerSet = [[NSMutableSet alloc] init];
-    if (![defaults boolForKey:multipleSelectionKey]) {
-        for(Selection *s in selectionList) {
-            if ([pickerSet containsObject:s.picker]) {
-                return NO;
-            }
-            [pickerSet addObject:s.picker];
+    for(Selection *s in selectionList) {
+        if ([pickerSet containsObject:s.picker]) {
+            return NO;
         }
+        [pickerSet addObject:s.picker];
     }
     return YES;
 }

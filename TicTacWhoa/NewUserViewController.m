@@ -34,6 +34,8 @@
 @synthesize m3x3pickerView;
 @synthesize menuViewController;
 @synthesize userNameTextField;
+@synthesize multipleSelectionSwitch;
+@synthesize inputOrderSwitch;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -170,7 +172,7 @@
         imageView.layer.borderWidth = borderWidth;
         accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"selected", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
     } else {
-        accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"un selected", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
+        accessibilityLabel = [NSString stringWithFormat:@"%@", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
     }
     [imageView setAccessibilityLabel:accessibilityLabel];
     return imageView;
@@ -236,8 +238,9 @@
         [NewUserViewController showAlert:@"Username already exists!" withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
         return;
     }
-    BOOL success = [grid saveGrid:userName];
+    BOOL success = [grid saveGrid:userName withMultiSelect:[multipleSelectionSwitch isOn]];
     if (success) {
+        [self saveDefaults];
         menuViewController = [[MenuViewController alloc] init];
         UIViewController *currentViewController = self.presentingViewController;
         [self dismissViewControllerAnimated:NO completion:^{
@@ -245,14 +248,28 @@
         }];
 
     } else {
+        // TODO Bring attempts back in at some point
 //        if ([grid getAttempts] > ATTEMPT_LIMIT) {
-            [NewUserViewController showAlert:@"Please only select 4 images" withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
+            [NewUserViewController showAlert:@"Invalid password. Please check your settings and ensure only 4 images are selected." withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
+        [self cancelButtonAction:nil];
 //        } else {
 //            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
 //                                     withTitle:@"Sorry" withOtherButtonTitle:nil];
 //            [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
 //        }
     }
+}
+
+-(void) saveDefaults {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", userNameTextField.text];
+    NSString *multipleSelectionKey =
+    [NSString stringWithFormat:@"%@_multi_select", userNameTextField.text];
+    
+    [defaults setBool:inputOrderSwitch.isOn forKey:pinOrderKey];
+    [defaults setBool:multipleSelectionSwitch.isOn forKey:multipleSelectionKey];
+    [defaults synchronize];
+
 }
 
 - (IBAction)cancelButtonAction:(id)sender {
