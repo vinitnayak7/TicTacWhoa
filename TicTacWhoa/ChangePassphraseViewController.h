@@ -34,11 +34,13 @@
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)submitAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UISwitch *inputOrderSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *inputOrderInDigitSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *multipleSelectionSwitch;
 - (IBAction)changePassphraseAction:(id)sender;
 - (IBAction)multiSelectSwitchAction:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UISwitch *changePassphraseSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *toggleHintLabel;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 
 @end

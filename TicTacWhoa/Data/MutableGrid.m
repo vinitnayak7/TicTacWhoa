@@ -14,6 +14,7 @@
 
 @implementation MutableGrid {
     NSArray *pickerList;
+    NSMutableArray *pickerStringList;
     NSMutableArray *selectionList;
     int attempts;
     NSMapTable *selectedViewsTable;
@@ -25,6 +26,16 @@
         self->pickerList = pickers;
         selectionList = [[NSMutableArray alloc] init];
         selectedViewsTable = [[NSMapTable alloc] init];
+        pickerStringList = [[NSMutableArray alloc] init];
+        [pickerStringList addObject:@"m1x1pickerView"];
+        [pickerStringList addObject:@"m1x2pickerView"];
+        [pickerStringList addObject:@"m1x3pickerView"];
+        [pickerStringList addObject:@"m2x1pickerView"];
+        [pickerStringList addObject:@"m2x2pickerView"];
+        [pickerStringList addObject:@"m2x3pickerView"];
+        [pickerStringList addObject:@"m3x1pickerView"];
+        [pickerStringList addObject:@"m3x2pickerView"];
+        [pickerStringList addObject:@"m3x3pickerView"];
     }
     return self;
 }
@@ -85,22 +96,50 @@
     }
     
     NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", userName];
+    NSString *imageOrderKey = [NSString stringWithFormat:@"%@_image_input_order", userName];
+    BOOL digitAnyOrder = [defaults boolForKey:pinOrderKey];
+    BOOL imagesInAnyOrderEnabled = [defaults boolForKey:imageOrderKey];
     
-    if ([defaults boolForKey:pinOrderKey]) {
-        for(Selection *s1 in selectionList) {
-            BOOL found = NO;
-            for(Selection *s2 in solution) {
-                if ([s1.picker isEqualToString:s2.picker]
-                    && s1.rowInPicker == s2.rowInPicker) {
-                    found = YES;
-                    break;
+    if (digitAnyOrder && imagesInAnyOrderEnabled) {
+        return [self validateNoConstraintsWithSolution:solution];
+    } else if (digitAnyOrder && !imagesInAnyOrderEnabled) {
+        NSMutableArray *selectionPickers = [[NSMutableArray alloc] init];
+        NSMutableArray *solutinPickers = [[NSMutableArray alloc] init];
+        for (NSString *pVString in pickerStringList) {
+            for (Selection *s1 in solution) {
+                if ([s1.picker isEqualToString:pVString]) {
+                    [solutinPickers addObject:s1];
                 }
             }
-            if (!found) {
+            for (Selection *s1 in selectionList) {
+                if ([s1.picker isEqualToString:pVString]) {
+                    [selectionPickers addObject:s1];
+                }
+            }
+            
+            if (selectionPickers.count != solutinPickers.count) {
+                return NO;
+            } else {
+                for (int i = 0; i < selectionPickers.count; i++) {
+                    Selection *s1 = [selectionPickers objectAtIndex:i];
+                    Selection *s2 = [solutinPickers objectAtIndex:i];
+                    if (s1.rowInPicker != s2.rowInPicker) {
+                        // Images are not in order!
+                        return NO;
+                    }
+                }
+            }
+        }
+        return [self validateNoConstraintsWithSolution:solution];
+    } else if (!digitAnyOrder && imagesInAnyOrderEnabled) {
+        for (int i = 0; i < [solution count]; i++) {
+            Selection *s1 = [solution objectAtIndex:i];
+            Selection *s2 = [selectionList objectAtIndex:i];
+            if (![s1.picker isEqualToString:s2.picker]) {
                 return NO;
             }
         }
-        return YES;
+        return [self validateNoConstraintsWithSolution:solution];
     } else {
         for (int i = 0; i < [solution count]; i++) {
             Selection *s1 = [solution objectAtIndex:i];
@@ -113,6 +152,23 @@
         }
         return YES;
     }
+}
+
+-(BOOL) validateNoConstraintsWithSolution:(NSArray*)solution {
+    for(Selection *s1 in selectionList) {
+        BOOL found = NO;
+        for(Selection *s2 in solution) {
+            if ([s1.picker isEqualToString:s2.picker]
+                && s1.rowInPicker == s2.rowInPicker) {
+                return YES;
+                break;
+            }
+        }
+        if (!found) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 -(int)getAttempts {

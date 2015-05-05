@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangePassphraseViewController">
             <connections>
                 <outlet property="changePassphraseSwitch" destination="86K-vF-WKy" id="hga-BB-bBl"/>
+                <outlet property="inputOrderInDigitSwitch" destination="SVm-QN-Eax" id="ZJ7-bg-BUI"/>
                 <outlet property="inputOrderSwitch" destination="JM2-5e-jzq" id="omp-pX-Vtd"/>
                 <outlet property="m1x1pickerView" destination="FLG-4q-rfY" id="cgR-UH-w4L"/>
                 <outlet property="m1x2pickerView" destination="Jd4-lz-MRF" id="ZTf-Ih-UI7"/>
@@ -19,304 +20,211 @@
                 <outlet property="m3x3pickerView" destination="9l2-qp-bGe" id="vXG-4R-LFn"/>
                 <outlet property="multipleSelectionSwitch" destination="bkB-RV-KSm" id="NiM-jJ-Q2G"/>
                 <outlet property="optionsView" destination="nNJ-6c-CGg" id="xy0-eq-9XQ"/>
+                <outlet property="submitButton" destination="vvr-ns-9mt" id="CSu-UD-GGX"/>
                 <outlet property="toggleHintLabel" destination="avQ-zB-vpo" id="M84-Ok-EXU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter current passphrase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODS-a9-9ub">
-                    <rect key="frame" x="204" y="26" width="193" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter current passphrase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODS-a9-9ub">
+                    <rect key="frame" x="332" y="52" width="193" height="21"/>
                     <accessibility key="accessibilityConfiguration" label="Enter current passphrase to proceed to passphrase settings"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="332" y="52" width="193" height="21"/>
-                    </variation>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXZ-ae-iXo">
-                    <rect key="frame" x="181" y="549" width="35" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXZ-ae-iXo">
+                    <rect key="frame" x="212" y="825" width="35" height="30"/>
                     <state key="normal" title="Back">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="212" y="744" width="35" height="30"/>
-                    </variation>
                     <connections>
                         <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="lza-Xi-CjD"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNJ-6c-CGg">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNJ-6c-CGg">
+                    <rect key="frame" x="140" y="86" width="578" height="172"/>
                     <subviews>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-5e-jzq">
-                            <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                            <accessibility key="accessibilityConfiguration" label="Allow passphrase input in any order"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="3" y="3" width="51" height="31"/>
-                            </variation>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-5e-jzq">
+                            <rect key="frame" x="3" y="3" width="51" height="31"/>
+                            <accessibility key="accessibilityConfiguration" label="Allow digits in passphrase to be selected in any order"/>
                         </switch>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow passphrase input in any order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTJ-Gq-6xd">
-                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow digits in passphrase to be selected in any order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTJ-Gq-6xd">
+                            <rect key="frame" x="60" y="8" width="409" height="21"/>
                             <accessibility key="accessibilityConfiguration">
                                 <bool key="isElement" value="NO"/>
                             </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="60" y="8" width="274" height="21"/>
-                            </variation>
                         </label>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bkB-RV-KSm">
-                            <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                            <accessibility key="accessibilityConfiguration" label="Allow multiple selections in same digit"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="3" y="37" width="51" height="31"/>
-                            </variation>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkB-RV-KSm">
+                            <rect key="frame" x="3" y="37" width="51" height="31"/>
+                            <accessibility key="accessibilityConfiguration" label="Allow multiple image selections in same digit"/>
                             <connections>
                                 <action selector="multiSelectSwitchAction:" destination="-1" eventType="valueChanged" id="T8t-9O-Jpq"/>
                             </connections>
                         </switch>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow multiple selection in same digit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vum-Id-Mq0">
-                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow multiple image selection in same digit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vum-Id-Mq0">
+                            <rect key="frame" x="60" y="42" width="334" height="21"/>
                             <accessibility key="accessibilityConfiguration">
                                 <bool key="isElement" value="NO"/>
                             </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="60" y="42" width="283" height="21"/>
-                            </variation>
                         </label>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="86K-vF-WKy">
-                            <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toggle switch to enter new passphrase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-zB-vpo">
+                            <rect key="frame" x="3" y="143" width="299" height="21"/>
+                            <accessibility key="accessibilityConfiguration" label="Toggle change passphrase switch above to enter new passphrase"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SVm-QN-Eax">
+                            <rect key="frame" x="3" y="70" width="51" height="31"/>
+                            <accessibility key="accessibilityConfiguration" label="Allow order of images in a given digit to be selected in any order"/>
+                        </switch>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow order of images in a given digit to be selected in any order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uku-Gp-YWD">
+                            <rect key="frame" x="60" y="75" width="492" height="21"/>
+                            <accessibility key="accessibilityConfiguration">
+                                <bool key="isElement" value="NO"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="86K-vF-WKy">
+                            <rect key="frame" x="3" y="105" width="51" height="31"/>
                             <accessibility key="accessibilityConfiguration" label="Change passphrase"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="3" y="71" width="51" height="31"/>
-                            </variation>
                             <connections>
                                 <action selector="changePassphraseAction:" destination="-1" eventType="valueChanged" id="SRY-Th-uzL"/>
                             </connections>
                         </switch>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change passphrase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woY-PQ-tRu">
-                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change passphrase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woY-PQ-tRu">
+                            <rect key="frame" x="60" y="106" width="154" height="21"/>
                             <accessibility key="accessibilityConfiguration">
                                 <bool key="isElement" value="NO"/>
                             </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="60" y="72" width="154" height="21"/>
-                            </variation>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toggle switch to enter new passphrase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-zB-vpo">
-                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                            <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="3" y="110" width="299" height="21"/>
-                            </variation>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <variation key="default">
-                        <mask key="subviews">
-                            <exclude reference="JM2-5e-jzq"/>
-                            <exclude reference="yTJ-Gq-6xd"/>
-                            <exclude reference="bkB-RV-KSm"/>
-                            <exclude reference="vum-Id-Mq0"/>
-                            <exclude reference="86K-vF-WKy"/>
-                            <exclude reference="woY-PQ-tRu"/>
-                            <exclude reference="avQ-zB-vpo"/>
-                        </mask>
-                    </variation>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="140" y="86" width="578" height="132"/>
-                        <mask key="subviews">
-                            <include reference="JM2-5e-jzq"/>
-                            <include reference="yTJ-Gq-6xd"/>
-                            <include reference="bkB-RV-KSm"/>
-                            <include reference="vum-Id-Mq0"/>
-                            <include reference="86K-vF-WKy"/>
-                            <include reference="woY-PQ-tRu"/>
-                            <include reference="avQ-zB-vpo"/>
-                        </mask>
-                    </variation>
                 </view>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLG-4q-rfY">
-                    <rect key="frame" x="2" y="39" width="190" height="162"/>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FLG-4q-rfY">
+                    <rect key="frame" x="137" y="315" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" hint="" label="Ones digit image selector">
                         <accessibilityTraits key="traits" none="YES"/>
                         <bool key="isElement" value="NO"/>
                     </accessibility>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="137" y="234" width="190" height="162"/>
-                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="6L8-jH-TV9"/>
                         <outlet property="delegate" destination="-1" id="7bw-f6-UrN"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jd4-lz-MRF">
-                    <rect key="frame" x="200" y="39" width="190" height="162"/>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jd4-lz-MRF">
+                    <rect key="frame" x="335" y="315" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" hint="" label="Twos digit image selector">
                         <bool key="isElement" value="NO"/>
                     </accessibility>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="335" y="234" width="190" height="162"/>
-                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="jAN-lc-wrD"/>
                         <outlet property="delegate" destination="-1" id="3yo-gI-1RB"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFD-o7-gEg">
-                    <rect key="frame" x="398" y="39" width="190" height="162"/>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFD-o7-gEg">
+                    <rect key="frame" x="533" y="315" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Threes digit image selector">
                         <bool key="isElement" value="NO"/>
                     </accessibility>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="533" y="234" width="190" height="162"/>
-                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="4AA-KM-8so"/>
                         <outlet property="delegate" destination="-1" id="Lgk-9N-a9T"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="659-Bm-Esm">
-                    <rect key="frame" x="0.0" y="209" width="190" height="162"/>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="659-Bm-Esm">
+                    <rect key="frame" x="135" y="485" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Fours digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="135" y="404" width="190" height="162"/>
-                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="E50-bg-1da"/>
                         <outlet property="delegate" destination="-1" id="IHB-Ke-FH3"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBT-BN-iCA">
-                    <rect key="frame" x="198" y="209" width="190" height="162"/>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qBT-BN-iCA">
+                    <rect key="frame" x="333" y="485" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Fives digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="333" y="404" width="190" height="162"/>
-                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="ycg-a6-aAp"/>
                         <outlet property="delegate" destination="-1" id="Oeo-tc-wdl"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3L-6R-K28">
-                    <rect key="frame" x="396" y="209" width="190" height="162"/>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C3L-6R-K28">
+                    <rect key="frame" x="531" y="485" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Sixes digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="531" y="404" width="190" height="162"/>
-                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="liX-WG-SKL"/>
                         <outlet property="delegate" destination="-1" id="dNG-ht-VND"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="049-0G-aNc">
-                    <rect key="frame" x="0.0" y="379" width="190" height="162"/>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="049-0G-aNc">
+                    <rect key="frame" x="135" y="655" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Sevens digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="135" y="574" width="190" height="162"/>
-                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="DoE-Nx-ZzT"/>
                         <outlet property="delegate" destination="-1" id="OmL-sq-ssz"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbG-SO-DVR">
-                    <rect key="frame" x="198" y="379" width="190" height="162"/>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KbG-SO-DVR">
+                    <rect key="frame" x="333" y="655" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Eights digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="333" y="574" width="190" height="162"/>
-                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="0b3-KH-mSY"/>
                         <outlet property="delegate" destination="-1" id="t7c-Xv-Sjd"/>
                     </connections>
                 </pickerView>
-                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9l2-qp-bGe">
-                    <rect key="frame" x="396" y="379" width="190" height="162"/>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9l2-qp-bGe">
+                    <rect key="frame" x="531" y="655" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Nines digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="531" y="574" width="190" height="162"/>
-                    </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="1Mg-EX-45p"/>
                         <outlet property="delegate" destination="-1" id="m6G-bQ-SZA"/>
                     </connections>
                 </pickerView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvr-ns-9mt">
-                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                    <state key="normal" title="Save">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvr-ns-9mt">
+                    <rect key="frame" x="397" y="825" width="62" height="30"/>
+                    <state key="normal" title="Continue">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="412" y="744" width="34" height="30"/>
-                    </variation>
                     <connections>
                         <action selector="submitAction:" destination="-1" eventType="touchUpInside" id="xgY-4r-AcJ"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <variation key="default">
-                <mask key="subviews">
-                    <exclude reference="ODS-a9-9ub"/>
-                    <exclude reference="cXZ-ae-iXo"/>
-                    <exclude reference="nNJ-6c-CGg"/>
-                    <exclude reference="FLG-4q-rfY"/>
-                    <exclude reference="Jd4-lz-MRF"/>
-                    <exclude reference="xFD-o7-gEg"/>
-                    <exclude reference="659-Bm-Esm"/>
-                    <exclude reference="qBT-BN-iCA"/>
-                    <exclude reference="C3L-6R-K28"/>
-                    <exclude reference="049-0G-aNc"/>
-                    <exclude reference="KbG-SO-DVR"/>
-                    <exclude reference="9l2-qp-bGe"/>
-                    <exclude reference="vvr-ns-9mt"/>
-                </mask>
-            </variation>
-            <variation key="heightClass=regular-widthClass=regular">
-                <mask key="subviews">
-                    <include reference="ODS-a9-9ub"/>
-                    <include reference="cXZ-ae-iXo"/>
-                    <include reference="nNJ-6c-CGg"/>
-                    <include reference="FLG-4q-rfY"/>
-                    <include reference="Jd4-lz-MRF"/>
-                    <include reference="xFD-o7-gEg"/>
-                    <include reference="659-Bm-Esm"/>
-                    <include reference="qBT-BN-iCA"/>
-                    <include reference="C3L-6R-K28"/>
-                    <include reference="049-0G-aNc"/>
-                    <include reference="KbG-SO-DVR"/>
-                    <include reference="9l2-qp-bGe"/>
-                    <include reference="vvr-ns-9mt"/>
-                </mask>
-            </variation>
+            <point key="canvasLocation" x="353" y="355"/>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>

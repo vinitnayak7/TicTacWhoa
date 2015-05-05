@@ -38,6 +38,8 @@
 @synthesize inputOrderSwitch;
 @synthesize multipleSelectionSwitch;
 @synthesize toggleHintLabel;
+@synthesize submitButton;
+@synthesize inputOrderInDigitSwitch;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -113,9 +115,11 @@
     NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", appDelegate.userName];
     NSString *multipleSelectionKey =
     [NSString stringWithFormat:@"%@_multi_select", appDelegate.userName];
+    NSString *imageOrderKey = [NSString stringWithFormat:@"%@_image_input_order", appDelegate.userName];
 
     [multipleSelectionSwitch setOn:[defaults boolForKey:multipleSelectionKey]];
     [inputOrderSwitch setOn:[defaults boolForKey:pinOrderKey]];
+    [inputOrderInDigitSwitch setOn:[defaults boolForKey:imageOrderKey]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -300,11 +304,7 @@ accessibilityLabelForComponent:(NSInteger)component {
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    if (buttonIndex == [alertView cancelButtonIndex]) {
-//        [userNameTextField becomeFirstResponder];
-//    } else {
-//        [self submitNewUser:nil];
-//    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
@@ -324,7 +324,9 @@ accessibilityLabelForComponent:(NSInteger)component {
 
 - (IBAction)submitAction:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    BOOL success;
+    BOOL success = NO;
+    NSString *failureMessage = nil;
+    NSString *successMessage = nil;
     if ([optionsView isHidden]) {
         success = [grid validate:appDelegate.userName];
         if (success) {
@@ -338,45 +340,65 @@ accessibilityLabelForComponent:(NSInteger)component {
         // We know user has verified correctly
         success = [grid saveGrid:appDelegate.userName withMultiSelect:[multipleSelectionSwitch isOn]];
         if (!success) {
-            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
-                                   withTitle:@"Sorry" withOtherButtonTitle:nil];
+//            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
+//                                   withTitle:@"Sorry" withOtherButtonTitle:nil];
+            failureMessage = @"Incorrect passphrase, please try again! Your changes are not saved.";
+            [self resetGrid];
         } else {
-            [NewUserViewController showAlert:@"Your settings and passphrase were saved!" withDelegate:nil
-                                   withTitle:@"Saved" withOtherButtonTitle:nil];
+//            [NewUserViewController showAlert:@"Your passphrase was saved!" withDelegate:self
+//                                   withTitle:@"Saved" withOtherButtonTitle:nil];
+            successMessage = @"Your passphrase was saved!";
+            [changePassphraseSwitch setOn:NO];
+            [self changePassphraseAction:nil];
         }
 
-    } else {
-        // We know user has verified correctly and they don't want to change passphrase
-        // Just save the two other switches into NSUserDefaults
-        
-        // if User disabled multi-select their previous password could have had multiple
-        // selected image from the same digit, which means now they'll never be able to log in
-        // Force them to make a new passphrase
-        if (multiSelectDisabled) {
-            [NewUserViewController showAlert:@"If you disabled selecting multiple images within the same digit, you must make a new password for security reasons!" withDelegate:nil
-                                   withTitle:@"Sorry" withOtherButtonTitle:nil];
-            return;
-        }
-        
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", appDelegate.userName];
-        NSString *multipleSelectionKey =
-        [NSString stringWithFormat:@"%@_multi_select", appDelegate.userName];
-
-        [defaults setBool:inputOrderSwitch.isOn forKey:pinOrderKey];
-        [defaults setBool:multipleSelectionSwitch.isOn forKey:multipleSelectionKey];
-        [defaults synchronize];
-        
-        [NewUserViewController showAlert:@"Your settings were saved!" withDelegate:nil
-                               withTitle:@"Saved" withOtherButtonTitle:nil];
     }
+    
+    if ([optionsView isHidden]) {
+        return;
+    }
+    // We know user has verified correctly and they don't want to change passphrase
+    // Just save the two other switches into NSUserDefaults
+    
+    // if User disabled multi-select their previous password could have had multiple
+    // selected image from the same digit, which means now they'll never be able to log in
+    // Force them to make a new passphrase
+    if (multiSelectDisabled && ![changePassphraseSwitch isOn] && !success) {
+        if (failureMessage == nil) {
+            failureMessage = @"If you disabled selecting multiple images within the same digit, you must make a new password for security reasons! Your changes are not saved.";
+        }
+        [NewUserViewController showAlert:failureMessage withDelegate:nil
+                               withTitle:@"Sorry" withOtherButtonTitle:nil];
+        return;
+    } else if (failureMessage != nil) {
+        [NewUserViewController showAlert:failureMessage withDelegate:nil
+                               withTitle:@"Sorry" withOtherButtonTitle:nil];
+        return;
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", appDelegate.userName];
+    NSString *imageOrderKey = [NSString stringWithFormat:@"%@_image_input_order", appDelegate.userName];
+    NSString *multipleSelectionKey =
+    [NSString stringWithFormat:@"%@_multi_select", appDelegate.userName];
+    
+    [defaults setBool:inputOrderSwitch.isOn forKey:pinOrderKey];
+    [defaults setBool:multipleSelectionSwitch.isOn forKey:multipleSelectionKey];
+    [defaults setBool:inputOrderInDigitSwitch.isOn forKey:imageOrderKey];
+    [defaults synchronize];
+    
+    if (successMessage == nil) {
+        successMessage = @"Your changes were saved!";
+    }
+    [NewUserViewController showAlert:successMessage withDelegate:self
+                           withTitle:@"Saved" withOtherButtonTitle:nil];
     [self resetGrid];
     
 }
 
 -(void) initializeChangeView {
     [optionsView setHidden:NO];
+    [submitButton setTitle:@"Save" forState:UIControlStateNormal];
     
     // Reset Grid
     [self resetGrid];
@@ -404,5 +426,9 @@ accessibilityLabelForComponent:(NSInteger)component {
 
 - (IBAction)multiSelectSwitchAction:(id)sender {
     multiSelectDisabled = ![multipleSelectionSwitch isOn];
+    if (![multipleSelectionSwitch isOn]) {
+        [inputOrderInDigitSwitch setOn:NO];
+    }
 }
+
 @end
