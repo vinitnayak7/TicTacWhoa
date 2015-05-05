@@ -40,6 +40,7 @@
 @synthesize toggleHintLabel;
 @synthesize submitButton;
 @synthesize inputOrderInDigitSwitch;
+@synthesize headerLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -159,7 +160,7 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
-    return 150;
+    return 130;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowWidthForComponent:(NSInteger)component
@@ -399,7 +400,8 @@ accessibilityLabelForComponent:(NSInteger)component {
 -(void) initializeChangeView {
     [optionsView setHidden:NO];
     [submitButton setTitle:@"Save" forState:UIControlStateNormal];
-    
+    [headerLabel setText:@"Passphrase Settings"];
+    [headerLabel setAccessibilityLabel:@"Change passphrase or passphrase options below"];
     // Reset Grid
     [self resetGrid];
     [self toggleInteractionState];

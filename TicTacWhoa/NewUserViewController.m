@@ -36,6 +36,7 @@
 @synthesize userNameTextField;
 @synthesize multipleSelectionSwitch;
 @synthesize inputOrderSwitch;
+@synthesize inputOrderInDigitSwitch;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -126,7 +127,7 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
-    return 150;
+    return 130;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowWidthForComponent:(NSInteger)component
@@ -265,7 +266,9 @@
     NSString *pinOrderKey = [NSString stringWithFormat:@"%@_input_order", userNameTextField.text];
     NSString *multipleSelectionKey =
     [NSString stringWithFormat:@"%@_multi_select", userNameTextField.text];
+    NSString *imageOrderKey = [NSString stringWithFormat:@"%@_image_input_order", userNameTextField.text];
     
+    [defaults setBool:inputOrderInDigitSwitch.isOn forKey:imageOrderKey];
     [defaults setBool:inputOrderSwitch.isOn forKey:pinOrderKey];
     [defaults setBool:multipleSelectionSwitch.isOn forKey:multipleSelectionKey];
     [defaults synchronize];

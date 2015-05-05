@@ -37,6 +37,7 @@
 - (IBAction)cancelButtonAction:(id)sender;
 - (IBAction)logoutAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UISwitch *inputOrderSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *inputOrderInDigitSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *multipleSelectionSwitch;
 + (void)showAlert:(NSString *)message
         withDelegate:(id)delegate

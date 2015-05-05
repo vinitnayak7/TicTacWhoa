@@ -202,7 +202,7 @@
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
 {
-    return 150;
+    return 130;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowWidthForComponent:(NSInteger)component
