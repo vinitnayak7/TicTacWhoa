@@ -36,6 +36,7 @@
 - (IBAction)submitButtonAction:(id)sender;
 - (IBAction)cancelButtonAction:(id)sender;
 - (IBAction)logoutAction:(id)sender;
+- (IBAction)multipleSelectionAction:(id)sender;
 @property (weak, nonatomic) IBOutlet UISwitch *inputOrderSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *inputOrderInDigitSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *multipleSelectionSwitch;

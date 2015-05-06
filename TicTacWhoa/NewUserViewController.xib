@@ -180,6 +180,9 @@
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="meb-55-Nuf">
                             <rect key="frame" x="3" y="37" width="51" height="31"/>
                             <accessibility key="accessibilityConfiguration" label="Allow multiple selections in same digit"/>
+                            <connections>
+                                <action selector="multipleSelectionAction:" destination="-1" eventType="valueChanged" id="z4N-QX-SBA"/>
+                            </connections>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow multiple selection in same digit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24b-RC-TFg">
                             <rect key="frame" x="60" y="42" width="283" height="21"/>

@@ -289,6 +289,15 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)multipleSelectionAction:(id)sender {
+    if (![multipleSelectionSwitch isOn]) {
+        [inputOrderInDigitSwitch setOn:NO];
+        [inputOrderInDigitSwitch setUserInteractionEnabled:NO];
+    } else {
+        [inputOrderInDigitSwitch setUserInteractionEnabled:YES];
+    }
+}
+
 +(void)showAlert:(NSString *)message
     withDelegate:(id)delegate
     withTitle:(NSString *)title

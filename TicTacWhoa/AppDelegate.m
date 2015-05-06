@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.splashViewController = [[SplashUIViewController alloc] initWithNibName:@"SplashUIViewController" bundle:nil];
+    self.splashViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
     self.window.rootViewController = self.splashViewController;
     [self.window makeKeyAndVisible];
     return YES;

@@ -12,7 +12,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong,nonatomic) SplashUIViewController *splashViewController;
+@property (strong,nonatomic) LoginViewController *splashViewController;
 
 @property (strong, nonatomic) NSString *userName;
 
