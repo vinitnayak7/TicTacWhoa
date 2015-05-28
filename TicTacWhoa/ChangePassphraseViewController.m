@@ -336,6 +336,7 @@ accessibilityLabelForComponent:(NSInteger)component {
         } else {
             [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
                                    withTitle:@"Sorry" withOtherButtonTitle:nil];
+            [self resetGrid];
         }
     } else if ([changePassphraseSwitch isOn]) {
         // We know user has verified correctly

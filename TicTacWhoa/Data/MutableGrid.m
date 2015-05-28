@@ -160,7 +160,7 @@
         for(Selection *s2 in solution) {
             if ([s1.picker isEqualToString:s2.picker]
                 && s1.rowInPicker == s2.rowInPicker) {
-                return YES;
+                found = YES;
                 break;
             }
         }
