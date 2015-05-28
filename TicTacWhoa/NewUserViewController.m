@@ -32,6 +32,7 @@
 @synthesize m3x1pickerView;
 @synthesize m3x2pickerView;
 @synthesize m3x3pickerView;
+@synthesize m4x1pickerView;
 @synthesize menuViewController;
 @synthesize userNameTextField;
 @synthesize multipleSelectionSwitch;
@@ -58,6 +59,7 @@
     [pickerList addObject:m3x1pickerView];
     [pickerList addObject:m3x2pickerView];
     [pickerList addObject:m3x3pickerView];
+    [pickerList addObject:m4x1pickerView];
     
     [pickerToString setObject:@"m1x1pickerView" forKey:m1x1pickerView];
     [pickerToString setObject:@"m1x2pickerView" forKey:m1x2pickerView];
@@ -68,6 +70,7 @@
     [pickerToString setObject:@"m3x1pickerView" forKey:m3x1pickerView];
     [pickerToString setObject:@"m3x2pickerView" forKey:m3x2pickerView];
     [pickerToString setObject:@"m3x3pickerView" forKey:m3x3pickerView];
+    [pickerToString setObject:@"m4x1pickerView" forKey:m4x1pickerView];
 
     [pickerStartingImageList setObject:@"one.png" forKey:m1x1pickerView];
     [pickerStartingImageList setObject:@"two.png" forKey:m1x2pickerView];
@@ -78,6 +81,7 @@
     [pickerStartingImageList setObject:@"seven.png" forKey:m3x1pickerView];
     [pickerStartingImageList setObject:@"eight.png" forKey:m3x2pickerView];
     [pickerStartingImageList setObject:@"nine.png" forKey:m3x3pickerView];
+    [pickerStartingImageList setObject:@"zero.png" forKey:m4x1pickerView];
     
     for (UIPickerView *picker in pickerStartingImageList.keyEnumerator) {
         [pickerImageList addObject:[pickerStartingImageList objectForKey:picker]];

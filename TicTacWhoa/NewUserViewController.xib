@@ -17,6 +17,7 @@
                 <outlet property="m3x1pickerView" destination="TQZ-m2-wzu" id="hDg-aG-fOB"/>
                 <outlet property="m3x2pickerView" destination="cHi-30-Icn" id="Znr-SR-7nh"/>
                 <outlet property="m3x3pickerView" destination="a6c-XO-wGw" id="cf9-lc-bNJ"/>
+                <outlet property="m4x1pickerView" destination="5PP-Th-80K" id="SI2-B7-8JT"/>
                 <outlet property="multipleSelectionSwitch" destination="meb-55-Nuf" id="sl7-Lx-VOR"/>
                 <outlet property="userNameTextField" destination="63A-JS-4tc" id="TOW-Pk-4g4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -28,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zq-ed-lmC">
-                    <rect key="frame" x="375" y="772" width="49" height="30"/>
+                    <rect key="frame" x="369" y="838" width="49" height="30"/>
                     <accessibility key="accessibilityConfiguration" label="Submit passphrase"/>
                     <state key="normal" title="Submit">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,7 +40,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-WF-BCg">
-                    <rect key="frame" x="574" y="772" width="30" height="30"/>
+                    <rect key="frame" x="581" y="838" width="30" height="30"/>
                     <state key="normal" title="Exit">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,7 +50,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wys-No-X4H">
-                    <rect key="frame" x="175" y="772" width="37" height="30"/>
+                    <rect key="frame" x="375" y="956" width="37" height="30"/>
                     <state key="normal" title="Clear">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -209,6 +210,16 @@
                     </subviews>
                     <color key="backgroundColor" red="0.20856404610000001" green="0.51554975240000001" blue="0.79910432450000002" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5PP-Th-80K">
+                    <rect key="frame" x="107" y="764" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration" label="Zeros digit image selector">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Ek0-Su-hCe"/>
+                        <outlet property="delegate" destination="-1" id="4JX-lk-iJa"/>
+                    </connections>
+                </pickerView>
             </subviews>
             <color key="backgroundColor" red="0.20856404610000001" green="0.51554975240000001" blue="0.79910432450000002" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="353" y="361"/>

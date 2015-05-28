@@ -18,6 +18,7 @@
                 <outlet property="m3x1pickerView" destination="kQf-F4-zFk" id="4Uk-bO-Rcz"/>
                 <outlet property="m3x2pickerView" destination="kw9-X2-DrF" id="ObS-oY-ELz"/>
                 <outlet property="m3x3pickerView" destination="FwE-dI-lHv" id="SZ3-d7-9Ba"/>
+                <outlet property="m4x1pickerView" destination="Jeo-K2-rHq" id="cpM-Yf-VJu"/>
                 <outlet property="userNameTextField" destination="od2-T1-cVF" id="iAC-HF-mnL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,25 +29,14 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oy-0u-6M5">
-                    <rect key="frame" x="291" y="749" width="91" height="30"/>
+                    <rect key="frame" x="365" y="706" width="38" height="30"/>
                     <accessibility key="accessibilityConfiguration" label="Login as existing user"/>
-                    <state key="normal" title="Existing User">
+                    <state key="normal" title="Login">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="submitExistingUser:" destination="-1" eventType="touchUpInside" id="j5m-E7-cI8"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai0-yO-0dF">
-                    <rect key="frame" x="423" y="749" width="68" height="30"/>
-                    <accessibility key="accessibilityConfiguration" label="Sign up as new user"/>
-                    <state key="normal" title="New User">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="submitNewUser:" destination="-1" eventType="touchUpInside" id="nD3-Kg-xjr"/>
                     </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="od2-T1-cVF">
@@ -57,16 +47,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login As A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FC-PE-4cj">
-                    <rect key="frame" x="357" y="710" width="83" height="21"/>
-                    <accessibility key="accessibilityConfiguration">
-                        <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
-                        <bool key="isElement" value="NO"/>
-                    </accessibility>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FLA-Lz-UKx">
                     <rect key="frame" x="93" y="158" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" hint="" label="Ones digit image selector">
@@ -165,7 +145,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-xx-tJN">
-                    <rect key="frame" x="143" y="706" width="37" height="30"/>
+                    <rect key="frame" x="564" y="706" width="37" height="30"/>
                     <state key="normal" title="Clear">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -175,7 +155,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQH-0t-SyS">
-                    <rect key="frame" x="159" y="789" width="454" height="193"/>
+                    <rect key="frame" x="267" y="910" width="263" height="84"/>
                     <accessibility key="accessibilityConfiguration">
                         <bool key="isElement" value="NO"/>
                     </accessibility>
@@ -183,6 +163,27 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai0-yO-0dF">
+                    <rect key="frame" x="352" y="828" width="117" height="30"/>
+                    <accessibility key="accessibilityConfiguration" label="Sign up as new user"/>
+                    <state key="normal" title="Create New User">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="submitNewUser:" destination="-1" eventType="touchUpInside" id="nD3-Kg-xjr"/>
+                    </connections>
+                </button>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jeo-K2-rHq">
+                    <rect key="frame" x="93" y="674" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration" label="Zeros digit image selector">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="olL-7m-6BL"/>
+                        <outlet property="delegate" destination="-1" id="ODu-PM-T8e"/>
+                    </connections>
+                </pickerView>
             </subviews>
             <color key="backgroundColor" red="0.20856404610552276" green="0.51554975240914147" blue="0.7991043244949495" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="342" y="309"/>
