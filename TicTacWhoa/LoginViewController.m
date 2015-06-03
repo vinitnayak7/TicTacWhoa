@@ -41,6 +41,9 @@
 @synthesize boardViewController;
 @synthesize menuViewController;
 @synthesize asteriskLabel;
+@synthesize loginButton;
+@synthesize clearButton;
+@synthesize createUserButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,6 +54,24 @@
     
     ////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////
+
+    //UI changes
+    loginButton.layer.cornerRadius = 10;
+    loginButton.clipsToBounds = YES;
+    loginButton.layer.borderWidth = 3.0;
+    loginButton.layer.borderColor =[[UIColor colorWithRed:0.0f/255.0f green:204.0f/255.0f blue:0.0f/255.0f alpha:1.0f] CGColor];
+    
+    clearButton.layer.cornerRadius = 10;
+    clearButton.clipsToBounds = YES;
+    clearButton.layer.borderWidth = 3.0;
+    clearButton.layer.borderColor =[[UIColor colorWithRed:255.0f/255.0f green:128.0f/255.0f blue:0.0f/255.0f alpha:1.0f] CGColor];
+    
+    createUserButton.layer.cornerRadius = 10;
+    createUserButton.clipsToBounds = YES;
+    createUserButton.layer.borderWidth = 3.0;
+    createUserButton.layer.borderColor =[[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:0.0f/255.0f alpha:1.0f] CGColor];
+    
+    
     pickerList = [[NSMutableArray alloc] initWithCapacity:9];
     pickerToString = [[NSMapTable alloc] init];
     

@@ -38,9 +38,30 @@
 @synthesize multipleSelectionSwitch;
 @synthesize inputOrderSwitch;
 @synthesize inputOrderInDigitSwitch;
+@synthesize submitButton;
+@synthesize clearButton;
+@synthesize exitButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // UI changes
+    submitButton.layer.cornerRadius = 10;
+    submitButton.clipsToBounds = YES;
+    submitButton.layer.borderWidth = 3.0;
+    submitButton.layer.borderColor =[[UIColor colorWithRed:0.0f/255.0f green:204.0f/255.0f blue:0.0f/255.0f alpha:1.0f] CGColor];
+    
+    clearButton.layer.cornerRadius = 10;
+    clearButton.clipsToBounds = YES;
+    clearButton.layer.borderWidth = 3.0;
+    clearButton.layer.borderColor =[[UIColor colorWithRed:255.0f/255.0f green:128.0f/255.0f blue:0.0f/255.0f alpha:1.0f] CGColor];
+    
+    exitButton.layer.cornerRadius = 10;
+    exitButton.clipsToBounds = YES;
+    exitButton.layer.borderWidth = 3.0;
+    exitButton.layer.borderColor =[[UIColor colorWithRed:255.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0f] CGColor];
+    
+    
     // Do any additional setup after loading the view from its nib.
     pickerList = [[NSMutableArray alloc] initWithCapacity:9];
     pickerToString = [[NSMapTable alloc] init];

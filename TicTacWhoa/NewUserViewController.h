@@ -50,5 +50,8 @@
         withDelegate:(id)delegate
         withTitle:(NSString *)title
         withOtherButtonTitle:(NSString*)otherButtonTitle;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIButton *clearButton;
+@property (weak, nonatomic) IBOutlet UIButton *exitButton;
 
 @end

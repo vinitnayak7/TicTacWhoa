@@ -48,5 +48,6 @@
 @property (weak, nonatomic) IBOutlet UISwitch *changePassphraseSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *toggleHintLabel;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end

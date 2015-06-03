@@ -42,9 +42,22 @@
 @synthesize submitButton;
 @synthesize inputOrderInDigitSwitch;
 @synthesize headerLabel;
+@synthesize cancelButton;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // UI changes
+    submitButton.layer.cornerRadius = 10;
+    submitButton.clipsToBounds = YES;
+    submitButton.layer.borderWidth = 3.0;
+    submitButton.layer.borderColor =[[UIColor colorWithRed:0.0f/255.0f green:204.0f/255.0f blue:0.0f/255.0f alpha:1.0f] CGColor];
+    
+    cancelButton.layer.cornerRadius = 10;
+    cancelButton.clipsToBounds = YES;
+    cancelButton.layer.borderWidth = 3.0;
+    cancelButton.layer.borderColor =[[UIColor colorWithRed:255.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:1.0f] CGColor];
+    
     // Do any additional setup after loading the view from its nib.
     
     pickerList = [[NSMutableArray alloc] initWithCapacity:9];

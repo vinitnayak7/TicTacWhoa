@@ -20,6 +20,7 @@
 		8E488A521AAFDD2F0020AD80 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E488A511AAFDD2F0020AD80 /* Constants.m */; };
 		8E49E8D81AEF67F7004C10AB /* ChangePassphraseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E49E8D61AEF67F7004C10AB /* ChangePassphraseViewController.m */; };
 		8E49E8D91AEF67F7004C10AB /* ChangePassphraseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E49E8D71AEF67F7004C10AB /* ChangePassphraseViewController.xib */; };
+		8E57EC631B16E0F400942C4A /* zero.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E57EC621B16E0F400942C4A /* zero.png */; };
 		8E81FAF61AA022EB00F70393 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FAF51AA022EB00F70393 /* main.m */; };
 		8E81FAF91AA022EB00F70393 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E81FAF81AA022EB00F70393 /* AppDelegate.m */; };
 		8E81FAFF1AA022EB00F70393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E81FAFD1AA022EB00F70393 /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		8E49E8D51AEF67F7004C10AB /* ChangePassphraseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePassphraseViewController.h; sourceTree = "<group>"; };
 		8E49E8D61AEF67F7004C10AB /* ChangePassphraseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePassphraseViewController.m; sourceTree = "<group>"; };
 		8E49E8D71AEF67F7004C10AB /* ChangePassphraseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangePassphraseViewController.xib; sourceTree = "<group>"; };
+		8E57EC621B16E0F400942C4A /* zero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zero.png; sourceTree = "<group>"; };
 		8E81FAF01AA022EB00F70393 /* TicTacWhoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacWhoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81FAF41AA022EB00F70393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E81FAF51AA022EB00F70393 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		0FC88FA91AA536C9000F0087 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8E57EC621B16E0F400942C4A /* zero.png */,
 				8EEFDF661AD98DA9005207A0 /* eight.png */,
 				8EEFDF671AD98DA9005207A0 /* five.png */,
 				8EEFDF681AD98DA9005207A0 /* four.png */,
@@ -338,6 +341,7 @@
 				8EEFDF761AD98DA9005207A0 /* six.png in Resources */,
 				8EEFDF791AD98DA9005207A0 /* two.png in Resources */,
 				8EEFDF771AD98DA9005207A0 /* three.png in Resources */,
+				8E57EC631B16E0F400942C4A /* zero.png in Resources */,
 				8EEFDF711AD98DA9005207A0 /* five.png in Resources */,
 				8E237F351AE76FA00083815F /* UserProfileSettingsViewController.xib in Resources */,
 				8EEFDF731AD98DA9005207A0 /* nine.png in Resources */,

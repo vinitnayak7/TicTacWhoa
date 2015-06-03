@@ -7,6 +7,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
                 <outlet property="asteriskLabel" destination="DQH-0t-SyS" id="i9l-Oo-6d5"/>
+                <outlet property="clearButton" destination="Q2g-xx-tJN" id="gIh-Ht-NCf"/>
+                <outlet property="createUserButton" destination="ai0-yO-0dF" id="hfK-Az-YTa"/>
+                <outlet property="loginButton" destination="2Oy-0u-6M5" id="Kdr-SE-RYm"/>
                 <outlet property="loginExistingUser" destination="2Oy-0u-6M5" id="Zm0-9h-rmY"/>
                 <outlet property="loginNewUser" destination="ai0-yO-0dF" id="5LZ-4i-yny"/>
                 <outlet property="m1x1pickerView" destination="FLA-Lz-UKx" id="MZc-yw-N4O"/>
@@ -28,17 +31,6 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oy-0u-6M5">
-                    <rect key="frame" x="365" y="706" width="38" height="30"/>
-                    <accessibility key="accessibilityConfiguration" label="Login as existing user"/>
-                    <state key="normal" title="Login">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="submitExistingUser:" destination="-1" eventType="touchUpInside" id="j5m-E7-cI8"/>
-                    </connections>
-                </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="od2-T1-cVF">
                     <rect key="frame" x="337" y="71" width="97" height="30"/>
                     <accessibility key="accessibilityConfiguration" hint="" label="Enter Username">
@@ -144,17 +136,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-xx-tJN">
-                    <rect key="frame" x="564" y="706" width="37" height="30"/>
-                    <state key="normal" title="Clear">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="resetGridAction:" destination="-1" eventType="touchUpInside" id="157-f8-Ae9"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQH-0t-SyS">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQH-0t-SyS">
                     <rect key="frame" x="267" y="910" width="263" height="84"/>
                     <accessibility key="accessibilityConfiguration">
                         <bool key="isElement" value="NO"/>
@@ -164,10 +146,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai0-yO-0dF">
-                    <rect key="frame" x="352" y="828" width="117" height="30"/>
+                    <rect key="frame" x="325" y="892" width="342" height="48"/>
                     <accessibility key="accessibilityConfiguration" label="Sign up as new user"/>
                     <state key="normal" title="Create New User">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -184,6 +166,29 @@
                         <outlet property="delegate" destination="-1" id="ODu-PM-T8e"/>
                     </connections>
                 </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oy-0u-6M5">
+                    <rect key="frame" x="327" y="706" width="340" height="98"/>
+                    <color key="backgroundColor" red="0.20856404610000001" green="0.51554975240000001" blue="0.79910432450000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <accessibility key="accessibilityConfiguration" label="Login as existing user"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="submitExistingUser:" destination="-1" eventType="touchUpInside" id="j5m-E7-cI8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-xx-tJN">
+                    <rect key="frame" x="121" y="890" width="146" height="51"/>
+                    <state key="normal" title="Clear">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="resetGridAction:" destination="-1" eventType="touchUpInside" id="157-f8-Ae9"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.20856404610552276" green="0.51554975240914147" blue="0.7991043244949495" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="342" y="309"/>

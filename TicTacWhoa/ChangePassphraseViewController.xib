@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangePassphraseViewController">
             <connections>
+                <outlet property="cancelButton" destination="cXZ-ae-iXo" id="CuZ-IN-FfO"/>
                 <outlet property="changePassphraseSwitch" destination="86K-vF-WKy" id="hga-BB-bBl"/>
                 <outlet property="headerLabel" destination="ODS-a9-9ub" id="1Ey-qh-Gml"/>
                 <outlet property="inputOrderInDigitSwitch" destination="SVm-QN-Eax" id="ZJ7-bg-BUI"/>
@@ -32,16 +33,6 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXZ-ae-iXo">
-                    <rect key="frame" x="559" y="825" width="48" height="30"/>
-                    <state key="normal" title="Cancel">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="lza-Xi-CjD"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNJ-6c-CGg">
                     <rect key="frame" x="94" y="81" width="578" height="172"/>
                     <subviews>
@@ -205,7 +196,7 @@
                     </connections>
                 </pickerView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvr-ns-9mt">
-                    <rect key="frame" x="354" y="825" width="62" height="30"/>
+                    <rect key="frame" x="333" y="867" width="101" height="74"/>
                     <state key="normal" title="Continue">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -231,6 +222,16 @@
                         <outlet property="delegate" destination="-1" id="yrO-iI-gp9"/>
                     </connections>
                 </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXZ-ae-iXo">
+                    <rect key="frame" x="531" y="867" width="101" height="74"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="lza-Xi-CjD"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.20856404610000001" green="0.51554975240000001" blue="0.79910432450000002" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="353" y="355"/>
