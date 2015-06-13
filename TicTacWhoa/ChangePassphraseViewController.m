@@ -448,9 +448,11 @@ accessibilityLabelForComponent:(NSInteger)component {
     multiSelectDisabled = ![multipleSelectionSwitch isOn];
     if (![multipleSelectionSwitch isOn]) {
         [inputOrderInDigitSwitch setOn:NO];
-        [inputOrderInDigitSwitch setUserInteractionEnabled:NO];
+        [inputOrderInDigitSwitch setEnabled:NO];
+        [inputOrderInDigitSwitch setAccessibilityElementsHidden:YES];
     } else {
-        [inputOrderInDigitSwitch setUserInteractionEnabled:YES];
+        [inputOrderInDigitSwitch setEnabled:YES];
+        [inputOrderInDigitSwitch setAccessibilityElementsHidden:NO];
     }
 }
 
