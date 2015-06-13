@@ -262,6 +262,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([defaults objectForKey:userNameTextField.text]) {
         [NewUserViewController showAlert:@"Username already exists!" withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
+        [self cancelButtonAction:nil];
         return;
     }
     BOOL success = [grid saveGrid:userName withMultiSelect:[multipleSelectionSwitch isOn]];

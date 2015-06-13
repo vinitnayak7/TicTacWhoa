@@ -49,7 +49,7 @@
 - (IBAction)resetGridAction:(id)sender;
 
 -(id)initWithUsername:(NSString*)name;
-@property (weak, nonatomic) IBOutlet UILabel *asteriskLabel;
+
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *clearButton;
 @property (weak, nonatomic) IBOutlet UIButton *createUserButton;

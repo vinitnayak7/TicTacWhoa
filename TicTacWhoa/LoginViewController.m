@@ -24,7 +24,6 @@
     NSMapTable *pickerStartingImageList;
     NSMapTable *pickerToString;
     NSString *userName;
-    int numberSelected;
 }
 
 @synthesize m1x1pickerView;
@@ -40,7 +39,6 @@
 @synthesize userNameTextField;
 @synthesize boardViewController;
 @synthesize menuViewController;
-@synthesize asteriskLabel;
 @synthesize loginButton;
 @synthesize clearButton;
 @synthesize createUserButton;
@@ -154,15 +152,16 @@
 }
 
 - (IBAction)submitExistingUser:(id)sender {
-    NSString *userName = userNameTextField.text;
-    if (userName == nil || [userName  isEqual: @""]) {
+    NSString *inputUserName = userNameTextField.text;
+    if (inputUserName == nil || [inputUserName  isEqual: @""]) {
         [LoginViewController showAlert:@"Enter userName" withDelegate:self withTitle:@"Sorry" withCancelButton:@"OK" withOtherButtonTitle:nil];
         return;
     }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if(![defaults objectForKey:userName]) {
+    if(![defaults objectForKey:inputUserName]) {
         [LoginViewController showAlert:@"User does not exist" withDelegate:self withTitle:@"Sorry" withCancelButton:@"Retry with different username" withOtherButtonTitle:@"Create new user"];
+        [self resetGridAction:nil];
         return;
     }
     
@@ -171,7 +170,7 @@
         menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
         [self presentViewController:menuViewController animated:YES completion:nil];
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        [appDelegate setUserName:userName];
+        [appDelegate setUserName:inputUserName];
         [userNameTextField setText:@""];
         [self resetGridAction:nil];
     } else {
@@ -200,8 +199,6 @@
         [picker reloadAllComponents];
         [picker selectRow:0 inComponent:0 animated:YES];
     }
-    [asteriskLabel setText:@""];
-    numberSelected = 0;
     // TODO
     //    [grid increaseAttempts];
     //    [attemptsLabel setText:[NSString stringWithFormat:@"Attempts: %d", [grid getAttempts]]];
@@ -300,22 +297,13 @@
     }
     
     if (![grid isSelectedForPicker:[pickerToString objectForKey:pV] forRow:selectedRow]) {
-        if (numberSelected == 4) {
-            return;
-        }
         imageView.frame = CGRectInset(imageView.frame, borderWidth, borderWidth);
         selectionColor = [UIColor redColor].CGColor;
         utterance = [NSString stringWithFormat:@"%@ selected", [AccessibilityUtils removeFileSuffix:imageTitle]];
-        numberSelected++;
     } else {
-        if (numberSelected > 4) {
-            numberSelected--;
-            return;
-        }
         imageView.frame = CGRectInset(imageView.frame, -borderWidth, -borderWidth);
         selectionColor = [UIColor clearColor].CGColor;
         utterance = [NSString stringWithFormat:@"%@ un selected", [AccessibilityUtils removeFileSuffix:imageTitle]];
-        numberSelected--;
     }
     imageView.layer.borderColor = selectionColor;
     imageView.layer.borderWidth = borderWidth;
@@ -326,11 +314,6 @@
             [grid updateSelectionForPicker:[pickerToString objectForKey:picker] forRow:selectedRow];
         }
     }
-    NSString *asterisks = @"";
-    for(int i = 0; i < numberSelected; i++) {
-        asterisks = [NSString stringWithFormat:@"%@*", asterisks];
-    }
-    [asteriskLabel setText:asterisks];
 }
 
 -(void)updateAccessibilityImageTap {

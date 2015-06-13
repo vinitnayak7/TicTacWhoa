@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
-                <outlet property="asteriskLabel" destination="DQH-0t-SyS" id="i9l-Oo-6d5"/>
                 <outlet property="clearButton" destination="Q2g-xx-tJN" id="gIh-Ht-NCf"/>
                 <outlet property="createUserButton" destination="ai0-yO-0dF" id="hfK-Az-YTa"/>
                 <outlet property="loginButton" destination="2Oy-0u-6M5" id="Kdr-SE-RYm"/>
@@ -134,15 +133,6 @@
                     <rect key="frame" x="292" y="123" width="185" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQH-0t-SyS">
-                    <rect key="frame" x="267" y="910" width="263" height="84"/>
-                    <accessibility key="accessibilityConfiguration">
-                        <bool key="isElement" value="NO"/>
-                    </accessibility>
-                    <fontDescription key="fontDescription" type="system" pointSize="257"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai0-yO-0dF">
