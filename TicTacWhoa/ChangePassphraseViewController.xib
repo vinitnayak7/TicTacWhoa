@@ -39,6 +39,7 @@
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-5e-jzq">
                             <rect key="frame" x="3" y="3" width="51" height="31"/>
                             <accessibility key="accessibilityConfiguration" label="Allow digits in passphrase to be selected in any order"/>
+                            <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow digits in passphrase to be selected in any order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTJ-Gq-6xd">
                             <rect key="frame" x="60" y="8" width="409" height="21"/>
@@ -46,12 +47,12 @@
                                 <bool key="isElement" value="NO"/>
                             </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkB-RV-KSm">
                             <rect key="frame" x="3" y="37" width="51" height="31"/>
                             <accessibility key="accessibilityConfiguration" label="Allow multiple image selections in same digit"/>
+                            <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="multiSelectSwitchAction:" destination="-1" eventType="valueChanged" id="T8t-9O-Jpq"/>
                             </connections>
@@ -62,19 +63,18 @@
                                 <bool key="isElement" value="NO"/>
                             </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toggle switch to enter new passphrase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avQ-zB-vpo">
                             <rect key="frame" x="3" y="143" width="299" height="21"/>
                             <accessibility key="accessibilityConfiguration" label="Toggle change passphrase switch above to enter new passphrase"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SVm-QN-Eax">
                             <rect key="frame" x="3" y="70" width="51" height="31"/>
                             <accessibility key="accessibilityConfiguration" label="Allow order of images in a given digit to be selected in any order"/>
+                            <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow order of images in a given digit to be selected in any order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uku-Gp-YWD">
                             <rect key="frame" x="60" y="75" width="492" height="21"/>
@@ -82,12 +82,12 @@
                                 <bool key="isElement" value="NO"/>
                             </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="86K-vF-WKy">
                             <rect key="frame" x="3" y="105" width="51" height="31"/>
                             <accessibility key="accessibilityConfiguration" label="Change passphrase"/>
+                            <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="changePassphraseAction:" destination="-1" eventType="valueChanged" id="SRY-Th-uzL"/>
                             </connections>
@@ -98,11 +98,9 @@
                                 <bool key="isElement" value="NO"/>
                             </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.20856404610000001" green="0.51554975240000001" blue="0.79910432450000002" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FLG-4q-rfY">
                     <rect key="frame" x="92" y="309" width="190" height="162"/>
@@ -198,7 +196,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvr-ns-9mt">
                     <rect key="frame" x="333" y="867" width="101" height="74"/>
                     <state key="normal" title="Continue">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -209,7 +207,7 @@
                     <rect key="frame" x="452" y="52" width="220" height="21"/>
                     <accessibility key="accessibilityConfiguration" label="Enter current passphrase to proceed to passphrase settings"/>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                    <color key="textColor" red="0.97797409499999999" green="1" blue="0.5833624516" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.92561765139999996" green="0.9431581416" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jef-rw-cVm">
@@ -225,7 +223,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXZ-ae-iXo">
                     <rect key="frame" x="531" y="867" width="101" height="74"/>
                     <state key="normal" title="Cancel">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -233,7 +231,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.20856404610000001" green="0.51554975240000001" blue="0.79910432450000002" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.16625236930000001" green="0.76523042929999996" blue="0.40929930260000003" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="353" y="355"/>
         </view>
     </objects>

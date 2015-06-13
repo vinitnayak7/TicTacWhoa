@@ -32,10 +32,10 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zq-ed-lmC">
-                    <rect key="frame" x="356" y="816" width="108" height="74"/>
+                    <rect key="frame" x="341" y="816" width="108" height="74"/>
                     <accessibility key="accessibilityConfiguration" label="Submit passphrase"/>
                     <state key="normal" title="Submit">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -43,9 +43,9 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wys-No-X4H">
-                    <rect key="frame" x="548" y="816" width="100" height="74"/>
+                    <rect key="frame" x="533" y="816" width="100" height="74"/>
                     <state key="normal" title="Clear">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -53,19 +53,18 @@
                     </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63A-JS-4tc">
-                    <rect key="frame" x="351" y="42" width="97" height="30"/>
+                    <rect key="frame" x="336" y="43" width="97" height="30"/>
                     <accessibility key="accessibilityConfiguration" label="Enter username"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter passphrase below" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uF7-OI-jz1">
-                    <rect key="frame" x="308" y="89" width="185" height="21"/>
+                    <rect key="frame" x="292" y="89" width="185" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6If-Re-4Gx">
-                    <rect key="frame" x="107" y="247" width="190" height="162"/>
+                    <rect key="frame" x="92" y="247" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" hint="" label="Ones digit image selector">
                         <accessibilityTraits key="traits" none="YES"/>
                         <bool key="isElement" value="NO"/>
@@ -76,7 +75,7 @@
                     </connections>
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LO0-ka-f28">
-                    <rect key="frame" x="305" y="247" width="190" height="162"/>
+                    <rect key="frame" x="290" y="247" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" hint="" label="Twos digit image selector">
                         <bool key="isElement" value="NO"/>
                     </accessibility>
@@ -86,7 +85,7 @@
                     </connections>
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fJ-nG-8Zb">
-                    <rect key="frame" x="503" y="247" width="190" height="162"/>
+                    <rect key="frame" x="488" y="247" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Threes digit image selector">
                         <bool key="isElement" value="NO"/>
                     </accessibility>
@@ -96,7 +95,7 @@
                     </connections>
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52m-bI-cA8">
-                    <rect key="frame" x="105" y="417" width="190" height="162"/>
+                    <rect key="frame" x="90" y="417" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Fours digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
@@ -106,7 +105,7 @@
                     </connections>
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UzB-aV-2r7">
-                    <rect key="frame" x="303" y="417" width="190" height="162"/>
+                    <rect key="frame" x="288" y="417" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Fives digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
@@ -116,7 +115,7 @@
                     </connections>
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smf-Fy-I9c">
-                    <rect key="frame" x="501" y="417" width="190" height="162"/>
+                    <rect key="frame" x="486" y="417" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Sixes digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
@@ -126,7 +125,7 @@
                     </connections>
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQZ-m2-wzu">
-                    <rect key="frame" x="105" y="587" width="190" height="162"/>
+                    <rect key="frame" x="90" y="587" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Sevens digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
@@ -136,7 +135,7 @@
                     </connections>
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHi-30-Icn">
-                    <rect key="frame" x="303" y="587" width="190" height="162"/>
+                    <rect key="frame" x="288" y="587" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Eights digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
@@ -146,7 +145,7 @@
                     </connections>
                 </pickerView>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6c-XO-wGw">
-                    <rect key="frame" x="501" y="587" width="190" height="162"/>
+                    <rect key="frame" x="486" y="587" width="190" height="162"/>
                     <accessibility key="accessibilityConfiguration" label="Nines digit image selector">
                         <bool key="isElement" value="YES"/>
                     </accessibility>
@@ -155,12 +154,33 @@
                         <outlet property="delegate" destination="-1" id="LGV-0Q-fLU"/>
                     </connections>
                 </pickerView>
+                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5PP-Th-80K">
+                    <rect key="frame" x="92" y="764" width="190" height="162"/>
+                    <accessibility key="accessibilityConfiguration" label="Zeros digit image selector">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Ek0-Su-hCe"/>
+                        <outlet property="delegate" destination="-1" id="4JX-lk-iJa"/>
+                    </connections>
+                </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-WF-BCg">
+                    <rect key="frame" x="341" y="919" width="108" height="74"/>
+                    <state key="normal" title="Exit">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="ST3-Un-gZN"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dkp-IA-f5z">
-                    <rect key="frame" x="121" y="136" width="578" height="103"/>
+                    <rect key="frame" x="96" y="131" width="578" height="103"/>
                     <subviews>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YE6-vz-qwh">
                             <rect key="frame" x="3" y="3" width="51" height="31"/>
                             <accessibility key="accessibilityConfiguration" label="Allow passphrase input in any order"/>
+                            <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow digits in passphrase to be selected in any order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRA-Bp-sDp">
                             <rect key="frame" x="60" y="8" width="510" height="21"/>
@@ -168,12 +188,12 @@
                                 <bool key="isElement" value="NO"/>
                             </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="meb-55-Nuf">
                             <rect key="frame" x="3" y="37" width="51" height="31"/>
                             <accessibility key="accessibilityConfiguration" label="Allow multiple selections in same digit"/>
+                            <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="multipleSelectionAction:" destination="-1" eventType="valueChanged" id="z4N-QX-SBA"/>
                             </connections>
@@ -184,12 +204,12 @@
                                 <bool key="isElement" value="NO"/>
                             </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DKg-HV-0rb">
                             <rect key="frame" x="3" y="72" width="51" height="31"/>
                             <accessibility key="accessibilityConfiguration" label="Allow order of images in a given digit to be selected in any order"/>
+                            <color key="onTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </switch>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow order of images in a given digit to be selected in any order" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fE-Wo-L0a">
                             <rect key="frame" x="60" y="77" width="492" height="21"/>
@@ -197,34 +217,12 @@
                                 <bool key="isElement" value="NO"/>
                             </accessibility>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.20856404610000001" green="0.51554975240000001" blue="0.79910432450000002" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5PP-Th-80K">
-                    <rect key="frame" x="107" y="764" width="190" height="162"/>
-                    <accessibility key="accessibilityConfiguration" label="Zeros digit image selector">
-                        <bool key="isElement" value="YES"/>
-                    </accessibility>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="Ek0-Su-hCe"/>
-                        <outlet property="delegate" destination="-1" id="4JX-lk-iJa"/>
-                    </connections>
-                </pickerView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ia-WF-BCg">
-                    <rect key="frame" x="356" y="919" width="108" height="74"/>
-                    <state key="normal" title="Exit">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="ST3-Un-gZN"/>
-                    </connections>
-                </button>
             </subviews>
-            <color key="backgroundColor" red="0.20856404610000001" green="0.51554975240000001" blue="0.79910432450000002" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.65010303579999995" green="0.63989199340000003" blue="0.6603140783" alpha="1" colorSpace="calibratedRGB"/>
             <point key="canvasLocation" x="353" y="361"/>
         </view>
     </objects>

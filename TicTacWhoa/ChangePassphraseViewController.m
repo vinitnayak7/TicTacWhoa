@@ -51,7 +51,7 @@
     submitButton.layer.cornerRadius = 10;
     submitButton.clipsToBounds = YES;
     submitButton.layer.borderWidth = 3.0;
-    submitButton.layer.borderColor =[[UIColor colorWithRed:0.0f/255.0f green:204.0f/255.0f blue:0.0f/255.0f alpha:1.0f] CGColor];
+    submitButton.layer.borderColor =[[UIColor colorWithRed:52.0f/255.0f green:137.0f/255.0f blue:52.0f/255.0f alpha:1.0f] CGColor];
     
     cancelButton.layer.cornerRadius = 10;
     cancelButton.clipsToBounds = YES;
