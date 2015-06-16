@@ -13,12 +13,17 @@
 
 @end
 
-@implementation MenuViewController
+@implementation MenuViewController {
+    NSString* userName;
+}
 @synthesize userProfileViewController;
+@synthesize userNameLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [userNameLabel setText:[NSString stringWithFormat:@"Welcome, %@", self->userName]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,6 +31,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(id)initWithUserName:(NSString*)name {
+    self = [super init];
+    if (self) {
+        self->userName = name;
+    }
+    return self;
+}
 /*
 #pragma mark - Navigation
 

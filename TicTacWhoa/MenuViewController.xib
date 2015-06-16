@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
             <connections>
+                <outlet property="userNameLabel" destination="Gr7-Co-psd" id="nl4-eY-7t8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -69,6 +70,15 @@
                         <rect key="frame" x="453" y="286" width="60" height="21"/>
                     </variation>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gr7-Co-psd">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                    <color key="textColor" red="0.92561765139999996" green="0.9431581416" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="109" y="157" width="295" height="21"/>
+                    </variation>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uD-90-JTc">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                     <state key="normal" title="Logout">
@@ -92,6 +102,7 @@
                     <exclude reference="DYt-x4-y14"/>
                     <exclude reference="55K-P8-nnf"/>
                     <exclude reference="IEB-nf-9Vo"/>
+                    <exclude reference="Gr7-Co-psd"/>
                     <exclude reference="3uD-90-JTc"/>
                 </mask>
             </variation>
@@ -103,6 +114,7 @@
                     <include reference="DYt-x4-y14"/>
                     <include reference="55K-P8-nnf"/>
                     <include reference="IEB-nf-9Vo"/>
+                    <include reference="Gr7-Co-psd"/>
                     <include reference="3uD-90-JTc"/>
                 </mask>
             </variation>

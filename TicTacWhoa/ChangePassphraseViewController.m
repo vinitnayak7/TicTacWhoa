@@ -351,7 +351,7 @@ accessibilityLabelForComponent:(NSInteger)component {
             [self initializeChangeView];
             return;
         } else {
-            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
+            [NewUserViewController showAlert:@"Invalid passphrase, please try again!" withDelegate:nil
                                    withTitle:@"Sorry" withOtherButtonTitle:nil];
             [self resetGrid];
         }

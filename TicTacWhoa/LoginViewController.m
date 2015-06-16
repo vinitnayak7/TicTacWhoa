@@ -53,6 +53,9 @@
     ////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////
 
+    NSNumber *value = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+    
     //UI changes
     loginButton.layer.cornerRadius = 10;
     loginButton.clipsToBounds = YES;
@@ -167,7 +170,7 @@
     
     BOOL success = [grid validate:userNameTextField.text];
     if (success) {
-        menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+        menuViewController = [[MenuViewController alloc] initWithUserName:userNameTextField.text];
         [self presentViewController:menuViewController animated:YES completion:nil];
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         [appDelegate setUserName:inputUserName];

@@ -268,7 +268,7 @@
     BOOL success = [grid saveGrid:userName withMultiSelect:[multipleSelectionSwitch isOn]];
     if (success) {
         [self saveDefaults];
-        menuViewController = [[MenuViewController alloc] init];
+        menuViewController = [[MenuViewController alloc] initWithUserName:userName];
         UIViewController *currentViewController = self.presentingViewController;
         [self dismissViewControllerAnimated:NO completion:^{
             [currentViewController presentViewController:menuViewController animated:NO completion:nil];

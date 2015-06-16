@@ -13,6 +13,9 @@
 
 @property (strong,nonatomic) UserProfileViewController *userProfileViewController;
 
+-(id)initWithUserName:(NSString*)userName;
+
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 - (IBAction)userProfileAction:(id)sender;
 - (IBAction)logoutAction:(id)sender;
 @end
