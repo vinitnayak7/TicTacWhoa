@@ -50,12 +50,12 @@
 
 - (IBAction)userProfileAction:(id)sender {
     userProfileViewController = [[UserProfileViewController alloc] initWithNibName:@"UserProfileViewController" bundle:nil];
-    [self presentViewController:userProfileViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:userProfileViewController animated:YES];
 }
 
 - (IBAction)logoutAction:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate setUserName:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 @end

@@ -37,7 +37,7 @@
 @synthesize m3x3pickerView;
 @synthesize m4x1pickerView;
 @synthesize userNameTextField;
-@synthesize boardViewController;
+@synthesize createUserViewController;
 @synthesize menuViewController;
 @synthesize loginButton;
 @synthesize clearButton;
@@ -171,7 +171,7 @@
     BOOL success = [grid validate:userNameTextField.text];
     if (success) {
         menuViewController = [[MenuViewController alloc] initWithUserName:userNameTextField.text];
-        [self presentViewController:menuViewController animated:YES completion:nil];
+        [self.navigationController pushViewController:menuViewController animated:YES];
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         [appDelegate setUserName:inputUserName];
         [userNameTextField setText:@""];
@@ -190,8 +190,8 @@
 }
 
 - (IBAction)submitNewUser:(id)sender {
-    boardViewController = [[NewUserViewController alloc] initWithNibName:@"NewUserViewController" bundle:nil];
-    [self presentViewController:boardViewController animated:YES completion:nil];
+    createUserViewController = [[NewUserViewController alloc] initWithNibName:@"NewUserViewController" bundle:nil];
+    [self.navigationController pushViewController:createUserViewController animated:YES];
     [userNameTextField setText:@""];
     [self resetGridAction:nil];
 }

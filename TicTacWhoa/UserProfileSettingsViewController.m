@@ -73,18 +73,15 @@
 }
 
 - (IBAction)cancelAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)changeAccountAction:(id)sender {
     if ([accountUsernameTextField.text isEqualToString:@""] || accountUsernameTextField.text == nil) {
         return;
     }
-    UIViewController *currentViewController = self.presentingViewController;
     LoginViewController *loginViewController = [[LoginViewController alloc] initWithUsername:accountUsernameTextField.text];
-    [self dismissViewControllerAnimated:NO completion:^{
-        [currentViewController presentViewController:loginViewController animated:NO completion:nil];
-    }];
+    [self.navigationController pushViewController:loginViewController animated:YES];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate setUserName:nil];
 }

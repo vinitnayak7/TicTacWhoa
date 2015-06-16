@@ -13,7 +13,7 @@
 @interface LoginViewController : UIViewController<UIPickerViewDataSource, UIPickerViewDelegate, UIGestureRecognizerDelegate, UIPickerViewAccessibilityDelegate, UIAlertViewDelegate>
 
 
-@property (strong,nonatomic) NewUserViewController *boardViewController;
+@property (strong,nonatomic) NewUserViewController *createUserViewController;
 @property (strong,nonatomic) MenuViewController *menuViewController;
 
 //========== ROW 1 =====================

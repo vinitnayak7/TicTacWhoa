@@ -269,11 +269,7 @@
     if (success) {
         [self saveDefaults];
         menuViewController = [[MenuViewController alloc] initWithUserName:userName];
-        UIViewController *currentViewController = self.presentingViewController;
-        [self dismissViewControllerAnimated:NO completion:^{
-            [currentViewController presentViewController:menuViewController animated:NO completion:nil];
-        }];
-
+        [self.navigationController pushViewController:menuViewController animated:YES];
     } else {
         // TODO Bring attempts back in at some point
 //        if ([grid getAttempts] > ATTEMPT_LIMIT) {
@@ -312,7 +308,8 @@
 }
 
 - (IBAction)logoutAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)multipleSelectionAction:(id)sender {

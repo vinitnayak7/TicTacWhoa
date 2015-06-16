@@ -38,37 +38,30 @@
 */
 
 - (IBAction)changePassphraseAction:(id)sender {
-//    userProfileSettingsViewController = [[UserProfileSettingsViewController alloc]
-//                                         initWithEnum:CHANGE_PASSPHRASE];
-//    [self presentViewController:userProfileSettingsViewController animated:YES completion:nil];
     ChangePassphraseViewController *vc = [[ChangePassphraseViewController alloc] initWithNibName:@"ChangePassphraseViewController" bundle:nil];
-    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
 - (IBAction)changeEmailAction:(id)sender {
     userProfileSettingsViewController = [[UserProfileSettingsViewController alloc]
                                          initWithEnum:CHANGE_EMAIL];
-    [self presentViewController:userProfileSettingsViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:userProfileSettingsViewController animated:YES];
 }
 
 - (IBAction)changeAccountAction:(id)sender {
     userProfileSettingsViewController = [[UserProfileSettingsViewController alloc]
                                          initWithEnum:CHANGE_ACCOUNT];
-    [self presentViewController:userProfileSettingsViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:userProfileSettingsViewController animated:YES];
 }
 
 - (IBAction)logoutAction:(id)sender {
-    UIViewController *currentViewController = self.presentingViewController;
-    LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    [self dismissViewControllerAnimated:NO completion:^{
-        [currentViewController presentViewController:loginViewController animated:NO completion:nil];
-    }];
+    [self.navigationController popToRootViewControllerAnimated:YES];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate setUserName:nil];
 }
 
 - (IBAction)cancelAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

@@ -322,7 +322,7 @@ accessibilityLabelForComponent:(NSInteger)component {
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
@@ -337,7 +337,7 @@ accessibilityLabelForComponent:(NSInteger)component {
 
 
 - (IBAction)cancelAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)submitAction:(id)sender {
