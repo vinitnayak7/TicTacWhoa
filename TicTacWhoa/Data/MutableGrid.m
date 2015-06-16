@@ -47,7 +47,7 @@
 
 -(BOOL)saveGrid:(NSString *)userName withMultiSelect:(BOOL)multiSelectEnabled {
     // Store the data
-    if ([selectionList count] != 4) {
+    if ([selectionList count] < 4) {
         return NO;
     }
     

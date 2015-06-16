@@ -277,7 +277,7 @@
     } else {
         // TODO Bring attempts back in at some point
 //        if ([grid getAttempts] > ATTEMPT_LIMIT) {
-            [NewUserViewController showAlert:@"Invalid password. Please check your settings and ensure only 4 images are selected." withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
+            [NewUserViewController showAlert:@"Invalid password. Please check your settings and ensure at least 4 images are selected." withDelegate:nil withTitle:@"Sorry" withOtherButtonTitle:nil];
         [self cancelButtonAction:nil];
 //        } else {
 //            [NewUserViewController showAlert:@"Incorrect passphrase, please try again!" withDelegate:nil
