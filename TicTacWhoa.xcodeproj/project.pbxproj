@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E1205EF1B4CFC8B00B6FBFB /* hh Sheikh Zayed Bin Sultan Al-Nahyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1205ED1B4CFC8B00B6FBFB /* hh Sheikh Zayed Bin Sultan Al-Nahyan.png */; };
+		8E1205F11B4CFCCC00B6FBFB /* HH Sheikh Rashid Bin Saeed Al-Maktoum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E1205F01B4CFCCC00B6FBFB /* HH Sheikh Rashid Bin Saeed Al-Maktoum.jpg */; };
+		8E1205F41B4CFE2A00B6FBFB /* HH Sheikh Khalifa Bin Zayed Al-Nahyan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E1205F21B4CFE2A00B6FBFB /* HH Sheikh Khalifa Bin Zayed Al-Nahyan.jpg */; };
+		8E1205F51B4CFE2A00B6FBFB /* HH Sheikh Mohamed Bin Rashid Al-Maktoum.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E1205F31B4CFE2A00B6FBFB /* HH Sheikh Mohamed Bin Rashid Al-Maktoum.jpg */; };
+		8E1205F81B4CFF2600B6FBFB /* HH Sheikh Mohamed bin Zayed Al-Nahyan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E1205F61B4CFF2600B6FBFB /* HH Sheikh Mohamed bin Zayed Al-Nahyan.jpg */; };
+		8E1205F91B4CFF2600B6FBFB /* HH Shiekh Sultan bin Muhammad Al-Qasimi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E1205F71B4CFF2600B6FBFB /* HH Shiekh Sultan bin Muhammad Al-Qasimi.jpg */; };
+		8E1205FC1B4D007600B6FBFB /* HH sheikh Hamdan Bin mubarak Al-Nahyan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E1205FA1B4D007600B6FBFB /* HH sheikh Hamdan Bin mubarak Al-Nahyan.jpg */; };
+		8E1205FD1B4D007600B6FBFB /* HH sheikh Nahyan bin Mubarak Al-Nahyan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E1205FB1B4D007600B6FBFB /* HH sheikh Nahyan bin Mubarak Al-Nahyan.jpg */; };
 		8E237F2F1AE76BD90083815F /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E237F2D1AE76BD90083815F /* UserProfileViewController.m */; };
 		8E237F301AE76BD90083815F /* UserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E237F2E1AE76BD90083815F /* UserProfileViewController.xib */; };
 		8E237F341AE76FA00083815F /* UserProfileSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E237F321AE76FA00083815F /* UserProfileSettingsViewController.m */; };
@@ -58,6 +66,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E1205ED1B4CFC8B00B6FBFB /* hh Sheikh Zayed Bin Sultan Al-Nahyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hh Sheikh Zayed Bin Sultan Al-Nahyan.png"; sourceTree = "<group>"; };
+		8E1205F01B4CFCCC00B6FBFB /* HH Sheikh Rashid Bin Saeed Al-Maktoum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "HH Sheikh Rashid Bin Saeed Al-Maktoum.jpg"; sourceTree = "<group>"; };
+		8E1205F21B4CFE2A00B6FBFB /* HH Sheikh Khalifa Bin Zayed Al-Nahyan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "HH Sheikh Khalifa Bin Zayed Al-Nahyan.jpg"; sourceTree = "<group>"; };
+		8E1205F31B4CFE2A00B6FBFB /* HH Sheikh Mohamed Bin Rashid Al-Maktoum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "HH Sheikh Mohamed Bin Rashid Al-Maktoum.jpg"; sourceTree = "<group>"; };
+		8E1205F61B4CFF2600B6FBFB /* HH Sheikh Mohamed bin Zayed Al-Nahyan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "HH Sheikh Mohamed bin Zayed Al-Nahyan.jpg"; sourceTree = "<group>"; };
+		8E1205F71B4CFF2600B6FBFB /* HH Shiekh Sultan bin Muhammad Al-Qasimi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "HH Shiekh Sultan bin Muhammad Al-Qasimi.jpg"; sourceTree = "<group>"; };
+		8E1205FA1B4D007600B6FBFB /* HH sheikh Hamdan Bin mubarak Al-Nahyan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "HH sheikh Hamdan Bin mubarak Al-Nahyan.jpg"; sourceTree = "<group>"; };
+		8E1205FB1B4D007600B6FBFB /* HH sheikh Nahyan bin Mubarak Al-Nahyan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "HH sheikh Nahyan bin Mubarak Al-Nahyan.jpg"; sourceTree = "<group>"; };
 		8E237F2C1AE76BD90083815F /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
 		8E237F2D1AE76BD90083815F /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		8E237F2E1AE76BD90083815F /* UserProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProfileViewController.xib; sourceTree = "<group>"; };
@@ -136,6 +152,14 @@
 		0FC88FA91AA536C9000F0087 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8E1205FA1B4D007600B6FBFB /* HH sheikh Hamdan Bin mubarak Al-Nahyan.jpg */,
+				8E1205FB1B4D007600B6FBFB /* HH sheikh Nahyan bin Mubarak Al-Nahyan.jpg */,
+				8E1205F61B4CFF2600B6FBFB /* HH Sheikh Mohamed bin Zayed Al-Nahyan.jpg */,
+				8E1205F71B4CFF2600B6FBFB /* HH Shiekh Sultan bin Muhammad Al-Qasimi.jpg */,
+				8E1205F21B4CFE2A00B6FBFB /* HH Sheikh Khalifa Bin Zayed Al-Nahyan.jpg */,
+				8E1205F31B4CFE2A00B6FBFB /* HH Sheikh Mohamed Bin Rashid Al-Maktoum.jpg */,
+				8E1205F01B4CFCCC00B6FBFB /* HH Sheikh Rashid Bin Saeed Al-Maktoum.jpg */,
+				8E1205ED1B4CFC8B00B6FBFB /* hh Sheikh Zayed Bin Sultan Al-Nahyan.png */,
 				8E57EC621B16E0F400942C4A /* zero.png */,
 				8EEFDF661AD98DA9005207A0 /* eight.png */,
 				8EEFDF671AD98DA9005207A0 /* five.png */,
@@ -332,12 +356,17 @@
 			files = (
 				8E488A4D1AAD68E00020AD80 /* car.png in Resources */,
 				8E81FB271AA2F6A500F70393 /* NewUserViewController.xib in Resources */,
+				8E1205F11B4CFCCC00B6FBFB /* HH Sheikh Rashid Bin Saeed Al-Maktoum.jpg in Resources */,
 				8E488A501AAD68E00020AD80 /* house.png in Resources */,
+				8E1205F81B4CFF2600B6FBFB /* HH Sheikh Mohamed bin Zayed Al-Nahyan.jpg in Resources */,
 				8E488A4E1AAD68E00020AD80 /* cat.png in Resources */,
+				8E1205F91B4CFF2600B6FBFB /* HH Shiekh Sultan bin Muhammad Al-Qasimi.jpg in Resources */,
 				8EEFDF721AD98DA9005207A0 /* four.png in Resources */,
 				8E488A4F1AAD68E00020AD80 /* dog.png in Resources */,
 				8E237F301AE76BD90083815F /* UserProfileViewController.xib in Resources */,
+				8E1205FC1B4D007600B6FBFB /* HH sheikh Hamdan Bin mubarak Al-Nahyan.jpg in Resources */,
 				8EEFDF741AD98DA9005207A0 /* one.png in Resources */,
+				8E1205EF1B4CFC8B00B6FBFB /* hh Sheikh Zayed Bin Sultan Al-Nahyan.png in Resources */,
 				8EEFDF761AD98DA9005207A0 /* six.png in Resources */,
 				8EEFDF791AD98DA9005207A0 /* two.png in Resources */,
 				8EEFDF771AD98DA9005207A0 /* three.png in Resources */,
@@ -346,8 +375,11 @@
 				8E237F351AE76FA00083815F /* UserProfileSettingsViewController.xib in Resources */,
 				8EEFDF731AD98DA9005207A0 /* nine.png in Resources */,
 				8E81FB221AA1A4F100F70393 /* LoginViewController.xib in Resources */,
+				8E1205F41B4CFE2A00B6FBFB /* HH Sheikh Khalifa Bin Zayed Al-Nahyan.jpg in Resources */,
 				8EEFDF781AD98DA9005207A0 /* tree.png in Resources */,
 				8ECA1B401AB4C4AC00AEAFF6 /* MenuViewController.xib in Resources */,
+				8E1205F51B4CFE2A00B6FBFB /* HH Sheikh Mohamed Bin Rashid Al-Maktoum.jpg in Resources */,
+				8E1205FD1B4D007600B6FBFB /* HH sheikh Nahyan bin Mubarak Al-Nahyan.jpg in Resources */,
 				8EEFDF701AD98DA9005207A0 /* eight.png in Resources */,
 				8E49E8D91AEF67F7004C10AB /* ChangePassphraseViewController.xib in Resources */,
 				8E81FB1D1AA19D2000F70393 /* SplashUIViewController.xib in Resources */,

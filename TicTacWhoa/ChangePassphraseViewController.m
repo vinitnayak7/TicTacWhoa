@@ -20,6 +20,7 @@
     MutableGrid *grid;
     NSMutableArray *pickerList;
     NSMutableArray *pickerImageList;
+    NSMutableArray *pickerSpeechList;
     NSMapTable *pickerStartingImageList;
     NSMapTable *pickerToString;
     BOOL multiSelectDisabled;
@@ -64,6 +65,7 @@
     pickerToString = [[NSMapTable alloc] init];
     
     pickerImageList = [[NSMutableArray alloc] init];
+    pickerSpeechList = [[NSMutableArray alloc] init];
     pickerStartingImageList = [[NSMapTable alloc] init];
     
     // NB: Do not change, this MUST be in the correct order
@@ -112,11 +114,35 @@
         [pickerImageList removeAllObjects];
     }
     
-    [pickerImageList addObject:@"tree.png"];
-    [pickerImageList addObject:@"car.png"];
-    [pickerImageList addObject:@"cat.png"];
-    [pickerImageList addObject:@"dog.png"];
-    [pickerImageList addObject:@"house.png"];
+//    [pickerImageList addObject:@"tree.png"];
+//    [pickerImageList addObject:@"car.png"];
+//    [pickerImageList addObject:@"cat.png"];
+//    [pickerImageList addObject:@"dog.png"];
+//    [pickerImageList addObject:@"house.png"];
+
+    [pickerImageList addObject:@"HH Sheikh Rashid Bin Saeed Al-Maktoum.jpg"];
+    [pickerSpeechList addObject:@"سمو الشيخ راشد بن سعيد آل مكتومْ"];
+    
+    [pickerImageList addObject:@"hh Sheikh Zayed Bin Sultan Al-Nahyan.png"];
+    [pickerSpeechList addObject:@"سمو الشيخ زايد بن سلطان آل نهيان"];
+    
+    [pickerImageList addObject:@"HH Sheikh Mohamed Bin Rashid Al-Maktoum.jpg"];
+    [pickerSpeechList addObject:@"سمو الشيخ مُِحمد بن راشد آل مكتومْ"];
+    
+    [pickerImageList addObject:@"HH Sheikh Khalifa Bin Zayed Al-Nahyan.jpg"];
+    [pickerSpeechList addObject:@"سمو الشيخ خَليفَ بن زايد آل نهيان"];
+    
+    [pickerImageList addObject:@"HH Sheikh Mohamed bin Zayed Al-Nahyan.jpg"];
+    [pickerSpeechList addObject:@"سمو الشيخ مُِحمد بن زايد آل نهيان"];
+    
+    [pickerImageList addObject:@"HH Shiekh Sultan bin Muhammad Al-Qasimi.jpg"];
+    [pickerSpeechList addObject:@"سمو الشيخ سلطان بن مُِحمد آل قاسمي"];
+    
+    [pickerImageList addObject:@"HH sheikh Nahyan bin Mubarak Al-Nahyan.jpg"];
+    [pickerSpeechList addObject:@"سمو الشيخ نهيان بن مبارك آل نهيان"];
+    
+    [pickerImageList addObject:@"HH sheikh Hamdan Bin mubarak Al-Nahyan.jpg"];
+    [pickerSpeechList addObject:@"سمو الشيخ حمدان بن مبارك آل نهيان"];
     
     grid = [[MutableGrid alloc] initWithPickers:pickerList];
     
@@ -172,7 +198,8 @@
 // The number of rows of data
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return 6;
+    // Number of images + 1 for the digit image
+    return [pickerImageList count] + 1;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
@@ -204,10 +231,10 @@
     // are the same.
     if (row == 0) {
         image = [UIImage imageNamed:[pickerStartingImageList objectForKey:pickerView]];
-        accessibilityLabel = [pickerStartingImageList objectForKey:pickerView];
+        accessibilityLabel = [AccessibilityUtils removeFileSuffix:[pickerStartingImageList objectForKey:pickerView]];
     } else {
         image = [UIImage imageNamed:[pickerImageList objectAtIndex:row-1]];
-        accessibilityLabel = [pickerImageList objectAtIndex:row-1];
+        accessibilityLabel = [pickerSpeechList objectAtIndex:row-1];
     }
     
     imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -221,9 +248,11 @@
         imageView.frame = CGRectInset(imageView.frame, borderWidth, borderWidth);
         imageView.layer.borderColor = [UIColor redColor].CGColor;
         imageView.layer.borderWidth = borderWidth;
-        accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"selected", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
+//        accessibilityLabel = [NSString stringWithFormat:@"%@ %@", @"selected", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
+        accessibilityLabel = [NSString stringWithFormat:@"%@ %@", accessibilityLabel, @"selected"];
     } else {
-        accessibilityLabel = [NSString stringWithFormat:@"%@", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
+//        accessibilityLabel = [NSString stringWithFormat:@"%@", [AccessibilityUtils removeFileSuffix:accessibilityLabel]];
+        // Don't need to do anything for sheiks
     }
     [imageView setAccessibilityLabel:accessibilityLabel];
     return imageView;
@@ -244,19 +273,19 @@
     NSString *imageTitle;
     
     if (selectedRow == 0) {
-        imageTitle = [pickerStartingImageList objectForKey:pV];
+        utterance = [AccessibilityUtils removeFileSuffix:[pickerStartingImageList objectForKey:pV]];
     } else {
-        imageTitle = [pickerImageList objectAtIndex:selectedRow - 1];
+        utterance = [pickerSpeechList objectAtIndex:selectedRow - 1];
     }
     
     if (![grid isSelectedForPicker:[pickerToString objectForKey:pV] forRow:selectedRow]) {
         imageView.frame = CGRectInset(imageView.frame, borderWidth, borderWidth);
         selectionColor = [UIColor redColor].CGColor;
-        utterance = [NSString stringWithFormat:@"%@ selected", [AccessibilityUtils removeFileSuffix:imageTitle]];
+        utterance = [NSString stringWithFormat:@"%@ %@", utterance, @"selected"];
     } else {
         imageView.frame = CGRectInset(imageView.frame, -borderWidth, -borderWidth);
         selectionColor = [UIColor clearColor].CGColor;
-        utterance = [NSString stringWithFormat:@"%@ un selected", [AccessibilityUtils removeFileSuffix:imageTitle]];
+        utterance = [NSString stringWithFormat:@"%@ %@", utterance, @"un selected"];
     }
     imageView.layer.borderColor = selectionColor;
     imageView.layer.borderWidth = borderWidth;
