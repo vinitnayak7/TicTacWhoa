@@ -120,17 +120,17 @@
 //    [pickerImageList addObject:@"dog.png"];
 //    [pickerImageList addObject:@"house.png"];
 
-    [pickerImageList addObject:@"HH Sheikh Rashid Bin Saeed Al-Maktoum.jpg"];
-    [pickerSpeechList addObject:@"سمو الشيخ راشد بن سعيد آل مكتومْ"];
-    
     [pickerImageList addObject:@"hh Sheikh Zayed Bin Sultan Al-Nahyan.png"];
     [pickerSpeechList addObject:@"سمو الشيخ زايد بن سلطان آل نهيان"];
     
-    [pickerImageList addObject:@"HH Sheikh Mohamed Bin Rashid Al-Maktoum.jpg"];
-    [pickerSpeechList addObject:@"سمو الشيخ مُِحمد بن راشد آل مكتومْ"];
+    [pickerImageList addObject:@"HH Sheikh Rashid Bin Saeed Al-Maktoum.jpg"];
+    [pickerSpeechList addObject:@"سمو الشيخ راشد بن سعيد آل مكتومْ"];
     
     [pickerImageList addObject:@"HH Sheikh Khalifa Bin Zayed Al-Nahyan.jpg"];
     [pickerSpeechList addObject:@"سمو الشيخ خَليفَ بن زايد آل نهيان"];
+    
+    [pickerImageList addObject:@"HH Sheikh Mohamed Bin Rashid Al-Maktoum.jpg"];
+    [pickerSpeechList addObject:@"سمو الشيخ مُِحمد بن راشد آل مكتومْ"];
     
     [pickerImageList addObject:@"HH Sheikh Mohamed bin Zayed Al-Nahyan.jpg"];
     [pickerSpeechList addObject:@"سمو الشيخ مُِحمد بن زايد آل نهيان"];

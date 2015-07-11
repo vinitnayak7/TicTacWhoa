@@ -19,7 +19,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.splashViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-//    self.window.rootViewController = self.splashViewController;
+
     UINavigationController *navigationController=[[UINavigationController alloc] initWithRootViewController:self.splashViewController];
     self.window.rootViewController = navigationController;
     navigationController.navigationBar.hidden = YES;
