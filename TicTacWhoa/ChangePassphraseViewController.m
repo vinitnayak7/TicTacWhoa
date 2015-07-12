@@ -144,6 +144,9 @@
     [pickerImageList addObject:@"HH sheikh Hamdan Bin mubarak Al-Nahyan.jpg"];
     [pickerSpeechList addObject:@"سمو الشيخ حمدان بن مبارك آل نهيان"];
     
+    [pickerImageList addObject:@"HH Shaikh Nahyan & Hesham.jpg"];
+    [pickerSpeechList addObject:@"سمو الشيخ نهيان بن مبارك آل نهيان بجامعة الإمارات"];
+    
     grid = [[MutableGrid alloc] initWithPickers:pickerList];
     
     for (UIPickerView *picker in pickerList) {
