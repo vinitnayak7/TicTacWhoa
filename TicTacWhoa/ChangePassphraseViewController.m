@@ -117,6 +117,8 @@
     [pickerImageList addObject:@"cat.png"];
     [pickerImageList addObject:@"dog.png"];
     [pickerImageList addObject:@"house.png"];
+    [pickerImageList addObject:@"Michael.jpg"];
+    [pickerImageList addObject:@"Lee.jpg"];
     
     grid = [[MutableGrid alloc] initWithPickers:pickerList];
     
@@ -172,7 +174,7 @@
 // The number of rows of data
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return 6;
+    return [pickerImageList count] + 1;
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
